@@ -8,14 +8,16 @@
 import Foundation
 import UIKit
 
-
-
-
 var screenHeight = CGFloat()
 var screenWidth = CGFloat()
 var stringMultiplier = CGFloat()
 var ScreenWidth_To_ScreenHeight_Converter = CGFloat()
 var ScreenHeight_To_ScreenWidth_Converter = CGFloat()
+
+let koyuYesil = UIColor(red: 0.27, green: 0.40, blue: 0.28, alpha: 1.00)
+let turuncu = UIColor(red: 1.00, green: 0.64, blue: 0.31, alpha: 1.00)
+let acikYesil = UIColor(red: 0.30, green: 0.69, blue: 0.31, alpha: 1.00)
+let acikGri = UIColor(red: 0.97, green: 0.96, blue: 0.95, alpha: 1.00)
 
 
 func setDefaultSize(view : UIView){
@@ -91,9 +93,4 @@ extension UIViewController {
 }
 
 
-enum senderVC {
-    case None
-    case Settings
-    case Walktrough
-}
 

@@ -35,7 +35,7 @@ class menuVC: UIViewController,UICollectionViewDataSource, UICollectionViewDeleg
         let mainTitle = UILabel()
             mainTitle.text = NSLocalizedString("Date Patisserie", comment: "")
             mainTitle.textAlignment = .center
-            mainTitle.textColor = UIColor(red: 0.275, green: 0.396, blue: 0.278, alpha: 1)
+            mainTitle.textColor = koyuYesil
             mainTitle.numberOfLines = 0
             mainTitle.font = UIFont(name: "Gilroy-Bold", size: 22 * stringMultiplier)
             mainTitle.frame = CGRect(x: 0.2 * screenWidth, y: 0.056 * screenHeight, width: 0.6 * screenWidth, height: 0.05 * screenHeight)
@@ -182,13 +182,12 @@ class menuVC: UIViewController,UICollectionViewDataSource, UICollectionViewDeleg
         
         if collectionView == beveragesCollection{
             
-            
             choosenBeverage.image = beverageArray[indexPath.row].image
             choosenBeverage.name = beverageArray[indexPath.row].name
             choosenBeverage.category = beverageArray[indexPath.row].category
             choosenBeverage.waterRate = beverageArray[indexPath.row].waterRate
             choosenBeverage.imageName = beverageArray[indexPath.row].imageName
-            performSegue(withIdentifier: "menuToMain", sender: nil )
+            performSegue(withIdentifier: "menuToDetail", sender: nil )
             
             
     }else if collectionView == CategoriesCollection{

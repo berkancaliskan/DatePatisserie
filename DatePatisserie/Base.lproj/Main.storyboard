@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7Pb-XN-DHb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vsg-XG-BhG">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -309,15 +309,32 @@
                         <outlet property="CategoriesCollection" destination="iyR-jO-L9Z" id="r6H-vB-gdh"/>
                         <outlet property="beveragesCollection" destination="lOj-TH-aJn" id="MJy-cp-B69"/>
                         <segue destination="vsg-XG-BhG" kind="show" identifier="menuToMain" id="10Z-UO-KHG"/>
+                        <segue destination="gFR-2n-ggq" kind="show" identifier="menuToDetail" id="gP6-QP-CN1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wav-Fa-GIZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5543" y="22"/>
+            <point key="canvasLocation" x="5610" y="-64"/>
+        </scene>
+        <!--DetailsVC-->
+        <scene sceneID="LvI-JY-36U">
+            <objects>
+                <viewController id="gFR-2n-ggq" customClass="DetailsVC" customModule="DatePatisserie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N5z-68-q8F">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Y6F-cT-xTl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="g2D-Z9-OwY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9iu-tS-yr0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6433" y="-311"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="KdP-nl-4u0"/>
+        <segue reference="10Z-UO-KHG"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

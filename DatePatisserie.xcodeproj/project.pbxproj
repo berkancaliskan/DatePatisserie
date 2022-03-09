@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		070A0D7C27AD9AC500066044 /* hamburger_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 070A0D7B27AD9AC500066044 /* hamburger_loading.json */; };
 		070A0D7E27ADC08F00066044 /* coffee_lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 070A0D7D27ADC08F00066044 /* coffee_lottie.json */; };
+		0712F1BC27D89E69000930CE /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0712F1BB27D89E69000930CE /* DetailsVC.swift */; };
 		07208CE2279B5C18003B422B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07208CE1279B5C18003B422B /* AppDelegate.swift */; };
 		07208CE6279B5C18003B422B /* Onboarding1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07208CE5279B5C18003B422B /* Onboarding1VC.swift */; };
 		07208CE9279B5C18003B422B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07208CE7279B5C18003B422B /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 		076FDEED279C580800F45EFA /* Gilroy-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 076FDEEC279C580800F45EFA /* Gilroy-Thin.otf */; };
 		076FDEEF279C58FA00F45EFA /* Gilroy-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 076FDEEE279C58FA00F45EFA /* Gilroy-Bold.otf */; };
 		078201FB279DAF29009E35AA /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078201FA279DAF29009E35AA /* LoginVC.swift */; };
+		0783DEBF27CF689C0086C8D4 /* ProfileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0783DEBE27CF689C0086C8D4 /* ProfileInfo.swift */; };
 		079709D427AB1D8500DC1538 /* loadinggif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 079709D327AB1D8500DC1538 /* loadinggif.gif */; };
 		07A3C6F227A5863800F3E81C /* LottieVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A3C6F127A5863800F3E81C /* LottieVC.swift */; };
 		07A3C6F427A5A89700F3E81C /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 07A3C6F327A5A89700F3E81C /* loading.json */; };
@@ -46,6 +48,7 @@
 		065220B640F476CD0A729FD9 /* Pods-DatePatisserie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatePatisserie.release.xcconfig"; path = "Target Support Files/Pods-DatePatisserie/Pods-DatePatisserie.release.xcconfig"; sourceTree = "<group>"; };
 		070A0D7B27AD9AC500066044 /* hamburger_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hamburger_loading.json; sourceTree = "<group>"; };
 		070A0D7D27ADC08F00066044 /* coffee_lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coffee_lottie.json; sourceTree = "<group>"; };
+		0712F1BB27D89E69000930CE /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
 		07208CDE279B5C18003B422B /* DatePatisserie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatePatisserie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07208CE1279B5C18003B422B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07208CE5279B5C18003B422B /* Onboarding1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding1VC.swift; sourceTree = "<group>"; };
@@ -69,6 +72,7 @@
 		076FDEEC279C580800F45EFA /* Gilroy-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Thin.otf"; sourceTree = "<group>"; };
 		076FDEEE279C58FA00F45EFA /* Gilroy-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Bold.otf"; sourceTree = "<group>"; };
 		078201FA279DAF29009E35AA /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		0783DEBE27CF689C0086C8D4 /* ProfileInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfo.swift; sourceTree = "<group>"; };
 		079709D327AB1D8500DC1538 /* loadinggif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loadinggif.gif; sourceTree = "<group>"; };
 		07A3C6F127A5863800F3E81C /* LottieVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieVC.swift; sourceTree = "<group>"; };
 		07A3C6F327A5A89700F3E81C /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
@@ -94,6 +98,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0712F1B927D89640000930CE /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				07208CE5279B5C18003B422B /* Onboarding1VC.swift */,
+				076FDEDB279C1FE900F45EFA /* Onboarding2VC.swift */,
+				076FDEDD279C1FFE00F45EFA /* Onboarding3VC.swift */,
+				076FDEDF279C22C600F45EFA /* Onboarding4VC.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		0712F1BA27D89698000930CE /* LottieJson */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LottieJson;
+			sourceTree = "<group>";
+		};
 		07208CD5279B5C18003B422B = {
 			isa = PBXGroup;
 			children = (
@@ -115,19 +137,19 @@
 		07208CE0279B5C18003B422B /* DatePatisserie */ = {
 			isa = PBXGroup;
 			children = (
-				076FDEE3279C57BC00F45EFA /* Fonts */,
+				0712F1BA27D89698000930CE /* LottieJson */,
 				07208CE1279B5C18003B422B /* AppDelegate.swift */,
 				072E8A6327ADD7B000C2E9AE /* Globals.swift */,
-				07208CE5279B5C18003B422B /* Onboarding1VC.swift */,
-				076FDEDB279C1FE900F45EFA /* Onboarding2VC.swift */,
-				076FDEDD279C1FFE00F45EFA /* Onboarding3VC.swift */,
-				076FDEDF279C22C600F45EFA /* Onboarding4VC.swift */,
+				076FDEE3279C57BC00F45EFA /* Fonts */,
+				0712F1B927D89640000930CE /* Onboarding */,
 				078201FA279DAF29009E35AA /* LoginVC.swift */,
 				07D8965B27A4BD7700A1ED17 /* SignUpVC.swift */,
+				0783DEBE27CF689C0086C8D4 /* ProfileInfo.swift */,
 				07350322279C8F9500B99102 /* MainVC.swift */,
 				07350324279C913600B99102 /* SettingsVC.swift */,
 				07350326279CA6A900B99102 /* ProfileVC.swift */,
 				07A3C6F127A5863800F3E81C /* LottieVC.swift */,
+				0712F1BB27D89E69000930CE /* DetailsVC.swift */,
 				07D074DC27A6D26000BE9EBB /* Beverage.swift */,
 				07D074E027A6D88C00BE9EBB /* beveragesCell.swift */,
 				07D074E227A6D8AF00BE9EBB /* beveragesCategories.swift */,
@@ -307,12 +329,14 @@
 				07D074E127A6D88C00BE9EBB /* beveragesCell.swift in Sources */,
 				076FDEDC279C1FE900F45EFA /* Onboarding2VC.swift in Sources */,
 				07D074DD27A6D26000BE9EBB /* Beverage.swift in Sources */,
+				0783DEBF27CF689C0086C8D4 /* ProfileInfo.swift in Sources */,
 				07208CE6279B5C18003B422B /* Onboarding1VC.swift in Sources */,
 				072E8A6427ADD7B000C2E9AE /* Globals.swift in Sources */,
 				076FDEE0279C22C600F45EFA /* Onboarding4VC.swift in Sources */,
 				07A3C6F227A5863800F3E81C /* LottieVC.swift in Sources */,
 				07D8965C27A4BD7700A1ED17 /* SignUpVC.swift in Sources */,
 				07350327279CA6A900B99102 /* ProfileVC.swift in Sources */,
+				0712F1BC27D89E69000930CE /* DetailsVC.swift in Sources */,
 				078201FB279DAF29009E35AA /* LoginVC.swift in Sources */,
 				07208CE2279B5C18003B422B /* AppDelegate.swift in Sources */,
 				076FDEDE279C1FFE00F45EFA /* Onboarding3VC.swift in Sources */,

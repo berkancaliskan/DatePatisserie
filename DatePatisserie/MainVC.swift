@@ -3,7 +3,7 @@
 //  DatePatisserie
 //
 //  Created by Berkan Çalışkan on 22.01.2022.
-//  UIColor(red: 0.275, green: 0.396, blue: 0.278, alpha: 1)
+//  koyuYesil
 
 import UIKit
 import Lottie
@@ -39,15 +39,6 @@ class MainVC: UIViewController {
         view.backgroundColor = UIColor.white
         
         
-//        progressBar?.frame = CGRect(x: 0.2 * screenWidth, y: 0.56 * screenHeight, width: 0.6 * screenWidth, height: 0.05 * screenHeight)
-//        progressBar?.progress = 3.4
-//        progressBar?.backgroundColor = .red
-//        progressBar?.progressTintColor = .orange
-//        progressBar?.trackTintColor = .systemGreen
-//
-//        self.view.addSubview(progressBar!)
-        
-        
         progressView.frame = CGRect(x: 0.2 * screenWidth, y: 0.45 * screenHeight, width: 0.6 * screenWidth, height: 0.1 * screenHeight)
         progressView.setProgress(icilenKahve, animated: true)
         progressView.trackTintColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
@@ -61,17 +52,16 @@ class MainVC: UIViewController {
         let mainTitle = UILabel()
         mainTitle.text = NSLocalizedString("Date Patisserie", comment: "")
         mainTitle.textAlignment = .center
-        mainTitle.textColor = UIColor(red: 0.298, green: 0.686, blue: 0.314, alpha: 1)
+        mainTitle.textColor = koyuYesil
         mainTitle.numberOfLines = 0
         mainTitle.font = UIFont(name: "Gilroy-Bold", size: 22 * stringMultiplier)
         mainTitle.frame = CGRect(x: 0.2 * screenWidth, y: 0.056 * screenHeight, width: 0.6 * screenWidth, height: 0.05 * screenHeight)
         view.addSubview(mainTitle)
         
-        
 
         kahveSayisi.text = NSLocalizedString("", comment: "")
         kahveSayisi.textAlignment = .left
-        kahveSayisi.textColor = UIColor(red: 0.275, green: 0.396, blue: 0.278, alpha: 1)
+        kahveSayisi.textColor = koyuYesil
         kahveSayisi.numberOfLines = 0
         kahveSayisi.font = UIFont(name: "Gilroy-Bold", size: 19 * stringMultiplier)
         kahveSayisi.frame = CGRect(x: 0.2 * screenWidth, y: 0.5 * screenHeight, width: 0.6 * screenWidth, height: 0.05 * screenHeight)
@@ -239,7 +229,7 @@ class MainVC: UIViewController {
             
                 
             }
-            kahveSayisi.textColor = UIColor(red: 0.275, green: 0.396, blue: 0.278, alpha: 1)
+            kahveSayisi.textColor = koyuYesil
             
             }
 
@@ -261,7 +251,7 @@ class MainVC: UIViewController {
             self.progressView.setProgress(barDegeri, animated: true)
             
             kahveSayisi.text = "Kahve Sayınız: \(Int(barDegeri*10))"
-            kahveSayisi.textColor = UIColor(red: 0.275, green: 0.396, blue: 0.278, alpha: 1)
+            kahveSayisi.textColor = koyuYesil
             
             
         }else{
@@ -271,7 +261,7 @@ class MainVC: UIViewController {
         }
         
         kalanKahveSayisi.text = "Kahve kazanmanıza: \(Int(10-(barDegeri*10)))"
-        kalanKahveSayisi.textColor = UIColor(red: 0.275, green: 0.396, blue: 0.278, alpha: 1)
+        kalanKahveSayisi.textColor = koyuYesil
         
             
 }

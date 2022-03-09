@@ -83,7 +83,7 @@ class ProfileVC: UIViewController {
 //        emailField.frame = CGRect(x: 0.1 * screenWidth, y: 0.55 * screenHeight, width: 0.8 * screenWidth, height: 0.06 * screenHeight)
 //        emailField.font = UIFont(name: "Gilroy-Regular", size: 16 * stringMultiplier)
 //        emailField.textColor = UIColor.black
-//        emailField.backgroundColor = UIColor(red: 0.97, green: 0.96, blue: 0.95, alpha: 1.00)
+//        emailField.backgroundColor = acikGri
 //        emailField.layer.cornerRadius =
 //
 //        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: emailField.frame.height))
@@ -100,7 +100,7 @@ class ProfileVC: UIViewController {
 //        passField.frame = CGRect(x: 0.1 * screenWidth, y: 0.62 * screenHeight, width: 0.8 * screenWidth, height: 0.06 * screenHeight)
 //        passField.font = UIFont(name: "Gilroy-Regular", size: 16 * stringMultiplier)
 //        passField.textColor = UIColor.black
-//        passField.backgroundColor = UIColor(red: 0.97, green: 0.96, blue: 0.95, alpha: 1.00)
+//        passField.backgroundColor = acikGri
 //        passField.layer.cornerRadius = 12
 //        passField.layer.masksToBounds = true
 //

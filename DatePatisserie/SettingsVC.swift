@@ -31,7 +31,7 @@ class SettingsVC: UIViewController, MFMailComposeViewControllerDelegate {
         let mainTitle = UILabel()
         mainTitle.text = NSLocalizedString("Ayarlar", comment: "")
         mainTitle.textAlignment = .center
-        mainTitle.textColor = UIColor(red: 0.275, green: 0.396, blue: 0.278, alpha: 1)
+        mainTitle.textColor = koyuYesil
         mainTitle.numberOfLines = 0
         mainTitle.font = UIFont(name: "Gilroy-Bold", size: 22 * stringMultiplier)
         mainTitle.frame = CGRect(x: 0.2 * screenWidth, y: 0.057 * screenHeight, width: 0.6 * screenWidth, height: 0.05 * screenHeight)
