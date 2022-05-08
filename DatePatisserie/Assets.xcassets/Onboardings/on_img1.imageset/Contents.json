@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Group 767.png",
+      "filename" : "cup-of-coffee-1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Group 767@2x.png",
+      "filename" : "cup-of-coffee.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Group 767@3x.png",
+      "filename" : "cup-of-coffee@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

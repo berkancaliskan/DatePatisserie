@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>645295325181-17ug3i2a9a6eviq771fbgo1q356uh0r1.apps.googleusercontent.com</string>
+	<string>1040124788733-qgmm5co3jklrrm8uvhuu31c9truh6eek.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.645295325181-17ug3i2a9a6eviq771fbgo1q356uh0r1</string>
+	<string>com.googleusercontent.apps.1040124788733-qgmm5co3jklrrm8uvhuu31c9truh6eek</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBGnM0b0PTmIuWohCEgD1f5IdMf7eKcFIw</string>
+	<string>AIzaSyD7g__NI4soxSr1isN32Hi-At59MsgPQos</string>
 	<key>GCM_SENDER_ID</key>
-	<string>645295325181</string>
+	<string>1040124788733</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>berkancaliskan.DatePatisserie</string>
 	<key>PROJECT_ID</key>
-	<string>datepatisserie-f50a3</string>
+	<string>datepatisserie-eb84c</string>
 	<key>STORAGE_BUCKET</key>
-	<string>datepatisserie-f50a3.appspot.com</string>
+	<string>datepatisserie-eb84c.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:645295325181:ios:d0417447732fbf62f72394</string>
+	<string>1:1040124788733:ios:bde713bf4a6bf67b0da394</string>
 </dict>
 </plist>

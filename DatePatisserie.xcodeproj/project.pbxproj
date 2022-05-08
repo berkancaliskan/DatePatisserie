@@ -7,236 +7,357 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		070A0D7C27AD9AC500066044 /* hamburger_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 070A0D7B27AD9AC500066044 /* hamburger_loading.json */; };
-		070A0D7E27ADC08F00066044 /* coffee_lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 070A0D7D27ADC08F00066044 /* coffee_lottie.json */; };
-		0712F1BC27D89E69000930CE /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0712F1BB27D89E69000930CE /* DetailsVC.swift */; };
-		07208CE2279B5C18003B422B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07208CE1279B5C18003B422B /* AppDelegate.swift */; };
-		07208CE6279B5C18003B422B /* Onboarding1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07208CE5279B5C18003B422B /* Onboarding1VC.swift */; };
-		07208CE9279B5C18003B422B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07208CE7279B5C18003B422B /* Main.storyboard */; };
-		07208CEC279B5C18003B422B /* DatePatisserie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07208CEA279B5C18003B422B /* DatePatisserie.xcdatamodeld */; };
-		07208CEE279B5C19003B422B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07208CED279B5C19003B422B /* Assets.xcassets */; };
-		07208CF1279B5C19003B422B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07208CEF279B5C19003B422B /* LaunchScreen.storyboard */; };
-		07208CFB279B602F003B422B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07208CFA279B602F003B422B /* GoogleService-Info.plist */; };
-		072E8A6427ADD7B000C2E9AE /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072E8A6327ADD7B000C2E9AE /* Globals.swift */; };
-		07350323279C8F9500B99102 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07350322279C8F9500B99102 /* MainVC.swift */; };
-		07350325279C913600B99102 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07350324279C913600B99102 /* SettingsVC.swift */; };
-		07350327279CA6A900B99102 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07350326279CA6A900B99102 /* ProfileVC.swift */; };
-		076FDEDC279C1FE900F45EFA /* Onboarding2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076FDEDB279C1FE900F45EFA /* Onboarding2VC.swift */; };
-		076FDEDE279C1FFE00F45EFA /* Onboarding3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076FDEDD279C1FFE00F45EFA /* Onboarding3VC.swift */; };
-		076FDEE0279C22C600F45EFA /* Onboarding4VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076FDEDF279C22C600F45EFA /* Onboarding4VC.swift */; };
-		076FDEE5279C57DF00F45EFA /* Gilroy-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 076FDEE4279C57DF00F45EFA /* Gilroy-Light.otf */; };
-		076FDEE7279C57ED00F45EFA /* Gilroy-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 076FDEE6279C57ED00F45EFA /* Gilroy-Regular.otf */; };
-		076FDEE9279C57F400F45EFA /* Gilroy-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 076FDEE8279C57F400F45EFA /* Gilroy-Medium.otf */; };
-		076FDEEB279C57FE00F45EFA /* Gilroy-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 076FDEEA279C57FE00F45EFA /* Gilroy-Semibold.otf */; };
-		076FDEED279C580800F45EFA /* Gilroy-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 076FDEEC279C580800F45EFA /* Gilroy-Thin.otf */; };
-		076FDEEF279C58FA00F45EFA /* Gilroy-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 076FDEEE279C58FA00F45EFA /* Gilroy-Bold.otf */; };
-		078201FB279DAF29009E35AA /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078201FA279DAF29009E35AA /* LoginVC.swift */; };
-		0783DEBF27CF689C0086C8D4 /* ProfileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0783DEBE27CF689C0086C8D4 /* ProfileInfo.swift */; };
-		079709D427AB1D8500DC1538 /* loadinggif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 079709D327AB1D8500DC1538 /* loadinggif.gif */; };
-		07A3C6F227A5863800F3E81C /* LottieVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A3C6F127A5863800F3E81C /* LottieVC.swift */; };
-		07A3C6F427A5A89700F3E81C /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 07A3C6F327A5A89700F3E81C /* loading.json */; };
-		07A3C6F627A5B0E900F3E81C /* food_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 07A3C6F527A5B0E900F3E81C /* food_loading.json */; };
-		07D074DD27A6D26000BE9EBB /* Beverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D074DC27A6D26000BE9EBB /* Beverage.swift */; };
-		07D074DF27A6D27E00BE9EBB /* menuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D074DE27A6D27E00BE9EBB /* menuVC.swift */; };
-		07D074E127A6D88C00BE9EBB /* beveragesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D074E027A6D88C00BE9EBB /* beveragesCell.swift */; };
-		07D074E327A6D8B000BE9EBB /* beveragesCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D074E227A6D8AF00BE9EBB /* beveragesCategories.swift */; };
-		07D8965C27A4BD7700A1ED17 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D8965B27A4BD7700A1ED17 /* SignUpVC.swift */; };
-		1777258C71A634686CC866C4 /* Pods_DatePatisserie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D20E00D3C2FE77436AADF628 /* Pods_DatePatisserie.framework */; };
+		0711509F281E85C400C8A932 /* OrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0711509E281E85C400C8A932 /* OrderVC.swift */; };
+		0727233028215F95004D8A89 /* FoodMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727232628215F8B004D8A89 /* FoodMenuVC.swift */; };
+		075401E5280302C6003AD065 /* CoffeeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075401E4280302C6003AD065 /* CoffeeVC.swift */; };
+		075401E72803036C003AD065 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075401E62803036C003AD065 /* HomeVC.swift */; };
+		077135F227EC98A1004C055E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077135F127EC98A1004C055E /* AppDelegate.swift */; };
+		077135FC27EC98A1004C055E /* DatePatisserie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 077135FA27EC98A1004C055E /* DatePatisserie.xcdatamodeld */; };
+		0771360127EC98A2004C055E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 077135FF27EC98A2004C055E /* LaunchScreen.storyboard */; };
+		0771361127EC990A004C055E /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0771360927EC990A004C055E /* ProfileVC.swift */; };
+		0771361227EC990A004C055E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0771360A27EC990A004C055E /* LoginVC.swift */; };
+		0771361327EC990A004C055E /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0771360B27EC990A004C055E /* SettingsVC.swift */; };
+		0771361427EC990A004C055E /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0771360C27EC990A004C055E /* SignUpVC.swift */; };
+		0771361627EC990A004C055E /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0771360E27EC990A004C055E /* DetailsVC.swift */; };
+		0771361727EC990A004C055E /* LottieVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0771360F27EC990A004C055E /* LottieVC.swift */; };
+		0771361827EC990A004C055E /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0771361027EC990A004C055E /* MainVC.swift */; };
+		0771361C27EC9916004C055E /* DetailsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0771361A27EC9916004C055E /* DetailsInfo.swift */; };
+		0771361D27EC9916004C055E /* ProfileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0771361B27EC9916004C055E /* ProfileInfo.swift */; };
+		0771362327EC9924004C055E /* food_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 0771361F27EC9924004C055E /* food_loading.json */; };
+		0771362427EC9924004C055E /* hamburger_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 0771362027EC9924004C055E /* hamburger_loading.json */; };
+		0771362527EC9924004C055E /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 0771362127EC9924004C055E /* loading.json */; };
+		0771362627EC9924004C055E /* coffee_lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 0771362227EC9924004C055E /* coffee_lottie.json */; };
+		0771362E27EC992B004C055E /* Gilroy-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0771362827EC992B004C055E /* Gilroy-Regular.otf */; };
+		0771362F27EC992B004C055E /* Gilroy-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0771362927EC992B004C055E /* Gilroy-Medium.otf */; };
+		0771363027EC992B004C055E /* Gilroy-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0771362A27EC992B004C055E /* Gilroy-Bold.otf */; };
+		0771363127EC992B004C055E /* Gilroy-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0771362B27EC992B004C055E /* Gilroy-Semibold.otf */; };
+		0771363227EC992B004C055E /* Gilroy-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0771362C27EC992B004C055E /* Gilroy-Light.otf */; };
+		0771363327EC992B004C055E /* Gilroy-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0771362D27EC992B004C055E /* Gilroy-Thin.otf */; };
+		0771363A27EC9935004C055E /* Onboarding2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0771363627EC9935004C055E /* Onboarding2VC.swift */; };
+		0771363B27EC9935004C055E /* Onboarding3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0771363727EC9935004C055E /* Onboarding3VC.swift */; };
+		0771363C27EC9935004C055E /* Onboarding4VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0771363827EC9935004C055E /* Onboarding4VC.swift */; };
+		0771363E27EC9966004C055E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0771363D27EC9966004C055E /* Colors.swift */; };
+		077475C8280C3DC800447BE5 /* QRCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077475C7280C3DC800447BE5 /* QRCodeVC.swift */; };
+		078B81C827EDA1B70095CE56 /* Presentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078B81C727EDA1B70095CE56 /* Presentation.swift */; };
+		078B81CA27EDA7740095CE56 /* Onboarding1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078B81C927EDA7740095CE56 /* Onboarding1VC.swift */; };
+		07B994242821A74A00423417 /* SandvicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B994212821A74A00423417 /* SandvicCell.swift */; };
+		07B994252821A74A00423417 /* Sandvic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B994222821A74A00423417 /* Sandvic.swift */; };
+		07B994282822A0CE00423417 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07B994272822A0CE00423417 /* Assets.xcassets */; };
+		07F1263E27F191A70017E3F3 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F1263D27F191A70017E3F3 /* NotificationService.swift */; };
+		07F1264227F191A70017E3F3 /* OneSignalServicesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 07F1263B27F191A70017E3F3 /* OneSignalServicesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		07FEA91E27F1B1C500546E31 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07FEA91D27F1B1C500546E31 /* GoogleService-Info.plist */; };
+		07FEA92027F1B2AE00546E31 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FEA91F27F1B2AE00546E31 /* NotificationService.swift */; };
+		07FEA92227F1BC5C00546E31 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FEA92127F1BC5C00546E31 /* Extensions.swift */; };
+		07FEA92427F1BCB700546E31 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FEA92327F1BCB700546E31 /* Functions.swift */; };
+		FEC2A62C6EC0141E83DFFC77 /* Pods_DatePatisserie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFA8F014341D9F36995890F7 /* Pods_DatePatisserie.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		07F1264027F191A70017E3F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 077135E627EC98A1004C055E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07F1263A27F191A70017E3F3;
+			remoteInfo = OneSignalServicesExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		07F1264327F191A70017E3F3 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				07F1264227F191A70017E3F3 /* OneSignalServicesExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		065220B640F476CD0A729FD9 /* Pods-DatePatisserie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatePatisserie.release.xcconfig"; path = "Target Support Files/Pods-DatePatisserie/Pods-DatePatisserie.release.xcconfig"; sourceTree = "<group>"; };
-		070A0D7B27AD9AC500066044 /* hamburger_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hamburger_loading.json; sourceTree = "<group>"; };
-		070A0D7D27ADC08F00066044 /* coffee_lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coffee_lottie.json; sourceTree = "<group>"; };
-		0712F1BB27D89E69000930CE /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
-		07208CDE279B5C18003B422B /* DatePatisserie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatePatisserie.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		07208CE1279B5C18003B422B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		07208CE5279B5C18003B422B /* Onboarding1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding1VC.swift; sourceTree = "<group>"; };
-		07208CE8279B5C18003B422B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		07208CEB279B5C18003B422B /* DatePatisserie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DatePatisserie.xcdatamodel; sourceTree = "<group>"; };
-		07208CED279B5C19003B422B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		07208CF0279B5C19003B422B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		07208CF2279B5C19003B422B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		07208CFA279B602F003B422B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		072E8A6327ADD7B000C2E9AE /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
-		07350322279C8F9500B99102 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
-		07350324279C913600B99102 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
-		07350326279CA6A900B99102 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
-		076FDEDB279C1FE900F45EFA /* Onboarding2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding2VC.swift; sourceTree = "<group>"; };
-		076FDEDD279C1FFE00F45EFA /* Onboarding3VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding3VC.swift; sourceTree = "<group>"; };
-		076FDEDF279C22C600F45EFA /* Onboarding4VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding4VC.swift; sourceTree = "<group>"; };
-		076FDEE4279C57DF00F45EFA /* Gilroy-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Light.otf"; sourceTree = "<group>"; };
-		076FDEE6279C57ED00F45EFA /* Gilroy-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Regular.otf"; sourceTree = "<group>"; };
-		076FDEE8279C57F400F45EFA /* Gilroy-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Medium.otf"; sourceTree = "<group>"; };
-		076FDEEA279C57FE00F45EFA /* Gilroy-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Semibold.otf"; sourceTree = "<group>"; };
-		076FDEEC279C580800F45EFA /* Gilroy-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Thin.otf"; sourceTree = "<group>"; };
-		076FDEEE279C58FA00F45EFA /* Gilroy-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Bold.otf"; sourceTree = "<group>"; };
-		078201FA279DAF29009E35AA /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
-		0783DEBE27CF689C0086C8D4 /* ProfileInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfo.swift; sourceTree = "<group>"; };
-		079709D327AB1D8500DC1538 /* loadinggif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loadinggif.gif; sourceTree = "<group>"; };
-		07A3C6F127A5863800F3E81C /* LottieVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieVC.swift; sourceTree = "<group>"; };
-		07A3C6F327A5A89700F3E81C /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
-		07A3C6F527A5B0E900F3E81C /* food_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = food_loading.json; sourceTree = "<group>"; };
-		07D074DC27A6D26000BE9EBB /* Beverage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beverage.swift; sourceTree = "<group>"; };
-		07D074DE27A6D27E00BE9EBB /* menuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = menuVC.swift; sourceTree = "<group>"; };
-		07D074E027A6D88C00BE9EBB /* beveragesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = beveragesCell.swift; sourceTree = "<group>"; };
-		07D074E227A6D8AF00BE9EBB /* beveragesCategories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = beveragesCategories.swift; sourceTree = "<group>"; };
-		07D8965B27A4BD7700A1ED17 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
-		2EAD1E0596C45B1B303D19E3 /* Pods-DatePatisserie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatePatisserie.debug.xcconfig"; path = "Target Support Files/Pods-DatePatisserie/Pods-DatePatisserie.debug.xcconfig"; sourceTree = "<group>"; };
-		D20E00D3C2FE77436AADF628 /* Pods_DatePatisserie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DatePatisserie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0711509E281E85C400C8A932 /* OrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderVC.swift; sourceTree = "<group>"; };
+		0727232628215F8B004D8A89 /* FoodMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodMenuVC.swift; sourceTree = "<group>"; };
+		075401E4280302C6003AD065 /* CoffeeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeVC.swift; sourceTree = "<group>"; };
+		075401E62803036C003AD065 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		077135EE27EC98A1004C055E /* DatePatisserie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatePatisserie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		077135F127EC98A1004C055E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		077135FB27EC98A1004C055E /* DatePatisserie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DatePatisserie.xcdatamodel; sourceTree = "<group>"; };
+		0771360027EC98A2004C055E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0771360227EC98A2004C055E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0771360927EC990A004C055E /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		0771360A27EC990A004C055E /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		0771360B27EC990A004C055E /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		0771360C27EC990A004C055E /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		0771360E27EC990A004C055E /* DetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
+		0771360F27EC990A004C055E /* LottieVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieVC.swift; sourceTree = "<group>"; };
+		0771361027EC990A004C055E /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		0771361A27EC9916004C055E /* DetailsInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsInfo.swift; sourceTree = "<group>"; };
+		0771361B27EC9916004C055E /* ProfileInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfo.swift; sourceTree = "<group>"; };
+		0771361F27EC9924004C055E /* food_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = food_loading.json; sourceTree = "<group>"; };
+		0771362027EC9924004C055E /* hamburger_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hamburger_loading.json; sourceTree = "<group>"; };
+		0771362127EC9924004C055E /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		0771362227EC9924004C055E /* coffee_lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coffee_lottie.json; sourceTree = "<group>"; };
+		0771362827EC992B004C055E /* Gilroy-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Regular.otf"; sourceTree = "<group>"; };
+		0771362927EC992B004C055E /* Gilroy-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Medium.otf"; sourceTree = "<group>"; };
+		0771362A27EC992B004C055E /* Gilroy-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Bold.otf"; sourceTree = "<group>"; };
+		0771362B27EC992B004C055E /* Gilroy-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Semibold.otf"; sourceTree = "<group>"; };
+		0771362C27EC992B004C055E /* Gilroy-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Light.otf"; sourceTree = "<group>"; };
+		0771362D27EC992B004C055E /* Gilroy-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Thin.otf"; sourceTree = "<group>"; };
+		0771363627EC9935004C055E /* Onboarding2VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Onboarding2VC.swift; sourceTree = "<group>"; };
+		0771363727EC9935004C055E /* Onboarding3VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Onboarding3VC.swift; sourceTree = "<group>"; };
+		0771363827EC9935004C055E /* Onboarding4VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Onboarding4VC.swift; sourceTree = "<group>"; };
+		0771363D27EC9966004C055E /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		077475C7280C3DC800447BE5 /* QRCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeVC.swift; sourceTree = "<group>"; };
+		078B81C727EDA1B70095CE56 /* Presentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presentation.swift; sourceTree = "<group>"; };
+		078B81C927EDA7740095CE56 /* Onboarding1VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Onboarding1VC.swift; sourceTree = "<group>"; };
+		07B994212821A74A00423417 /* SandvicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SandvicCell.swift; sourceTree = "<group>"; };
+		07B994222821A74A00423417 /* Sandvic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sandvic.swift; sourceTree = "<group>"; };
+		07B994272822A0CE00423417 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		07F1263B27F191A70017E3F3 /* OneSignalServicesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalServicesExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		07F1263D27F191A70017E3F3 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		07F1263F27F191A70017E3F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07FEA91C27F19D1800546E31 /* DatePatisserie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DatePatisserie.entitlements; sourceTree = "<group>"; };
+		07FEA91D27F1B1C500546E31 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		07FEA91F27F1B2AE00546E31 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		07FEA92127F1BC5C00546E31 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		07FEA92327F1BCB700546E31 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		3984B2195244F8FC0E69B62C /* Pods-DatePatisserie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatePatisserie.release.xcconfig"; path = "Target Support Files/Pods-DatePatisserie/Pods-DatePatisserie.release.xcconfig"; sourceTree = "<group>"; };
+		70D3CA5AB319C54D7A1E353E /* Pods-DatePatisserie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatePatisserie.debug.xcconfig"; path = "Target Support Files/Pods-DatePatisserie/Pods-DatePatisserie.debug.xcconfig"; sourceTree = "<group>"; };
+		DFA8F014341D9F36995890F7 /* Pods_DatePatisserie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DatePatisserie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		07208CDB279B5C18003B422B /* Frameworks */ = {
+		077135EB27EC98A1004C055E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1777258C71A634686CC866C4 /* Pods_DatePatisserie.framework in Frameworks */,
+				FEC2A62C6EC0141E83DFFC77 /* Pods_DatePatisserie.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07F1263827F191A70017E3F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0712F1B927D89640000930CE /* Onboarding */ = {
+		077135E527EC98A1004C055E = {
 			isa = PBXGroup;
 			children = (
-				07208CE5279B5C18003B422B /* Onboarding1VC.swift */,
-				076FDEDB279C1FE900F45EFA /* Onboarding2VC.swift */,
-				076FDEDD279C1FFE00F45EFA /* Onboarding3VC.swift */,
-				076FDEDF279C22C600F45EFA /* Onboarding4VC.swift */,
-			);
-			path = Onboarding;
-			sourceTree = "<group>";
-		};
-		0712F1BA27D89698000930CE /* LottieJson */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = LottieJson;
-			sourceTree = "<group>";
-		};
-		07208CD5279B5C18003B422B = {
-			isa = PBXGroup;
-			children = (
-				07208CE0279B5C18003B422B /* DatePatisserie */,
-				07208CDF279B5C18003B422B /* Products */,
-				74843753CC449FA21700F761 /* Pods */,
-				12CEE9B69D10CD46AD1752FF /* Frameworks */,
+				077135F027EC98A1004C055E /* DatePatisserie */,
+				07F1263C27F191A70017E3F3 /* OneSignalServicesExtension */,
+				077135EF27EC98A1004C055E /* Products */,
+				428DABDFCBF9A6F25C0E090F /* Pods */,
+				BBA6ED5701FB2982CF6B8BB2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		07208CDF279B5C18003B422B /* Products */ = {
+		077135EF27EC98A1004C055E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				07208CDE279B5C18003B422B /* DatePatisserie.app */,
+				077135EE27EC98A1004C055E /* DatePatisserie.app */,
+				07F1263B27F191A70017E3F3 /* OneSignalServicesExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		07208CE0279B5C18003B422B /* DatePatisserie */ = {
+		077135F027EC98A1004C055E /* DatePatisserie */ = {
 			isa = PBXGroup;
 			children = (
-				0712F1BA27D89698000930CE /* LottieJson */,
-				07208CE1279B5C18003B422B /* AppDelegate.swift */,
-				072E8A6327ADD7B000C2E9AE /* Globals.swift */,
-				076FDEE3279C57BC00F45EFA /* Fonts */,
-				0712F1B927D89640000930CE /* Onboarding */,
-				078201FA279DAF29009E35AA /* LoginVC.swift */,
-				07D8965B27A4BD7700A1ED17 /* SignUpVC.swift */,
-				0783DEBE27CF689C0086C8D4 /* ProfileInfo.swift */,
-				07350322279C8F9500B99102 /* MainVC.swift */,
-				07350324279C913600B99102 /* SettingsVC.swift */,
-				07350326279CA6A900B99102 /* ProfileVC.swift */,
-				07A3C6F127A5863800F3E81C /* LottieVC.swift */,
-				0712F1BB27D89E69000930CE /* DetailsVC.swift */,
-				07D074DC27A6D26000BE9EBB /* Beverage.swift */,
-				07D074E027A6D88C00BE9EBB /* beveragesCell.swift */,
-				07D074E227A6D8AF00BE9EBB /* beveragesCategories.swift */,
-				07D074DE27A6D27E00BE9EBB /* menuVC.swift */,
-				070A0D7D27ADC08F00066044 /* coffee_lottie.json */,
-				07A3C6F527A5B0E900F3E81C /* food_loading.json */,
-				07A3C6F327A5A89700F3E81C /* loading.json */,
-				070A0D7B27AD9AC500066044 /* hamburger_loading.json */,
-				079709D327AB1D8500DC1538 /* loadinggif.gif */,
-				07208CED279B5C19003B422B /* Assets.xcassets */,
-				07208CE7279B5C18003B422B /* Main.storyboard */,
-				07208CEF279B5C19003B422B /* LaunchScreen.storyboard */,
-				07208CF2279B5C19003B422B /* Info.plist */,
-				07208CFA279B602F003B422B /* GoogleService-Info.plist */,
-				07208CEA279B5C18003B422B /* DatePatisserie.xcdatamodeld */,
+				07B994272822A0CE00423417 /* Assets.xcassets */,
+				07FEA91C27F19D1800546E31 /* DatePatisserie.entitlements */,
+				07FEA92527F1BD0000546E31 /* Helpers */,
+				0771363427EC9935004C055E /* Onboarding */,
+				07DAECE62821506C00F0CF3E /* FoodMenu */,
+				0771362727EC992B004C055E /* Fonts */,
+				0771361E27EC9924004C055E /* LottieJson */,
+				0771361927EC9916004C055E /* Infos */,
+				0771360827EC990A004C055E /* ViewControllers */,
+				077135FF27EC98A2004C055E /* LaunchScreen.storyboard */,
+				07FEA91D27F1B1C500546E31 /* GoogleService-Info.plist */,
+				0771360227EC98A2004C055E /* Info.plist */,
+				077135FA27EC98A1004C055E /* DatePatisserie.xcdatamodeld */,
 			);
 			path = DatePatisserie;
 			sourceTree = "<group>";
 		};
-		076FDEE3279C57BC00F45EFA /* Fonts */ = {
+		0771360827EC990A004C055E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				076FDEEE279C58FA00F45EFA /* Gilroy-Bold.otf */,
-				076FDEEC279C580800F45EFA /* Gilroy-Thin.otf */,
-				076FDEE8279C57F400F45EFA /* Gilroy-Medium.otf */,
-				076FDEEA279C57FE00F45EFA /* Gilroy-Semibold.otf */,
-				076FDEE6279C57ED00F45EFA /* Gilroy-Regular.otf */,
-				076FDEE4279C57DF00F45EFA /* Gilroy-Light.otf */,
+				0771360927EC990A004C055E /* ProfileVC.swift */,
+				0711509E281E85C400C8A932 /* OrderVC.swift */,
+				0771360A27EC990A004C055E /* LoginVC.swift */,
+				0771360B27EC990A004C055E /* SettingsVC.swift */,
+				075401E4280302C6003AD065 /* CoffeeVC.swift */,
+				0771360C27EC990A004C055E /* SignUpVC.swift */,
+				0771360E27EC990A004C055E /* DetailsVC.swift */,
+				0771360F27EC990A004C055E /* LottieVC.swift */,
+				075401E62803036C003AD065 /* HomeVC.swift */,
+				0771361027EC990A004C055E /* MainVC.swift */,
+				077475C7280C3DC800447BE5 /* QRCodeVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0771361927EC9916004C055E /* Infos */ = {
+			isa = PBXGroup;
+			children = (
+				0771361A27EC9916004C055E /* DetailsInfo.swift */,
+				0771361B27EC9916004C055E /* ProfileInfo.swift */,
+			);
+			path = Infos;
+			sourceTree = "<group>";
+		};
+		0771361E27EC9924004C055E /* LottieJson */ = {
+			isa = PBXGroup;
+			children = (
+				0771361F27EC9924004C055E /* food_loading.json */,
+				0771362027EC9924004C055E /* hamburger_loading.json */,
+				0771362127EC9924004C055E /* loading.json */,
+				0771362227EC9924004C055E /* coffee_lottie.json */,
+			);
+			path = LottieJson;
+			sourceTree = "<group>";
+		};
+		0771362727EC992B004C055E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0771362827EC992B004C055E /* Gilroy-Regular.otf */,
+				0771362927EC992B004C055E /* Gilroy-Medium.otf */,
+				0771362A27EC992B004C055E /* Gilroy-Bold.otf */,
+				0771362B27EC992B004C055E /* Gilroy-Semibold.otf */,
+				0771362C27EC992B004C055E /* Gilroy-Light.otf */,
+				0771362D27EC992B004C055E /* Gilroy-Thin.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		12CEE9B69D10CD46AD1752FF /* Frameworks */ = {
+		0771363427EC9935004C055E /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				D20E00D3C2FE77436AADF628 /* Pods_DatePatisserie.framework */,
+				078B81C927EDA7740095CE56 /* Onboarding1VC.swift */,
+				0771363627EC9935004C055E /* Onboarding2VC.swift */,
+				0771363727EC9935004C055E /* Onboarding3VC.swift */,
+				0771363827EC9935004C055E /* Onboarding4VC.swift */,
 			);
-			name = Frameworks;
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
-		74843753CC449FA21700F761 /* Pods */ = {
+		07DAECE62821506C00F0CF3E /* FoodMenu */ = {
 			isa = PBXGroup;
 			children = (
-				2EAD1E0596C45B1B303D19E3 /* Pods-DatePatisserie.debug.xcconfig */,
-				065220B640F476CD0A729FD9 /* Pods-DatePatisserie.release.xcconfig */,
+				07B994222821A74A00423417 /* Sandvic.swift */,
+				07B994212821A74A00423417 /* SandvicCell.swift */,
+				0727232628215F8B004D8A89 /* FoodMenuVC.swift */,
+			);
+			path = FoodMenu;
+			sourceTree = "<group>";
+		};
+		07F1263C27F191A70017E3F3 /* OneSignalServicesExtension */ = {
+			isa = PBXGroup;
+			children = (
+				07F1263D27F191A70017E3F3 /* NotificationService.swift */,
+				07F1263F27F191A70017E3F3 /* Info.plist */,
+			);
+			path = OneSignalServicesExtension;
+			sourceTree = "<group>";
+		};
+		07FEA92527F1BD0000546E31 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				077135F127EC98A1004C055E /* AppDelegate.swift */,
+				078B81C727EDA1B70095CE56 /* Presentation.swift */,
+				0771363D27EC9966004C055E /* Colors.swift */,
+				07FEA91F27F1B2AE00546E31 /* NotificationService.swift */,
+				07FEA92127F1BC5C00546E31 /* Extensions.swift */,
+				07FEA92327F1BCB700546E31 /* Functions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		428DABDFCBF9A6F25C0E090F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				70D3CA5AB319C54D7A1E353E /* Pods-DatePatisserie.debug.xcconfig */,
+				3984B2195244F8FC0E69B62C /* Pods-DatePatisserie.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		BBA6ED5701FB2982CF6B8BB2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DFA8F014341D9F36995890F7 /* Pods_DatePatisserie.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		07208CDD279B5C18003B422B /* DatePatisserie */ = {
+		077135ED27EC98A1004C055E /* DatePatisserie */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 07208CF5279B5C19003B422B /* Build configuration list for PBXNativeTarget "DatePatisserie" */;
+			buildConfigurationList = 0771360527EC98A2004C055E /* Build configuration list for PBXNativeTarget "DatePatisserie" */;
 			buildPhases = (
-				C08AD847DD73266669FB5208 /* [CP] Check Pods Manifest.lock */,
-				07208CDA279B5C18003B422B /* Sources */,
-				07208CDB279B5C18003B422B /* Frameworks */,
-				07208CDC279B5C18003B422B /* Resources */,
-				C5141CACCB298C349F17ED14 /* [CP] Embed Pods Frameworks */,
+				2B2484325C5FA2EDD980CBC3 /* [CP] Check Pods Manifest.lock */,
+				077135EA27EC98A1004C055E /* Sources */,
+				077135EB27EC98A1004C055E /* Frameworks */,
+				077135EC27EC98A1004C055E /* Resources */,
+				07F1264327F191A70017E3F3 /* Embed App Extensions */,
+				9ADC7D93BAC7D9E5FEB4B719 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				07F1264127F191A70017E3F3 /* PBXTargetDependency */,
+			);
+			name = DatePatisserie;
+			productName = DatePatisserie;
+			productReference = 077135EE27EC98A1004C055E /* DatePatisserie.app */;
+			productType = "com.apple.product-type.application";
+		};
+		07F1263A27F191A70017E3F3 /* OneSignalServicesExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07F1264627F191A70017E3F3 /* Build configuration list for PBXNativeTarget "OneSignalServicesExtension" */;
+			buildPhases = (
+				07F1263727F191A70017E3F3 /* Sources */,
+				07F1263827F191A70017E3F3 /* Frameworks */,
+				07F1263927F191A70017E3F3 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = DatePatisserie;
-			productName = DatePatisserie;
-			productReference = 07208CDE279B5C18003B422B /* DatePatisserie.app */;
-			productType = "com.apple.product-type.application";
+			name = OneSignalServicesExtension;
+			productName = OneSignalServicesExtension;
+			productReference = 07F1263B27F191A70017E3F3 /* OneSignalServicesExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		07208CD6279B5C18003B422B /* Project object */ = {
+		077135E627EC98A1004C055E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1320;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
 				TargetAttributes = {
-					07208CDD279B5C18003B422B = {
-						CreatedOnToolsVersion = 13.2.1;
+					077135ED27EC98A1004C055E = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					07F1263A27F191A70017E3F3 = {
+						CreatedOnToolsVersion = 13.3;
 					};
 				};
 			};
-			buildConfigurationList = 07208CD9279B5C18003B422B /* Build configuration list for PBXProject "DatePatisserie" */;
+			buildConfigurationList = 077135E927EC98A1004C055E /* Build configuration list for PBXProject "DatePatisserie" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -244,43 +365,49 @@
 				en,
 				Base,
 			);
-			mainGroup = 07208CD5279B5C18003B422B;
-			productRefGroup = 07208CDF279B5C18003B422B /* Products */;
+			mainGroup = 077135E527EC98A1004C055E;
+			productRefGroup = 077135EF27EC98A1004C055E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				07208CDD279B5C18003B422B /* DatePatisserie */,
+				077135ED27EC98A1004C055E /* DatePatisserie */,
+				07F1263A27F191A70017E3F3 /* OneSignalServicesExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		07208CDC279B5C18003B422B /* Resources */ = {
+		077135EC27EC98A1004C055E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				076FDEE7279C57ED00F45EFA /* Gilroy-Regular.otf in Resources */,
-				070A0D7E27ADC08F00066044 /* coffee_lottie.json in Resources */,
-				07208CF1279B5C19003B422B /* LaunchScreen.storyboard in Resources */,
-				076FDEEF279C58FA00F45EFA /* Gilroy-Bold.otf in Resources */,
-				07A3C6F627A5B0E900F3E81C /* food_loading.json in Resources */,
-				07208CFB279B602F003B422B /* GoogleService-Info.plist in Resources */,
-				07A3C6F427A5A89700F3E81C /* loading.json in Resources */,
-				07208CEE279B5C19003B422B /* Assets.xcassets in Resources */,
-				076FDEEB279C57FE00F45EFA /* Gilroy-Semibold.otf in Resources */,
-				076FDEE5279C57DF00F45EFA /* Gilroy-Light.otf in Resources */,
-				070A0D7C27AD9AC500066044 /* hamburger_loading.json in Resources */,
-				076FDEED279C580800F45EFA /* Gilroy-Thin.otf in Resources */,
-				07208CE9279B5C18003B422B /* Main.storyboard in Resources */,
-				079709D427AB1D8500DC1538 /* loadinggif.gif in Resources */,
-				076FDEE9279C57F400F45EFA /* Gilroy-Medium.otf in Resources */,
+				07FEA91E27F1B1C500546E31 /* GoogleService-Info.plist in Resources */,
+				0771363327EC992B004C055E /* Gilroy-Thin.otf in Resources */,
+				0771362E27EC992B004C055E /* Gilroy-Regular.otf in Resources */,
+				0771362627EC9924004C055E /* coffee_lottie.json in Resources */,
+				07B994282822A0CE00423417 /* Assets.xcassets in Resources */,
+				0771362427EC9924004C055E /* hamburger_loading.json in Resources */,
+				0771363227EC992B004C055E /* Gilroy-Light.otf in Resources */,
+				0771363027EC992B004C055E /* Gilroy-Bold.otf in Resources */,
+				0771360127EC98A2004C055E /* LaunchScreen.storyboard in Resources */,
+				0771362F27EC992B004C055E /* Gilroy-Medium.otf in Resources */,
+				0771363127EC992B004C055E /* Gilroy-Semibold.otf in Resources */,
+				0771362327EC9924004C055E /* food_loading.json in Resources */,
+				0771362527EC9924004C055E /* loading.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07F1263927F191A70017E3F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		C08AD847DD73266669FB5208 /* [CP] Check Pods Manifest.lock */ = {
+		2B2484325C5FA2EDD980CBC3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -302,7 +429,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C5141CACCB298C349F17ED14 /* [CP] Embed Pods Frameworks */ = {
+		9ADC7D93BAC7D9E5FEB4B719 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -322,47 +449,63 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		07208CDA279B5C18003B422B /* Sources */ = {
+		077135EA27EC98A1004C055E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07D074E127A6D88C00BE9EBB /* beveragesCell.swift in Sources */,
-				076FDEDC279C1FE900F45EFA /* Onboarding2VC.swift in Sources */,
-				07D074DD27A6D26000BE9EBB /* Beverage.swift in Sources */,
-				0783DEBF27CF689C0086C8D4 /* ProfileInfo.swift in Sources */,
-				07208CE6279B5C18003B422B /* Onboarding1VC.swift in Sources */,
-				072E8A6427ADD7B000C2E9AE /* Globals.swift in Sources */,
-				076FDEE0279C22C600F45EFA /* Onboarding4VC.swift in Sources */,
-				07A3C6F227A5863800F3E81C /* LottieVC.swift in Sources */,
-				07D8965C27A4BD7700A1ED17 /* SignUpVC.swift in Sources */,
-				07350327279CA6A900B99102 /* ProfileVC.swift in Sources */,
-				0712F1BC27D89E69000930CE /* DetailsVC.swift in Sources */,
-				078201FB279DAF29009E35AA /* LoginVC.swift in Sources */,
-				07208CE2279B5C18003B422B /* AppDelegate.swift in Sources */,
-				076FDEDE279C1FFE00F45EFA /* Onboarding3VC.swift in Sources */,
-				07350325279C913600B99102 /* SettingsVC.swift in Sources */,
-				07D074DF27A6D27E00BE9EBB /* menuVC.swift in Sources */,
-				07208CEC279B5C18003B422B /* DatePatisserie.xcdatamodeld in Sources */,
-				07D074E327A6D8B000BE9EBB /* beveragesCategories.swift in Sources */,
-				07350323279C8F9500B99102 /* MainVC.swift in Sources */,
+				0727233028215F95004D8A89 /* FoodMenuVC.swift in Sources */,
+				0771361427EC990A004C055E /* SignUpVC.swift in Sources */,
+				078B81C827EDA1B70095CE56 /* Presentation.swift in Sources */,
+				0771361127EC990A004C055E /* ProfileVC.swift in Sources */,
+				0771363C27EC9935004C055E /* Onboarding4VC.swift in Sources */,
+				0771361727EC990A004C055E /* LottieVC.swift in Sources */,
+				07B994242821A74A00423417 /* SandvicCell.swift in Sources */,
+				0771361D27EC9916004C055E /* ProfileInfo.swift in Sources */,
+				07FEA92027F1B2AE00546E31 /* NotificationService.swift in Sources */,
+				0771361827EC990A004C055E /* MainVC.swift in Sources */,
+				075401E72803036C003AD065 /* HomeVC.swift in Sources */,
+				077135F227EC98A1004C055E /* AppDelegate.swift in Sources */,
+				0771363E27EC9966004C055E /* Colors.swift in Sources */,
+				0771361C27EC9916004C055E /* DetailsInfo.swift in Sources */,
+				0771361627EC990A004C055E /* DetailsVC.swift in Sources */,
+				077135FC27EC98A1004C055E /* DatePatisserie.xcdatamodeld in Sources */,
+				078B81CA27EDA7740095CE56 /* Onboarding1VC.swift in Sources */,
+				07B994252821A74A00423417 /* Sandvic.swift in Sources */,
+				07FEA92227F1BC5C00546E31 /* Extensions.swift in Sources */,
+				077475C8280C3DC800447BE5 /* QRCodeVC.swift in Sources */,
+				075401E5280302C6003AD065 /* CoffeeVC.swift in Sources */,
+				0771361227EC990A004C055E /* LoginVC.swift in Sources */,
+				0711509F281E85C400C8A932 /* OrderVC.swift in Sources */,
+				07FEA92427F1BCB700546E31 /* Functions.swift in Sources */,
+				0771363B27EC9935004C055E /* Onboarding3VC.swift in Sources */,
+				0771363A27EC9935004C055E /* Onboarding2VC.swift in Sources */,
+				0771361327EC990A004C055E /* SettingsVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07F1263727F191A70017E3F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07F1263E27F191A70017E3F3 /* NotificationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		07208CE7279B5C18003B422B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				07208CE8279B5C18003B422B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
+/* Begin PBXTargetDependency section */
+		07F1264127F191A70017E3F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07F1263A27F191A70017E3F3 /* OneSignalServicesExtension */;
+			targetProxy = 07F1264027F191A70017E3F3 /* PBXContainerItemProxy */;
 		};
-		07208CEF279B5C19003B422B /* LaunchScreen.storyboard */ = {
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		077135FF27EC98A2004C055E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				07208CF0279B5C19003B422B /* Base */,
+				0771360027EC98A2004C055E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -370,14 +513,13 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		07208CF3279B5C19003B422B /* Debug */ = {
+		0771360327EC98A2004C055E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -421,7 +563,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -431,14 +573,13 @@
 			};
 			name = Debug;
 		};
-		07208CF4279B5C19003B422B /* Release */ = {
+		0771360427EC98A2004C055E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -476,7 +617,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -486,21 +627,22 @@
 			};
 			name = Release;
 		};
-		07208CF6279B5C19003B422B /* Debug */ = {
+		0771360627EC98A2004C055E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2EAD1E0596C45B1B303D19E3 /* Pods-DatePatisserie.debug.xcconfig */;
+			baseConfigurationReference = 70D3CA5AB319C54D7A1E353E /* Pods-DatePatisserie.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DatePatisserie/DatePatisserie.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = G92NRN7H3H;
+				DEVELOPMENT_TEAM = UH5437SQWZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DatePatisserie/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -508,29 +650,31 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = berkancaliskan.DatePatisserie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.berkancaliskan.datepatisserie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		07208CF7279B5C19003B422B /* Release */ = {
+		0771360727EC98A2004C055E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 065220B640F476CD0A729FD9 /* Pods-DatePatisserie.release.xcconfig */;
+			baseConfigurationReference = 3984B2195244F8FC0E69B62C /* Pods-DatePatisserie.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DatePatisserie/DatePatisserie.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = G92NRN7H3H;
+				DEVELOPMENT_TEAM = UH5437SQWZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DatePatisserie/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -538,31 +682,91 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = berkancaliskan.DatePatisserie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.berkancaliskan.datepatisserie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		07F1264427F191A70017E3F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UH5437SQWZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalServicesExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalServicesExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.berkancaliskan.datepatisserie.OneSignalServicesExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		07F1264527F191A70017E3F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UH5437SQWZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalServicesExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalServicesExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.berkancaliskan.datepatisserie.OneSignalServicesExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		07208CD9279B5C18003B422B /* Build configuration list for PBXProject "DatePatisserie" */ = {
+		077135E927EC98A1004C055E /* Build configuration list for PBXProject "DatePatisserie" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				07208CF3279B5C19003B422B /* Debug */,
-				07208CF4279B5C19003B422B /* Release */,
+				0771360327EC98A2004C055E /* Debug */,
+				0771360427EC98A2004C055E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		07208CF5279B5C19003B422B /* Build configuration list for PBXNativeTarget "DatePatisserie" */ = {
+		0771360527EC98A2004C055E /* Build configuration list for PBXNativeTarget "DatePatisserie" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				07208CF6279B5C19003B422B /* Debug */,
-				07208CF7279B5C19003B422B /* Release */,
+				0771360627EC98A2004C055E /* Debug */,
+				0771360727EC98A2004C055E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07F1264627F191A70017E3F3 /* Build configuration list for PBXNativeTarget "OneSignalServicesExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07F1264427F191A70017E3F3 /* Debug */,
+				07F1264527F191A70017E3F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -570,17 +774,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		07208CEA279B5C18003B422B /* DatePatisserie.xcdatamodeld */ = {
+		077135FA27EC98A1004C055E /* DatePatisserie.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				07208CEB279B5C18003B422B /* DatePatisserie.xcdatamodel */,
+				077135FB27EC98A1004C055E /* DatePatisserie.xcdatamodel */,
 			);
-			currentVersion = 07208CEB279B5C18003B422B /* DatePatisserie.xcdatamodel */;
+			currentVersion = 077135FB27EC98A1004C055E /* DatePatisserie.xcdatamodel */;
 			path = DatePatisserie.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = 07208CD6279B5C18003B422B /* Project object */;
+	rootObject = 077135E627EC98A1004C055E /* Project object */;
 }

@@ -13,70 +13,65 @@ class Onboarding2VC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        let screenHeight = view.frame.size.height
-        let screenWidth = view.frame.size.width
-        let stringMultiplier = 0.00115 * screenHeight
+        setDefaultSize(view: view)
+
+        createUI()
+        
+    }
+    
+    func createUI(){
         
         let pagePointer = UIImageView()
         pagePointer.image = UIImage(named: "slider2")
-        pagePointer.frame = CGRect(x: 0.36 * screenWidth, y: 0.8 * screenHeight, width: 0.28 * screenWidth, height: 0.005 * screenHeight)
+        pagePointer.frame = CGRect(x:      0.450  * screenWidth,
+                                   y:      0.930  * screenHeight,
+                                   width:  0.100  * screenWidth,
+                                   height: 0.005  * screenHeight)
+        
         view.addSubview(pagePointer)
 
         let onboadingImg = UIImageView()
         onboadingImg.image = UIImage(named: "on_img2")
-        onboadingImg.frame = CGRect(x: 0.05 * screenWidth, y: 0.22 * screenHeight, width: 0.9 * screenWidth, height: 0.5 * screenHeight)
+        onboadingImg.frame = CGRect(x: (screenWidth - 0.3 * screenHeight)/2 ,
+                                    y: 0.35 * screenHeight,
+                                    width: 0.3 * screenHeight,
+                                    height: 0.3 * screenHeight)
+        onboadingImg.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
         view.addSubview(onboadingImg)
-        
+        onboadingImg.contentMode = .scaleAspectFit
         
         let holderTitle = UILabel()
-        holderTitle.text = NSLocalizedString("Onboarding 2 Title ", comment:"")
+        holderTitle.text = NSLocalizedString("Anında Haberdar Ol!", comment:"")
         holderTitle.textAlignment = .center
-        holderTitle.textColor = UIColor(red: 1.00, green: 0.32, blue: 0.00, alpha: 1.00)
+        holderTitle.textColor = lacivert
         holderTitle.font = UIFont(name: "Gilroy-Bold", size: 22 * stringMultiplier)
         holderTitle.numberOfLines = 0
-        holderTitle.frame = CGRect(x: 0.1 * screenWidth, y: 0.52 * screenHeight, width: 0.8 * screenWidth, height: 0.1 * screenHeight)
+        holderTitle.frame = CGRect(x: 0.1 * screenWidth, y: 0.06 * screenHeight, width: 0.8 * screenWidth, height: 0.1 * screenHeight)
         view.addSubview(holderTitle)
         
-        
         let holderSubTit = UILabel()
-        holderSubTit.text = NSLocalizedString("Your browsing history and site data doesn’t saved.", comment:"")
+        holderSubTit.text = NSLocalizedString("Anasayfanda günlük yemek menüsüne ulaş dilediğini sipariş ver.", comment:"")
         holderSubTit.textAlignment = .center
-        holderSubTit.textColor = .black
+        holderSubTit.textColor = lacivert
         holderSubTit.numberOfLines = 0
-        holderSubTit.font = UIFont(name: "Gilroy-Regular", size: 20 * stringMultiplier)
-        holderSubTit.frame = CGRect(x: 0.1 * screenWidth, y: 0.56 * screenHeight, width: 0.8 * screenWidth, height: 0.18 * screenHeight)
+        holderSubTit.font = UIFont(name: "Gilroy-Light", size: 18 * stringMultiplier)
+        holderSubTit.frame = CGRect(x: 0.15 * screenWidth, y: 0.08 * screenHeight, width: 0.7 * screenWidth, height: 0.18 * screenHeight)
         view.addSubview(holderSubTit)
         
-        
         let button = UIButton()
-        button.setTitle(NSLocalizedString("Devam Et", comment: ""), for: UIControl.State.normal)
-        button.setTitleColor(UIColor.white, for: UIControl.State.normal)
-        button.setBackgroundImage(UIImage(named: "btn_start" ), for: UIControl.State.normal)
-        button.frame = CGRect(x: 0.06763285024154589 * screenWidth, y: 0.88 * screenHeight, width: 0.8695652173913043 * screenWidth, height: 0.06584821428571429 * screenHeight)
-        button.contentVerticalAlignment.self = .center
-        button.contentHorizontalAlignment.self = .center
-        button.titleLabel?.font = UIFont(name: "Gilroy-Bold", size: 22 * stringMultiplier)
+
+        button.setBackgroundImage(UIImage(named: "btn_devam_et" ), for: UIControl.State.normal)
+        button.frame = CGRect(x: 0.274 * screenWidth, y: 0.78 * screenHeight, width: 0.452 * screenWidth, height: 0.15 * screenWidth)
         view.addSubview(button)
-        button.addTarget(self, action: #selector(starButtonClicked), for: UIControl.Event.touchUpInside)
+        button.addTarget(self, action: #selector(buttonClicked), for: UIControl.Event.touchUpInside)
+
 
     }
-    
-    @objc func starButtonClicked() {
-        
+
+    @objc func buttonClicked() {
         vibrate(style: .heavy)
-        performSegue(withIdentifier: "onboarding2to3", sender: nil)
+        presentVC(currentVC: self, destinationVC: Onboarding3VC(), toDirection: .right)
     
 }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
-    if segue.identifier == "onboarding2to3"{
-
-        let destination = segue.destination as! Onboarding3VC
-        destination.hero.isEnabled = true
-        destination.hero.modalAnimationType = .selectBy(presenting: .slide(direction: .left), dismissing: .slide(direction: .right))
-        
-
-        }
     }
-}
