@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       createSandwiches()
       window = UIWindow(frame: UIScreen.main.bounds)
       window?.makeKeyAndVisible()
-      window?.rootViewController = FoodMenuVC()
+      window?.rootViewController = HomeVC()
     
 
       // OneSignal initialization

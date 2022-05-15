@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "down-1.png",
+      "filename" : "Polygon 1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "down.png",
+      "filename" : "Polygon 1@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "down-2.png",
+      "filename" : "Polygon 1@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -10,19 +10,29 @@ import Hero
 import StoreKit
 import MessageUI
 
-class SettingsVC: UIViewController, MFMailComposeViewControllerDelegate {
+class SettingsVC: UIViewController, MFMailComposeViewControllerDelegate, UIScrollViewDelegate {
     
+    
+    let scrollview = UIScrollView()
         override func viewDidLoad() {
         super.viewDidLoad()
+        setDefaultSize(view: view)
+        createScrollView()
         createUI()
         
     }
 
-    func createUI(){
+    func createScrollView(){
+        scrollview.frame = CGRect(x: 0, y: screenHeight * 0.12, width: screenWidth, height: screenHeight)
+        scrollview.contentSize = CGSize(width: screenWidth, height: screenHeight * 0.8)
+        scrollview.alwaysBounceVertical = true
+        scrollview.delegate = self
+        scrollview.backgroundColor = .clear
+        view.addSubview(scrollview)
         
-        let screenHeight = view.frame.size.height
-        let screenWidth = view.frame.size.width
-        let stringMultiplier = 0.00115 * screenHeight
+    }
+    func createUI(){
+
       
 //      view.backgroundColor = UIColor(red: 0.92, green: 0.93, blue: 0.94, alpha: 1.00)
         view.backgroundColor = .white
@@ -31,7 +41,7 @@ class SettingsVC: UIViewController, MFMailComposeViewControllerDelegate {
         let mainTitle = UILabel()
         mainTitle.text = NSLocalizedString("Ayarlar", comment: "")
         mainTitle.textAlignment = .center
-        mainTitle.textColor = koyuYesil
+        mainTitle.textColor = lacivert
         mainTitle.numberOfLines = 0
         mainTitle.font = UIFont(name: "Gilroy-Bold", size: 22 * stringMultiplier)
         mainTitle.frame = CGRect(x: 0.2 * screenWidth, y: 0.057 * screenHeight, width: 0.6 * screenWidth, height: 0.05 * screenHeight)
@@ -43,7 +53,7 @@ class SettingsVC: UIViewController, MFMailComposeViewControllerDelegate {
         backButton.frame = CGRect(x: 0.04 * screenWidth, y: 0.07 * screenHeight, width: 0.06 * screenWidth, height: 0.024 * screenHeight)
         backButton.contentVerticalAlignment.self = .center
         backButton.contentHorizontalAlignment.self = .center
-                view.addSubview(backButton)
+        view.addSubview(backButton)
         backButton.addTarget(self, action: #selector(backClicked), for: UIControl.Event.touchUpInside)
         
         
@@ -53,13 +63,14 @@ class SettingsVC: UIViewController, MFMailComposeViewControllerDelegate {
         settingSubText.textColor = .black
         settingSubText.numberOfLines = 0
         settingSubText.font = UIFont(name: "Gilroy-Bold", size: 16 * stringMultiplier)
-        settingSubText.frame = CGRect(x: 0.06 * screenWidth, y: 0.134 * screenHeight, width: 0.9 * screenWidth, height: 0.05 * screenHeight)
-        view.addSubview(settingSubText)
+        settingSubText.frame = CGRect(x: 0.06 * screenWidth, y: 0.03 * screenHeight, width: 0.9 * screenWidth, height: 0.05 * screenHeight)
+        scrollview.addSubview(settingSubText)
         
         
         let shareButton = UIButton()
-        shareButton.setBackgroundImage(UIImage(named: "btn_set_select"), for: UIControl.State.normal)
-        shareButton.frame = CGRect(x: 0.04 * screenWidth, y: 0.18 * screenHeight, width: 0.92 * screenWidth, height: 0.086 * screenHeight)
+        shareButton.backgroundColor = krem
+        shareButton.layer.cornerRadius = 15
+        shareButton.frame = CGRect(x: 0.04 * screenWidth, y: 0.08 * screenHeight, width: 0.92 * screenWidth, height: 0.08 * screenHeight)
 //        shareButton.backgroundColor = UIColor(red: 1.00, green: 0.67, blue: 0.55, alpha: 0.50)
         shareButton.contentVerticalAlignment.self = .center
         shareButton.contentHorizontalAlignment.self = .left
@@ -67,13 +78,14 @@ class SettingsVC: UIViewController, MFMailComposeViewControllerDelegate {
         shareButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
         shareButton.titleLabel?.font =  UIFont(name: "Gilroy-Medium", size: 16)
 
-                view.addSubview(shareButton)
+                scrollview.addSubview(shareButton)
         shareButton.addTarget(self, action: #selector(shareClicked), for: UIControl.Event.touchUpInside)
         
         
         let rateButton = UIButton()
-        rateButton.setBackgroundImage(UIImage(named: "btn_set_select"), for: UIControl.State.normal)
-        rateButton.frame = CGRect(x: 0.04 * screenWidth, y: 0.26 * screenHeight, width: 0.92 * screenWidth, height: 0.086 * screenHeight)
+        rateButton.backgroundColor = krem
+        rateButton.layer.cornerRadius = 15
+        rateButton.frame = CGRect(x: 0.04 * screenWidth, y: 0.18 * screenHeight, width: 0.92 * screenWidth, height: 0.08 * screenHeight)
         rateButton.contentVerticalAlignment.self = .center
         rateButton.contentHorizontalAlignment.self = .left
 //        rateButton.backgroundColor = UIColor(red: 1.00, green: 0.67, blue: 0.55, alpha: 0.50)
@@ -81,19 +93,20 @@ class SettingsVC: UIViewController, MFMailComposeViewControllerDelegate {
         rateButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
         rateButton.titleLabel?.font =  UIFont(name: "Gilroy-Medium", size: 16)
 
-                view.addSubview(rateButton)
+                scrollview.addSubview(rateButton)
         rateButton.addTarget(self, action: #selector(rateClicked), for: UIControl.Event.touchUpInside)
         
         
         let contactButton = UIButton()
-        contactButton.setBackgroundImage(UIImage(named: "btn_set_select"), for: UIControl.State.normal)
-        contactButton.frame = CGRect(x: 0.04 * screenWidth, y: 0.34 * screenHeight, width: 0.92 * screenWidth, height: 0.086 * screenHeight)
+        contactButton.backgroundColor = krem
+        contactButton.layer.cornerRadius = 15
+        contactButton.frame = CGRect(x: 0.04 * screenWidth, y: 0.28 * screenHeight, width: 0.92 * screenWidth, height: 0.08 * screenHeight)
         contactButton.contentVerticalAlignment.self = .center
         contactButton.contentHorizontalAlignment.self = .left
         contactButton.setTitle(NSLocalizedString("      💌   İletişime Geç", comment: ""), for: UIControl.State.normal)
         contactButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
         contactButton.titleLabel?.font =  UIFont(name: "Gilroy-Medium", size: 16)
-                view.addSubview(contactButton)
+                scrollview.addSubview(contactButton)
         contactButton.addTarget(self, action: #selector(contactClicked), for: UIControl.Event.touchUpInside)
         
         let privacyText = UILabel()
@@ -102,34 +115,42 @@ class SettingsVC: UIViewController, MFMailComposeViewControllerDelegate {
         privacyText.textColor = .black
         privacyText.numberOfLines = 0
         privacyText.font = UIFont(name: "Gilroy-Bold", size: 16 * stringMultiplier)
-        privacyText.frame = CGRect(x: 0.06 * screenWidth, y: 0.425 * screenHeight, width: 0.8 * screenWidth, height: 0.05 * screenHeight)
-        view.addSubview(privacyText)
+        privacyText.frame = CGRect(x: 0.06 * screenWidth, y: 0.38 * screenHeight, width: 0.8 * screenWidth, height: 0.05 * screenHeight)
+        scrollview.addSubview(privacyText)
         
     
         let privacyButton = UIButton()
-        privacyButton.setBackgroundImage(UIImage(named: "btn_set_select"), for: UIControl.State.normal)
-        privacyButton.frame = CGRect(x: 0.04 * screenWidth, y: 0.47 * screenHeight, width: 0.92 * screenWidth, height: 0.086 * screenHeight)
+        privacyButton.backgroundColor = krem
+        privacyButton.layer.cornerRadius = 15
+        privacyButton.frame = CGRect(x: 0.04 * screenWidth, y: 0.43 * screenHeight, width: 0.92 * screenWidth, height: 0.08 * screenHeight)
         privacyButton.setTitle(NSLocalizedString("      📝   Gizlilik Sözleşmesi", comment: ""), for: UIControl.State.normal)
         privacyButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
         privacyButton.titleLabel?.font =  UIFont(name: "Gilroy-Medium", size: 16)
         privacyButton.contentVerticalAlignment.self = .center
         privacyButton.contentHorizontalAlignment.self = .left
-        view.addSubview(privacyButton)
+        scrollview.addSubview(privacyButton)
         privacyButton.addTarget(self, action: #selector(privacyClicked), for: UIControl.Event.touchUpInside)
         
         
         let termsButton = UIButton()
-        termsButton.setBackgroundImage(UIImage(named: "btn_set_select"), for: UIControl.State.normal)
-        termsButton.frame = CGRect(x: 0.04 * screenWidth, y: 0.55 * screenHeight, width: 0.92 * screenWidth, height: 0.086 * screenHeight)
+        termsButton.backgroundColor = krem
+        termsButton.layer.cornerRadius = 15
+        termsButton.frame = CGRect(x: 0.04 * screenWidth, y: 0.53 * screenHeight, width: 0.92 * screenWidth, height: 0.08 * screenHeight)
         termsButton.setTitle(NSLocalizedString("      📑   Kullanım Şartları", comment: ""), for: UIControl.State.normal)
         termsButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
         termsButton.titleLabel?.font =  UIFont(name: "Gilroy-Medium", size: 16)
         termsButton.contentVerticalAlignment.self = .center
         termsButton.contentHorizontalAlignment.self = .left
-        view.addSubview(termsButton)
+        scrollview.addSubview(termsButton)
         termsButton.addTarget(self, action: #selector(termsClicked), for: UIControl.Event.touchUpInside)
         
-
+        let thanks = UILabel()
+        thanks.frame = CGRect(x: 0.04 * screenWidth, y: 1.1 * screenHeight, width: 0.92 * screenWidth, height: 0.08 * screenHeight)
+        thanks.text = "Created by Berkan Çalışkan"
+        thanks.textColor = lacivert
+        thanks.textAlignment = .center
+        thanks.font = UIFont(name: "Gilroy-Regular", size: 16)
+        scrollview.addSubview(thanks)
         
     }
     

@@ -38,7 +38,7 @@ class SignUpVC: UIViewController {
         
         let downImg = UIImageView()
         downImg.image = UIImage(named: "down")
-        downImg.frame = CGRect(x: 0.45 * screenWidth, y: 0.02 * screenHeight, width: 0.1 * screenWidth, height: 0.04 * screenHeight)
+        downImg.frame = CGRect(x: 0.45 * screenWidth, y: 0.02 * screenHeight, width: 0.1 * screenWidth, height: 0.027 * screenHeight)
         view.addSubview(downImg)
         
         

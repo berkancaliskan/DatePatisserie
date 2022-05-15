@@ -3,16 +3,14 @@
 //  DatePatisserie
 //
 //  Created by Berkan Çalışkan on 22.01.2022.
-//  koyuYesil
+//  lacivert
 
 import UIKit
 import Lottie
 
 class MainVC: UIViewController {
     
-    var foodLottie: AnimationView?
-    var coffeeLottie: AnimationView?
-    
+
     
     let progressView = UIProgressView(progressViewStyle: .bar)
     let maxKahve: Float = 10.0
@@ -27,11 +25,7 @@ class MainVC: UIViewController {
         createUI()
         progressGuncelle()
         
-        let _ = Timer.scheduledTimer(withTimeInterval: 2.95, repeats: true) { timer in
-            self.foodLottie?.isHidden = true
-            self.coffeeLottie?.isHidden = false
-        
-        }
+  
     
     func createUI(){
         
@@ -51,7 +45,7 @@ class MainVC: UIViewController {
         let mainTitle = UILabel()
         mainTitle.text = NSLocalizedString("Date Patisserie", comment: "")
         mainTitle.textAlignment = .center
-        mainTitle.textColor = koyuYesil
+        mainTitle.textColor = lacivert
         mainTitle.numberOfLines = 0
         mainTitle.font = UIFont(name: "Gilroy-Bold", size: 22 * stringMultiplier)
         mainTitle.frame = CGRect(x: 0.2 * screenWidth, y: 0.056 * screenHeight, width: 0.6 * screenWidth, height: 0.05 * screenHeight)
@@ -60,7 +54,7 @@ class MainVC: UIViewController {
 
         kahveSayisi.text = NSLocalizedString("", comment: "")
         kahveSayisi.textAlignment = .left
-        kahveSayisi.textColor = koyuYesil
+        kahveSayisi.textColor = lacivert
         kahveSayisi.numberOfLines = 0
         kahveSayisi.font = UIFont(name: "Gilroy-Bold", size: 19 * stringMultiplier)
         kahveSayisi.frame = CGRect(x: 0.2 * screenWidth, y: 0.5 * screenHeight, width: 0.6 * screenWidth, height: 0.05 * screenHeight)
@@ -76,40 +70,8 @@ class MainVC: UIViewController {
         view.addSubview(kalanKahveSayisi)
         
 
-        let settingsButton = UIButton()
-        settingsButton.setBackgroundImage(UIImage(named: "settings_btn"), for: UIControl.State.normal)
-        settingsButton.frame = CGRect(x: 0.04 * screenWidth, y: 0.065 * screenHeight, width: 0.084 * screenWidth, height: 0.038 * screenHeight)
-        settingsButton.contentVerticalAlignment.self = .center
-        settingsButton.contentHorizontalAlignment.self = .center
-                view.addSubview(settingsButton)
-        settingsButton.addTarget(self, action: #selector(settingsClicked), for: UIControl.Event.touchUpInside)
-        
-        
-        let profileButton = UIButton()
-        profileButton.setBackgroundImage(UIImage(named: "profile"), for: UIControl.State.normal)
-        profileButton.frame = CGRect(x: 0.84 * screenWidth, y: 0.065 * screenHeight, width: 0.084 * screenWidth, height: 0.038 * screenHeight)
-        profileButton.contentVerticalAlignment.self = .center
-        profileButton.contentHorizontalAlignment.self = .center
-                view.addSubview(profileButton)
-        profileButton.addTarget(self, action: #selector(profileClicked), for: UIControl.Event.touchUpInside)
-    
-        
-        
-        coffeeLottie = .init(name: "coffee_lottie")
-        coffeeLottie?.frame =  CGRect(x: 0.24 * screenWidth, y: 0.13 * screenHeight, width: 0.52 * screenWidth, height: 0.325 * screenHeight)
-            
-        coffeeLottie?.play()
-        coffeeLottie?.loopMode = .loop
-        coffeeLottie?.isHidden = true
-        self.view.addSubview(coffeeLottie!)
-        coffeeLottie?.backgroundBehavior = .pauseAndRestore
-  
-        foodLottie = .init(name: "food_loading")
-        foodLottie?.frame =  CGRect(x: 0.24 * screenWidth, y: 0.13 * screenHeight, width: 0.52 * screenWidth, height: 0.325 * screenHeight)
-        foodLottie?.play()
-        foodLottie?.loopMode = .loop
-        view.addSubview(foodLottie!)
-        
+
+
         
         
         let artıButton = UIButton()
@@ -188,7 +150,7 @@ class MainVC: UIViewController {
             
                 
             }
-            kahveSayisi.textColor = koyuYesil
+            kahveSayisi.textColor = lacivert
             
             }
 
@@ -210,7 +172,7 @@ class MainVC: UIViewController {
             self.progressView.setProgress(barDegeri, animated: true)
             
             kahveSayisi.text = "Kahve Sayınız: \(Int(barDegeri*10))"
-            kahveSayisi.textColor = koyuYesil
+            kahveSayisi.textColor = lacivert
             
             
         }else{
@@ -220,7 +182,7 @@ class MainVC: UIViewController {
         }
         
         kalanKahveSayisi.text = "Kahve kazanmanıza: \(Int(10-(barDegeri*10)))"
-        kalanKahveSayisi.textColor = koyuYesil
+        kalanKahveSayisi.textColor = lacivert
         
             
 }
@@ -228,17 +190,7 @@ class MainVC: UIViewController {
     
     
     
-    
-    @objc func settingsClicked() {
-        
-        vibrate(style: .medium)
-        presentVC(currentVC: self, destinationVC: SettingsVC(), toDirection: .left)
-}
-    @objc func profileClicked() {
-        
-        vibrate(style: .medium)
-        presentVC(currentVC: self, destinationVC: ProfileVC(), toDirection: .right)
-}
+ 
     
     @objc func tatliClicked() {
         

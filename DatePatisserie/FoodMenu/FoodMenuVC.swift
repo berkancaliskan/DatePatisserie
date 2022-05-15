@@ -83,7 +83,7 @@ class FoodMenuVC: UIViewController, UIScrollViewDelegate, UICollectionViewDataSo
         shoppingCartView.addSubview(cartButton)
         cartButton.layer.masksToBounds = true
         cartButton.contentMode = .scaleAspectFit
-        cartButton.addTarget(self, action: #selector(backClicked), for: UIControl.Event.touchUpInside)
+        cartButton.addTarget(self, action: #selector(cartClicked), for: UIControl.Event.touchUpInside)
         
         productCounterLabel.frame = CGRect(x: cartButton.frame.maxX - 12, y: 0, width: 26, height: 26)
         productCounterLabel.text = String(numberOfProduct)
@@ -176,7 +176,7 @@ class FoodMenuVC: UIViewController, UIScrollViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
                 
         vibrate(style: .heavy)
-    
+        presentAsPageSheet(currentVC: self, destinationVC: DetailsVC())
         showCustomAlert(title: "Merhaba!" , message: "Seçilen item \(indexPath.row)", viewController: self)
     
     }
@@ -279,7 +279,10 @@ class FoodMenuVC: UIViewController, UIScrollViewDelegate, UICollectionViewDataSo
         deactiveAllButton()
         button6.activeButton()
     }
-    
+    @objc  func cartClicked(){
+        
+        presentVC(currentVC: self, destinationVC: OrderVC(), toDirection: .right)
+    }
     @objc  func backClicked(){
         
         dismiss(animated: true)

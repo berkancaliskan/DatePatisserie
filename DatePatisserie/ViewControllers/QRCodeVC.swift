@@ -25,13 +25,11 @@ class QRCodeVC: UIViewController {
         
         view.backgroundColor = UIColor.white
         
-        let backButton = UIButton()
-        backButton.setBackgroundImage(UIImage(named: "back_btn"), for: UIControl.State.normal)
-        backButton.frame = CGRect(x: 0.04 * screenWidth, y: 0.07 * screenHeight, width: 0.06 * screenWidth, height: 0.024 * screenHeight)
-        backButton.contentVerticalAlignment.self = .center
-        backButton.contentHorizontalAlignment.self = .center
-        view.addSubview(backButton)
-        backButton.addTarget(self, action: #selector(backClicked), for: UIControl.Event.touchUpInside)
+        let downImg = UIImageView()
+        downImg.image = UIImage(named: "down")
+        downImg.frame = CGRect(x: 0.45 * screenWidth, y: 0.02 * screenHeight, width: 0.1 * screenWidth, height: 0.027 * screenHeight)
+        view.addSubview(downImg)
+        
         
         let holderTitle = UILabel()
         holderTitle.text = NSLocalizedString("QR Kodunuz", comment:"")
