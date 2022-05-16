@@ -103,7 +103,7 @@ class SignUpVC: UIViewController {
         let kayitOl  = UIButton()
         kayitOl.setTitleColor(.white, for: .normal)
         kayitOl.setTitle("Kayıt Ol", for: .normal)
-        kayitOl.backgroundColor = acikYesil
+        kayitOl.backgroundColor = yesil
         kayitOl.frame = CGRect(x: 0.1 * screenWidth, y: 0.76 * screenHeight, width: 0.8 * screenWidth, height: 0.06 * screenHeight)
         kayitOl.contentVerticalAlignment.self = .center
         kayitOl.layer.cornerRadius = 10

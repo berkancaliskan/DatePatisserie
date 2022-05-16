@@ -65,7 +65,7 @@ class OrderCell: UITableViewCell {
         
         productName.numberOfLines = 0
         productName.text = "Salamlı Sandviç"
-        productName.textColor = UIColor(hexCode: "383853")
+        productName.textColor = lacivert
         productName.textAlignment = .left
         productName.font = UIFont(name: "Gilroy-Bold", size: 340 * stringMultiplier)
         
@@ -73,13 +73,13 @@ class OrderCell: UITableViewCell {
 
         let doubleStr = String(format: "%.2f", price) // "3.14"
         productPrice.text = "₺\(doubleStr)"
-        productPrice.textColor = UIColor(hexCode: "383853")
+        productPrice.textColor = lacivert
         productPrice.textAlignment = .left
         productPrice.font = UIFont(name: "Gilroy-Regular", size: 280 * stringMultiplier)
         
         productCounter.value = 1
         productCounterLabel.text = String(Int(productCounter.value))
-        productCounterLabel.textColor = UIColor(hexCode: "383853")
+        productCounterLabel.textColor = lacivert
         productCounterLabel.textAlignment = .center
         productCounterLabel.font = UIFont(name: "Gilroy-Regular", size: 320 * stringMultiplier)
 

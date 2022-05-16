@@ -482,6 +482,7 @@ PODS:
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
   - PromisesObjC (2.0.0)
+  - Pulsator (0.6.0)
 
 DEPENDENCIES:
   - Firebase/Auth
@@ -489,6 +490,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - Hero
   - lottie-ios
+  - Pulsator
 
 SPEC REPOS:
   trunk:
@@ -512,6 +514,7 @@ SPEC REPOS:
     - lottie-ios
     - nanopb
     - PromisesObjC
+    - Pulsator
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -534,7 +537,8 @@ SPEC CHECKSUMS:
   lottie-ios: 6ac74dcc09904798f59b18cb3075c089d76be9ae
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
+  Pulsator: eb5a9f9be4bdcbd19903984c65deca6aabe50a17
 
-PODFILE CHECKSUM: c5fcd6aff1e5dc0dbe6106466d8e567de9293d09
+PODFILE CHECKSUM: 424deb38dbb3901b5e85ecd325ca5dc134b40f54
 
 COCOAPODS: 1.11.2

@@ -10,12 +10,12 @@ import Firebase
 import FirebaseAuth
 import Lottie
 
-
-
 // QR okutuldukça artacak
-var qrCounter = 11
-var kalankahve = 10 - qrCounter % 10
+var qrCounter = 34
+
 var icilenKahve = qrCounter % 10
+var kalankahve = 10 - qrCounter % 10
+
 
 //İsmin altında yazıların değişmesi için sayaç
 let infoText = UILabel()
@@ -98,13 +98,19 @@ class HomeVC: UIViewController {
   
         
         let menuButton = UIButton()
-        menuButton.backgroundColor = UIColor(hexCode: "BAD65D")
+        menuButton.backgroundColor = yesil
         menuButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
         menuButton.setTitle("MENÜ", for: .normal)
         menuButton.layer.cornerRadius = 15
         menuButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         menuButton.titleLabel?.font =  UIFont(name: "Gilroy-Medium", size: 19)
         menuButton.frame = CGRect(x: 0.05 * screenWidth, y: 0.45 * screenHeight, width: 0.9 * screenWidth, height: 0.086 * screenHeight)
+        menuButton.layer.shadowColor = UIColor.lightGray.cgColor
+        menuButton.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        menuButton.layer.shadowOpacity = 0.7
+        menuButton.layer.shadowRadius = 12.0
+        menuButton.layer.masksToBounds = false
+        menuButton.addVibrateEffect()
         view.addSubview(menuButton)
         menuButton.addTarget(self, action: #selector(menuClicked), for: UIControl.Event.touchUpInside)
         
@@ -118,7 +124,7 @@ class HomeVC: UIViewController {
         let coffeeProgressBg = UIView()
         coffeeProgressBg.frame = CGRect(x: 0.05 * screenWidth, y: 0.27 * screenHeight, width: 0.9 * screenWidth, height: 0.156 * screenHeight)
         
-        coffeeProgressBg.backgroundColor = UIColor(hexCode: "F3F3F3")
+        coffeeProgressBg.backgroundColor = gri
         coffeeProgressBg.layer.masksToBounds = true
         coffeeProgressBg.layer.cornerRadius = 18
         view.addSubview(coffeeProgressBg)
@@ -133,12 +139,11 @@ class HomeVC: UIViewController {
 
         coffeeProgressImageView.frame = CGRect(x: 20, y: 22, width: 106, height: 106)
         coffeeProgressImageView.clipsToBounds = true
-      
         coffeeProgressImageView.contentMode = .scaleAspectFill
         coffeeProgressBg.addSubview(coffeeProgressImageView)
         
         let coffeInfoText = UILabel()
-        coffeInfoText.text = NSLocalizedString("Hediye kahvene son \(kalankahve) kahve kaldı! ", comment: "")
+        coffeInfoText.text = NSLocalizedString("Hediye kahvene son \n\(kalankahve) kahve kaldı! ", comment: "")
         coffeInfoText.textAlignment = .left
         coffeInfoText.textColor = lacivert
         coffeInfoText.numberOfLines = 0
@@ -184,7 +189,7 @@ class HomeVC: UIViewController {
         
         let dailyFoodBg = UIView()
         dailyFoodBg.frame = CGRect(x: 0, y: 0.56 * screenHeight, width: screenWidth, height: 0.5 * screenHeight)
-        dailyFoodBg.backgroundColor = UIColor(hexCode: "F3F3F3")
+        dailyFoodBg.backgroundColor = gri
         dailyFoodBg.layer.masksToBounds = true
         dailyFoodBg.layer.cornerRadius = 22
         view.addSubview(dailyFoodBg)
@@ -253,7 +258,7 @@ class HomeVC: UIViewController {
     
     @objc func menuClicked() {
         
-        presentVC(currentVC: self, destinationVC: FoodMenuVC(), toDirection: .left)
+        presentVC(currentVC: self, destinationVC: MenuVC(), toDirection: .left)
      
 }
     

@@ -9,12 +9,12 @@ import Foundation
 import UIKit
 
 
-var stringMultiplier = CGFloat()
 
-let turuncu = UIColor(red: 1.00, green: 0.64, blue: 0.31, alpha: 1.00)
-let acikYesil = UIColor(red: 0.73, green: 0.84, blue: 0.36, alpha: 1.00)
-let acikGri = UIColor(red: 0.97, green: 0.96, blue: 0.95, alpha: 1.00)
-let lacivert = UIColor(red: 0.22, green: 0.22, blue: 0.34, alpha: 1.00)
+
+
+let yesil = UIColor(red: 0.73, green: 0.84, blue: 0.36, alpha: 1.00)
+let gri = UIColor(red: 0.93, green: 0.93, blue: 0.93, alpha: 1.00)
+let lacivert = UIColor(red: 0.22, green: 0.22, blue: 0.35, alpha: 1.00)
 let krem = UIColor(red: 0.94, green: 0.88, blue: 0.81, alpha: 1.00)
 
 

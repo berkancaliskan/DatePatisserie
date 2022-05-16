@@ -78,7 +78,7 @@ class LoginVC: UIViewController {
         
         
         let girisButton  = UIButton()
-        girisButton.backgroundColor = acikYesil
+        girisButton.backgroundColor = yesil
         girisButton.setTitleColor(.white, for: .normal)
         girisButton.setTitle("Giriş Yap", for: .normal)
         
@@ -119,7 +119,7 @@ class LoginVC: UIViewController {
         view.addSubview(kayıtYonlendirmeText)
         
         let kayitOl  = UIButton()
-        kayitOl.setTitleColor(acikYesil, for: .normal)
+        kayitOl.setTitleColor(yesil, for: .normal)
         kayitOl.setTitle("Kayıt Ol", for: .normal)
         kayitOl.frame = CGRect(x: 0.3 * screenWidth, y: 0.86 * screenHeight, width: 0.4 * screenWidth, height: 0.06 * screenHeight)
         kayitOl.contentVerticalAlignment.self = .center

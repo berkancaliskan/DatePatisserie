@@ -11,6 +11,7 @@ target 'DatePatisserie' do
   pod 'Firebase/Firestore'
   pod 'Hero'
   pod 'lottie-ios'
+  pod 'Pulsator'
 end
 
 

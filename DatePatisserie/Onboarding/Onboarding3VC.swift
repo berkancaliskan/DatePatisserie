@@ -18,7 +18,6 @@ class Onboarding3VC: UIViewController {
         createUI()
         
     }
-    
     func createUI(){
         
         let pagePointer = UIImageView()

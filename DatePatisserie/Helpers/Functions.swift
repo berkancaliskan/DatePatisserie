@@ -11,7 +11,7 @@ import UIKit
 
 var screenHeight = CGFloat()
 var screenWidth = CGFloat()
-
+var stringMultiplier = CGFloat()
 
 func setDefaultSize(view : UIView){
     
@@ -20,8 +20,6 @@ func setDefaultSize(view : UIView){
     stringMultiplier = 0.00115 * screenHeight
    
 }
-
-
 func showCustomAlert(title: String, message: String,  viewController : UIViewController){
     let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
     alert.addAction(UIAlertAction(title: "Tamam", style: UIAlertAction.Style.default, handler: nil))

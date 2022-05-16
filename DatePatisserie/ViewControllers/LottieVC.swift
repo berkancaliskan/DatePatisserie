@@ -10,7 +10,7 @@ import Lottie
 
 class LottieVC: UIViewController {
 
-    var animationView: AnimationView?
+
 
     override func viewDidLoad() {
 //        view.backgroundColor = UIColor.white
@@ -20,13 +20,6 @@ class LottieVC: UIViewController {
         let screenWidth = view.frame.size.width
 
 
-        animationView = .init(name: "hamburger_loading")
-        animationView?.frame =  CGRect(x: 0.24 * screenWidth, y: 0.3 * screenHeight, width: 0.52 * screenWidth, height: 0.325 * screenHeight)
-        
-        animationView?.play()
-        animationView?.loopMode = .loop
-
-        view.addSubview(animationView!)
         
         let appInfo = UITextView()
         appInfo.text = "Date Atalier  & Patisserie & Eatery"
@@ -38,7 +31,7 @@ class LottieVC: UIViewController {
         view.addSubview(appInfo)
 
         
-        let _ = Timer.scheduledTimer(withTimeInterval: 3.9, repeats: true) { timer in
+        let _ = Timer.scheduledTimer(withTimeInterval: 3.9, repeats: false) { timer in
             
         presentVCWithoutAnimation(currentVC: self, destinationVC: MainVC()) }
              

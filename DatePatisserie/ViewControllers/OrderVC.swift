@@ -5,7 +5,6 @@
 //  Created by Berkan Çalışkan on 1.05.2022.
 //
 
-
 import UIKit
 
 class OrderVC: UIViewController {
@@ -29,18 +28,12 @@ class OrderVC: UIViewController {
     }
     
     func setUp() {
-        
-        view.backgroundColor = UIColor(hexCode: "FFFFFF")
+        view.backgroundColor = UIColor.white
         
         let backButton = UIButton()
-        backButton.setBackgroundImage(UIImage(named: "back_btn"), for: UIControl.State.normal)
-        backButton.frame = CGRect(x: 0.04 * screenWidth, y: 0.07 * screenHeight, width: 0.06 * screenWidth, height: 0.024 * screenHeight)
-        backButton.contentVerticalAlignment.self = .center
-        backButton.contentHorizontalAlignment.self = .center
-        view.addSubview(backButton)
-        backButton.addTarget(self, action: #selector(backClicked), for: UIControl.Event.touchUpInside)
+        backButton.makeBackButton(view: view, selector: #selector(backClicked), VC: self)
         
-        orderTableView.frame = CGRect(x: 0.05 * screenWidth, y: 0.14 * screenHeight, width: 0.9 * screenWidth, height:screenHeight * 0.5)
+        orderTableView.frame = CGRect(x: 0.05 * screenWidth, y: 0.14 * screenHeight, width: 0.90 * screenWidth, height:screenHeight * 0.50)
         orderTableView.delegate = self
         orderTableView.dataSource = self
         orderTableView.backgroundColor = UIColor.clear
@@ -51,7 +44,7 @@ class OrderVC: UIViewController {
         orderTableView.reloadData()
         orderTableView.layer.cornerRadius = 12
         view.addSubview(orderTableView)
-    
+        
         titleLabel.frame = CGRect(x: 0.2 * screenWidth, y: 0.057 * screenHeight, width: 0.6 * screenWidth, height: 0.05 * screenHeight)
         titleLabel.text = "Sipariş Sepeti"
         titleLabel.textAlignment = .center
@@ -60,7 +53,7 @@ class OrderVC: UIViewController {
         view.addSubview(titleLabel)
         
         totalPriceLabel.frame = CGRect(x: 0.35 * screenWidth, y: 0.68 * screenHeight, width: 0.6 * screenWidth, height: 0.12 * screenWidth)
-        totalPriceLabel.backgroundColor = UIColor(hexCode: "f3f3f3")
+        totalPriceLabel.backgroundColor = gri
         totalPriceLabel.text = "Toplam Tutar:  ₺\(totalPrice)"
         totalPriceLabel.textAlignment = .center
         totalPriceLabel.textColor = lacivert
@@ -81,52 +74,35 @@ class OrderVC: UIViewController {
     
     @objc func backClicked() {
         vibrate(style: .heavy)
-        dismiss(animated: true, completion: nil)
         
-
+//        sender ile dismiss eklenecek
+        presentVC(currentVC: self, destinationVC: MenuVC(), toDirection: .right)
     }
 }
-
-
 extension OrderVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
             let cell = tableView.dequeueReusableCell(withIdentifier: OrderCell.cell, for: indexPath) as! OrderCell
-            cell.backgroundColor = UIColor(hexCode: "F0E1CF")
+            cell.backgroundColor = krem
             cell.layer.cornerRadius = 14
             return cell
-    
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
         print("\(indexPath.row) Clicked.")
-        
     }
-    
-    
-    
-    
+
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
     {
         let verticalPadding: CGFloat = 12
-        
         let maskLayer = CALayer()
         maskLayer.cornerRadius = 10    //if you want round edges
         maskLayer.backgroundColor = UIColor.red.cgColor
         maskLayer.frame = CGRect(x: cell.bounds.origin.x, y: cell.bounds.origin.y, width: cell.bounds.width, height: cell.bounds.height).insetBy(dx: 0, dy: verticalPadding/2)
-        
         cell.layer.mask = maskLayer
-        
     }
-    
-    
 }
-
-
-

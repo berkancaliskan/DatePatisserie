@@ -37,13 +37,7 @@ class ProfileVC: UIViewController {
         view.addSubview(mainImg)
         
         let backButton = UIButton()
-        backButton.setBackgroundImage(UIImage(named: "back_btn"), for: UIControl.State.normal)
-        backButton.frame = CGRect(x: 0.04 * screenWidth, y: 0.07 * screenHeight, width: 0.06 * screenWidth, height: 0.024 * screenHeight)
-        backButton.contentVerticalAlignment.self = .center
-        backButton.contentHorizontalAlignment.self = .center
-        view.addSubview(backButton)
-        backButton.addTarget(self, action: #selector(backClicked), for: UIControl.Event.touchUpInside)
-        
+        backButton.makeBackButton(view: view, selector: #selector(backClicked), VC: self)
         
         let nameText  = UILabel()
         nameText.textAlignment = .center
@@ -86,7 +80,7 @@ class ProfileVC: UIViewController {
         kartButton.titleLabel?.font = UIFont(name: "Gilroy-Medium", size: 14 * stringMultiplier)
         kartButton.contentHorizontalAlignment.self = .center
         kartButton.layer.cornerRadius = 12
-        kartButton.backgroundColor = acikYesil
+        kartButton.backgroundColor = yesil
         
         
         view.addSubview(kartButton)

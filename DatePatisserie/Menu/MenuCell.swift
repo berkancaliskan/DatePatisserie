@@ -11,7 +11,7 @@ struct FoodID {
     static var identifier = "sandvic_cell"
 }
 
-class SandvicCell: UICollectionViewCell {
+class MenuCell: UICollectionViewCell {
     
     
     let foodImageView: UIImageView = {
@@ -99,10 +99,10 @@ class SandvicCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(with sandvic: Sandvic) {
-        foodImageView.image = UIImage(named: sandvic.imageName)
-        name.text = sandvic.productName
-        locationLabel.text = sandvic.price
-        professionLabel.text = sandvic.productStepper
+    func setup(with cell: Sandwich) {
+        foodImageView.image = UIImage(named: cell.imageName)
+        name.text = cell.productName
+        locationLabel.text = cell.price
+        professionLabel.text = cell.productStepper
     }
 }

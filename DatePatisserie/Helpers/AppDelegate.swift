@@ -23,7 +23,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
       FirebaseApp.configure()
-      createSandwiches()
+        
+        createSandwiches()
+        createColdDrinks()
+        createToasts()
+        createCoffees()
+        createBurgers()
+        createDesserts()
+        createIceCoffees()
+        createHotDrinks()
+        createOthers()
+        
       window = UIWindow(frame: UIScreen.main.bounds)
       window?.makeKeyAndVisible()
       window?.rootViewController = HomeVC()
