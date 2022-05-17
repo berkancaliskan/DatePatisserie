@@ -8,14 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0711509F281E85C400C8A932 /* OrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0711509E281E85C400C8A932 /* OrderVC.swift */; };
-		071481D328310F7200D5726A /* Burger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071481D228310F7200D5726A /* Burger.swift */; };
-		071481D528310F8500D5726A /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071481D428310F8500D5726A /* Toast.swift */; };
-		071481D72831114800D5726A /* Coffee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071481D62831114800D5726A /* Coffee.swift */; };
-		071481D92831116700D5726A /* HotDrink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071481D82831116700D5726A /* HotDrink.swift */; };
-		071481DB2831117400D5726A /* ColdDrink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071481DA2831117400D5726A /* ColdDrink.swift */; };
-		071481DD283111B300D5726A /* Dessert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071481DC283111B300D5726A /* Dessert.swift */; };
-		071481DF283111D100D5726A /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071481DE283111D100D5726A /* Other.swift */; };
-		071481E12831120E00D5726A /* IceCoffee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071481E02831120E00D5726A /* IceCoffee.swift */; };
 		0727233028215F95004D8A89 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727232628215F8B004D8A89 /* MenuVC.swift */; };
 		074C2E96283195C60013B756 /* added_cart.json in Resources */ = {isa = PBXBuildFile; fileRef = 074C2E95283195C60013B756 /* added_cart.json */; };
 		075401E5280302C6003AD065 /* CoffeeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075401E4280302C6003AD065 /* CoffeeVC.swift */; };
@@ -44,14 +36,15 @@
 		0771363327EC992B004C055E /* Gilroy-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0771362D27EC992B004C055E /* Gilroy-Thin.otf */; };
 		0771363A27EC9935004C055E /* Onboarding2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0771363627EC9935004C055E /* Onboarding2VC.swift */; };
 		0771363B27EC9935004C055E /* Onboarding3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0771363727EC9935004C055E /* Onboarding3VC.swift */; };
-		0771363C27EC9935004C055E /* Onboarding4VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0771363827EC9935004C055E /* Onboarding4VC.swift */; };
 		0771363E27EC9966004C055E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0771363D27EC9966004C055E /* Colors.swift */; };
 		077475C8280C3DC800447BE5 /* QRCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077475C7280C3DC800447BE5 /* QRCodeVC.swift */; };
-		077B1EF5282B965500E2EA59 /* OrderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B1EF4282B965500E2EA59 /* OrderInfo.swift */; };
+		077B1EF5282B965500E2EA59 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B1EF4282B965500E2EA59 /* Product.swift */; };
 		078B81C827EDA1B70095CE56 /* Presentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078B81C727EDA1B70095CE56 /* Presentation.swift */; };
 		078B81CA27EDA7740095CE56 /* Onboarding1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078B81C927EDA7740095CE56 /* Onboarding1VC.swift */; };
+		079032672832D52900D615EB /* AdminMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079032662832D52900D615EB /* AdminMainVC.swift */; };
+		0790327B2833EB2300D615EB /* ProductHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0790327A2833EB2300D615EB /* ProductHandler.swift */; };
+		0790327D2833F06400D615EB /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0790327C2833F06400D615EB /* Globals.swift */; };
 		07B994242821A74A00423417 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B994212821A74A00423417 /* MenuCell.swift */; };
-		07B994252821A74A00423417 /* Sandwich.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B994222821A74A00423417 /* Sandwich.swift */; };
 		07B994282822A0CE00423417 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07B994272822A0CE00423417 /* Assets.xcassets */; };
 		07C246D3282D75E300869A23 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C246D2282D75E300869A23 /* OrderCell.swift */; };
 		07F1263E27F191A70017E3F3 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F1263D27F191A70017E3F3 /* NotificationService.swift */; };
@@ -89,14 +82,6 @@
 
 /* Begin PBXFileReference section */
 		0711509E281E85C400C8A932 /* OrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderVC.swift; sourceTree = "<group>"; };
-		071481D228310F7200D5726A /* Burger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Burger.swift; sourceTree = "<group>"; };
-		071481D428310F8500D5726A /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
-		071481D62831114800D5726A /* Coffee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coffee.swift; sourceTree = "<group>"; };
-		071481D82831116700D5726A /* HotDrink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotDrink.swift; sourceTree = "<group>"; };
-		071481DA2831117400D5726A /* ColdDrink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColdDrink.swift; sourceTree = "<group>"; };
-		071481DC283111B300D5726A /* Dessert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dessert.swift; sourceTree = "<group>"; };
-		071481DE283111D100D5726A /* Other.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
-		071481E02831120E00D5726A /* IceCoffee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceCoffee.swift; sourceTree = "<group>"; };
 		0727232628215F8B004D8A89 /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		074C2E95283195C60013B756 /* added_cart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = added_cart.json; sourceTree = "<group>"; };
 		075401E4280302C6003AD065 /* CoffeeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeVC.swift; sourceTree = "<group>"; };
@@ -127,14 +112,15 @@
 		0771362D27EC992B004C055E /* Gilroy-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Thin.otf"; sourceTree = "<group>"; };
 		0771363627EC9935004C055E /* Onboarding2VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Onboarding2VC.swift; sourceTree = "<group>"; };
 		0771363727EC9935004C055E /* Onboarding3VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Onboarding3VC.swift; sourceTree = "<group>"; };
-		0771363827EC9935004C055E /* Onboarding4VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Onboarding4VC.swift; sourceTree = "<group>"; };
 		0771363D27EC9966004C055E /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		077475C7280C3DC800447BE5 /* QRCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeVC.swift; sourceTree = "<group>"; };
-		077B1EF4282B965500E2EA59 /* OrderInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInfo.swift; sourceTree = "<group>"; };
+		077B1EF4282B965500E2EA59 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		078B81C727EDA1B70095CE56 /* Presentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presentation.swift; sourceTree = "<group>"; };
 		078B81C927EDA7740095CE56 /* Onboarding1VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Onboarding1VC.swift; sourceTree = "<group>"; };
+		079032662832D52900D615EB /* AdminMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminMainVC.swift; sourceTree = "<group>"; };
+		0790327A2833EB2300D615EB /* ProductHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductHandler.swift; sourceTree = "<group>"; };
+		0790327C2833F06400D615EB /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		07B994212821A74A00423417 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
-		07B994222821A74A00423417 /* Sandwich.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sandwich.swift; sourceTree = "<group>"; };
 		07B994272822A0CE00423417 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07C246D2282D75E300869A23 /* OrderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
 		07F1263B27F191A70017E3F3 /* OneSignalServicesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalServicesExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,15 +158,6 @@
 		071481D128310F2700D5726A /* CellContents */ = {
 			isa = PBXGroup;
 			children = (
-				07B994222821A74A00423417 /* Sandwich.swift */,
-				071481DA2831117400D5726A /* ColdDrink.swift */,
-				071481D428310F8500D5726A /* Toast.swift */,
-				071481E02831120E00D5726A /* IceCoffee.swift */,
-				071481D82831116700D5726A /* HotDrink.swift */,
-				071481DE283111D100D5726A /* Other.swift */,
-				071481DC283111B300D5726A /* Dessert.swift */,
-				071481D62831114800D5726A /* Coffee.swift */,
-				071481D228310F7200D5726A /* Burger.swift */,
 			);
 			path = CellContents;
 			sourceTree = "<group>";
@@ -210,6 +187,7 @@
 			children = (
 				07B994272822A0CE00423417 /* Assets.xcassets */,
 				07FEA91C27F19D1800546E31 /* DatePatisserie.entitlements */,
+				079032652832D28800D615EB /* AdminPanel */,
 				0771363427EC9935004C055E /* Onboarding */,
 				0771360827EC990A004C055E /* ViewControllers */,
 				07FEA92527F1BD0000546E31 /* Helpers */,
@@ -248,7 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				0771361A27EC9916004C055E /* DetailsInfo.swift */,
-				077B1EF4282B965500E2EA59 /* OrderInfo.swift */,
+				077B1EF4282B965500E2EA59 /* Product.swift */,
 				0771361B27EC9916004C055E /* ProfileInfo.swift */,
 			);
 			path = Model;
@@ -285,9 +263,16 @@
 				078B81C927EDA7740095CE56 /* Onboarding1VC.swift */,
 				0771363627EC9935004C055E /* Onboarding2VC.swift */,
 				0771363727EC9935004C055E /* Onboarding3VC.swift */,
-				0771363827EC9935004C055E /* Onboarding4VC.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		079032652832D28800D615EB /* AdminPanel */ = {
+			isa = PBXGroup;
+			children = (
+				079032662832D52900D615EB /* AdminMainVC.swift */,
+			);
+			path = AdminPanel;
 			sourceTree = "<group>";
 		};
 		07DAECE62821506C00F0CF3E /* Menu */ = {
@@ -312,9 +297,11 @@
 		07FEA92527F1BD0000546E31 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				0790327A2833EB2300D615EB /* ProductHandler.swift */,
 				077135F127EC98A1004C055E /* AppDelegate.swift */,
 				078B81C727EDA1B70095CE56 /* Presentation.swift */,
 				0771363D27EC9966004C055E /* Colors.swift */,
+				0790327C2833F06400D615EB /* Globals.swift */,
 				07FEA91F27F1B2AE00546E31 /* NotificationService.swift */,
 				07FEA92127F1BC5C00546E31 /* Extensions.swift */,
 				07FEA92327F1BCB700546E31 /* Functions.swift */,
@@ -497,37 +484,30 @@
 			files = (
 				0727233028215F95004D8A89 /* MenuVC.swift in Sources */,
 				0771361427EC990A004C055E /* SignUpVC.swift in Sources */,
-				071481E12831120E00D5726A /* IceCoffee.swift in Sources */,
 				078B81C827EDA1B70095CE56 /* Presentation.swift in Sources */,
 				0771361127EC990A004C055E /* ProfileVC.swift in Sources */,
-				071481DB2831117400D5726A /* ColdDrink.swift in Sources */,
 				07C246D3282D75E300869A23 /* OrderCell.swift in Sources */,
-				0771363C27EC9935004C055E /* Onboarding4VC.swift in Sources */,
-				071481D328310F7200D5726A /* Burger.swift in Sources */,
 				0771361727EC990A004C055E /* LottieVC.swift in Sources */,
+				079032672832D52900D615EB /* AdminMainVC.swift in Sources */,
 				07B994242821A74A00423417 /* MenuCell.swift in Sources */,
+				0790327D2833F06400D615EB /* Globals.swift in Sources */,
 				0771361D27EC9916004C055E /* ProfileInfo.swift in Sources */,
 				07FEA92027F1B2AE00546E31 /* NotificationService.swift in Sources */,
-				071481D528310F8500D5726A /* Toast.swift in Sources */,
 				0771361827EC990A004C055E /* MainVC.swift in Sources */,
-				071481D92831116700D5726A /* HotDrink.swift in Sources */,
 				075401E72803036C003AD065 /* HomeVC.swift in Sources */,
 				077135F227EC98A1004C055E /* AppDelegate.swift in Sources */,
-				071481D72831114800D5726A /* Coffee.swift in Sources */,
 				0771363E27EC9966004C055E /* Colors.swift in Sources */,
 				0771361C27EC9916004C055E /* DetailsInfo.swift in Sources */,
-				077B1EF5282B965500E2EA59 /* OrderInfo.swift in Sources */,
+				077B1EF5282B965500E2EA59 /* Product.swift in Sources */,
 				0771361627EC990A004C055E /* DetailsVC.swift in Sources */,
 				077135FC27EC98A1004C055E /* DatePatisserie.xcdatamodeld in Sources */,
 				078B81CA27EDA7740095CE56 /* Onboarding1VC.swift in Sources */,
-				071481DF283111D100D5726A /* Other.swift in Sources */,
-				07B994252821A74A00423417 /* Sandwich.swift in Sources */,
+				0790327B2833EB2300D615EB /* ProductHandler.swift in Sources */,
 				07FEA92227F1BC5C00546E31 /* Extensions.swift in Sources */,
 				077475C8280C3DC800447BE5 /* QRCodeVC.swift in Sources */,
 				075401E5280302C6003AD065 /* CoffeeVC.swift in Sources */,
 				0771361227EC990A004C055E /* LoginVC.swift in Sources */,
 				0711509F281E85C400C8A932 /* OrderVC.swift in Sources */,
-				071481DD283111B300D5726A /* Dessert.swift in Sources */,
 				07FEA92427F1BCB700546E31 /* Functions.swift in Sources */,
 				0771363B27EC9935004C055E /* Onboarding3VC.swift in Sources */,
 				0771363A27EC9935004C055E /* Onboarding2VC.swift in Sources */,

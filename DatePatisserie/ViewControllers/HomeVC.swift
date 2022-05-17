@@ -194,6 +194,21 @@ class HomeVC: UIViewController {
         dailyFoodBg.layer.cornerRadius = 22
         view.addSubview(dailyFoodBg)
         
+        let date = Date()
+        let df = DateFormatter()
+        df.dateFormat = "dd-MM-yyyy"
+        let dateString = df.string(from: date)
+        
+        let dateLabel = UILabel()
+        dateLabel.text = NSLocalizedString("\(dateString)", comment: "")
+        dateLabel.textAlignment = .left
+        dateLabel.textColor = lacivert
+        dateLabel.numberOfLines = 0
+        dateLabel.font = UIFont(name: "Gilroy-Regular", size: 12.7 * stringMultiplier)
+        dateLabel.frame = CGRect(x: 16, y: 44, width: 170, height: 33)
+        dailyFoodBg.addSubview(dateLabel)
+        
+        
         let dailyFoodTitle = UILabel()
         dailyFoodTitle.text = NSLocalizedString("Günün Menüsü", comment: "")
         dailyFoodTitle.textAlignment = .left
@@ -209,7 +224,7 @@ class HomeVC: UIViewController {
         detailsTitle.textColor = lacivert
         detailsTitle.numberOfLines = 0
         detailsTitle.font = UIFont(name: "Gilroy-Bold", size: 18 * stringMultiplier)
-        detailsTitle.frame = CGRect(x: 16, y: 196, width: 390, height: 32)
+        detailsTitle.frame = CGRect(x: 16, y: 216, width: 390, height: 32)
         dailyFoodBg.addSubview(detailsTitle)
         
 
@@ -219,11 +234,11 @@ class HomeVC: UIViewController {
         detailsContent.textColor = lacivert
         detailsContent.numberOfLines = 0
         detailsContent.font = UIFont(name: "Gilroy-Regular", size: 16 * stringMultiplier)
-        detailsContent.frame = CGRect(x: 16, y: 220, width: 390, height: 56)
+        detailsContent.frame = CGRect(x: 16, y: 240, width: 390, height: 56)
         dailyFoodBg.addSubview(detailsContent)
         
         let foodImage1 = UIImageView()
-        foodImage1.frame = CGRect(x: 16, y: 56, width: 120, height: 120)
+        foodImage1.frame = CGRect(x: 16, y: 86, width: 120, height: 120)
         foodImage1.clipsToBounds = true
         foodImage1.backgroundColor = .white
         foodImage1.layer.cornerRadius = 16
@@ -234,7 +249,7 @@ class HomeVC: UIViewController {
         print(dailyFoodBg.frame.width)
         
         let foodImage2 = UIImageView()
-        foodImage2.frame = CGRect(x: 154, y: 56, width: 120, height: 120)
+        foodImage2.frame = CGRect(x: 154, y: 86, width: 120, height: 120)
         foodImage2.clipsToBounds = true
         foodImage2.backgroundColor = .white
         foodImage2.layer.cornerRadius = 16
@@ -243,7 +258,7 @@ class HomeVC: UIViewController {
         dailyFoodBg.addSubview(foodImage2)
         
         let foodImage3 = UIImageView()
-        foodImage3.frame = CGRect(x: 292, y: 56, width: 120, height: 120)
+        foodImage3.frame = CGRect(x: 292, y: 86, width: 120, height: 120)
         foodImage3.clipsToBounds = true
         foodImage3.backgroundColor = .white
         foodImage3.layer.cornerRadius = 16

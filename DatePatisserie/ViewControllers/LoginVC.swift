@@ -47,12 +47,16 @@ class LoginVC: UIViewController {
         emailField.layer.borderWidth = 1
         emailField.autocapitalizationType = .none
         emailField.layer.borderColor = lacivert.cgColor
-        emailField.placeholder = "Email Adresinizi Giriniz..."
         emailField.frame = CGRect(x: 0.1 * screenWidth, y: 0.55 * screenHeight, width: 0.8 * screenWidth, height: 0.06 * screenHeight)
         emailField.font = UIFont(name: "Gilroy-Regular", size: 16 * stringMultiplier)
         emailField.textColor = lacivert
         emailField.backgroundColor = .clear
         emailField.layer.cornerRadius = 12
+        
+        emailField.attributedPlaceholder = NSAttributedString(
+            string: "Email Adresinizi Giriniz...",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray2]
+        )
         
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: emailField.frame.height))
         emailField.leftView = paddingView
@@ -62,13 +66,16 @@ class LoginVC: UIViewController {
         
         passField.layer.borderWidth = 1
         passField.layer.borderColor = lacivert.cgColor
-        passField.placeholder = "Şifrenizi Giriniz..."
         passField.frame = CGRect(x: 0.1 * screenWidth, y: 0.62 * screenHeight, width: 0.8 * screenWidth, height: 0.06 * screenHeight)
         passField.font = UIFont(name: "Gilroy-Regular", size: 16 * stringMultiplier)
         passField.textColor = lacivert
         passField.backgroundColor = .clear
         passField.layer.cornerRadius = 12
         passField.layer.masksToBounds = true
+        passField.attributedPlaceholder = NSAttributedString(
+            string: "Şifrenizi Giriniz...",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray2]
+        )
         
         let paddingView2 = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: passField.frame.height))
         passField.leftView = paddingView2
@@ -94,7 +101,7 @@ class LoginVC: UIViewController {
         
         
         eyeButton.backgroundColor = .clear
-        eyeButton.setBackgroundImage(UIImage(named: "eye" ), for: UIControl.State.normal)
+        eyeButton.setBackgroundImage(UIImage(named: "close_eye" ), for: UIControl.State.normal)
         eyeButton.frame = CGRect(x: 0.795 * screenWidth, y: 0.637 * screenHeight, width: 0.066 * screenWidth, height: 0.066 * screenWidth)
         view.addSubview(eyeButton)
         eyeButton.addTarget(self, action: #selector(eyeClicked), for: .touchUpInside)
@@ -163,7 +170,7 @@ class LoginVC: UIViewController {
                     self.navigationController?.popViewController(animated: true)
                 }else{
                     
-                    presentVC(currentVC: self, destinationVC: MainVC(), toDirection: .left)
+                    presentVC(currentVC: self, destinationVC: HomeVC(), toDirection: .left)
                     
                 }
                 

@@ -39,7 +39,7 @@ class Onboarding3VC: UIViewController {
         onboadingImg.contentMode = .scaleAspectFit
         
         let holderTitle = UILabel()
-        holderTitle.text = NSLocalizedString("Tüm Menü Elinin Altında", comment:"")
+        holderTitle.text = NSLocalizedString("Tüm Menü Elinin Altında!", comment:"")
         holderTitle.textAlignment = .center
         holderTitle.textColor = lacivert
         holderTitle.font = UIFont(name: "Gilroy-Bold", size: 22 * stringMultiplier)
@@ -48,12 +48,12 @@ class Onboarding3VC: UIViewController {
         view.addSubview(holderTitle)
         
         let holderSubTit = UILabel()
-        holderSubTit.text = NSLocalizedString("Burger, pizza, kavhe ve tatlı menüsünün tamamına ulaş içeriğini ve kalorisini anında öğren.", comment:"")
+        holderSubTit.text = NSLocalizedString("Size özel hazırlanmış menüye anında ulaş ve sipariş ver.", comment:"")
         holderSubTit.textAlignment = .center
         holderSubTit.textColor = lacivert
         holderSubTit.numberOfLines = 0
         holderSubTit.font = UIFont(name: "Gilroy-Light", size: 18 * stringMultiplier)
-        holderSubTit.frame = CGRect(x: 0.15 * screenWidth, y: 0.08 * screenHeight, width: 0.7 * screenWidth, height: 0.18 * screenHeight)
+        holderSubTit.frame = CGRect(x: 0.1 * screenWidth, y: 0.1 * screenHeight, width: 0.8 * screenWidth, height: 0.18 * screenHeight)
         view.addSubview(holderSubTit)
         
         let button = UIButton()
@@ -68,7 +68,7 @@ class Onboarding3VC: UIViewController {
 
     @objc func buttonClicked() {
         vibrate(style: .heavy)
-        presentVC(currentVC: self, destinationVC: Onboarding4VC(), toDirection: .right)
+        presentVC(currentVC: self, destinationVC: LoginVC(), toDirection: .right)
     
 }
 

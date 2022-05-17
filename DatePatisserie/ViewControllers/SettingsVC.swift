@@ -93,7 +93,7 @@ class SettingsVC: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
             mail.setToRecipients(["berkancaliskanios@gmail.com"])
-            mail.setMessageBody("<p>Merhaba uygulamada yardımcı olmanızı istediğim bir konu var.</p>", isHTML: true)
+            mail.setMessageBody("<p>Merhaba uygulama içerisinde size bildirmek istediğim bir konu var.</p>", isHTML: true)
             present(mail, animated: true)
         } else {
             vibrate(style: .heavy)

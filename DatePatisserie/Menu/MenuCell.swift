@@ -99,10 +99,10 @@ class MenuCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(with cell: Sandwich) {
-        foodImageView.image = UIImage(named: cell.imageName)
-        name.text = cell.productName
-        locationLabel.text = cell.price
-        professionLabel.text = cell.productStepper
+    func setup(with cell: Product) {
+        foodImageView.image = cell.image
+        name.text = cell.name
+        locationLabel.text = "\(cell.price)"
+      
     }
 }

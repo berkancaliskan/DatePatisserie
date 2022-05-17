@@ -50,12 +50,12 @@ class Onboarding2VC: UIViewController {
         view.addSubview(holderTitle)
         
         let holderSubTit = UILabel()
-        holderSubTit.text = NSLocalizedString("Anasayfanda günlük yemek menüsüne ulaş dilediğini sipariş ver.", comment:"")
+        holderSubTit.text = NSLocalizedString("Anasayfanda günlük yemek menüsüne ulaş ve dilediğini sipariş ver. Hazır olduğunda anında bildirim gelsin.", comment:"")
         holderSubTit.textAlignment = .center
         holderSubTit.textColor = lacivert
         holderSubTit.numberOfLines = 0
         holderSubTit.font = UIFont(name: "Gilroy-Light", size: 18 * stringMultiplier)
-        holderSubTit.frame = CGRect(x: 0.15 * screenWidth, y: 0.08 * screenHeight, width: 0.7 * screenWidth, height: 0.18 * screenHeight)
+        holderSubTit.frame = CGRect(x: 0.1 * screenWidth, y: 0.1 * screenHeight, width: 0.8 * screenWidth, height: 0.18 * screenHeight)
         view.addSubview(holderSubTit)
         
         let button = UIButton()

@@ -14,6 +14,8 @@ class DetailsVC: UIViewController {
     
  
 
+    var selectedProduct = Product()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,14 +49,13 @@ class DetailsVC: UIViewController {
         mainTitle.makeClassicLabel(x: 0.2, y: 0.063, w: 0.6, h: 0.04, text: "Detaylar", textColor: lacivert, textSize: 22, textAlignment: .center, addView: view)
         mainTitle.font = UIFont(name: "Gilroy-Bold", size: 22)
 
-        
         let productImg = UIImageView()
         productImg.image = UIImage(named: "sandvic_1")
         productImg.frame = CGRect(x: 0.14 * screenWidth, y: 0.132 * screenHeight, width: 0.72 * screenWidth, height: 0.26 * screenHeight)
         view.addSubview(productImg)
   
         let productName = UILabel()
-        productName.text = NSLocalizedString("Tavuklu Sandviç", comment: "")
+        productName.text = selectedProduct.name
         productName.textAlignment = .left
         productName.textColor = lacivert
         productName.numberOfLines = 0
@@ -141,7 +142,6 @@ class DetailsVC: UIViewController {
         addCartButton.layer.shadowRadius = 12
         addCartButton.addPulseEffect()
 
-     
         view.addSubview(addCartButton)
         addCartButton.addTarget(self, action: #selector(addCartButtonClicked), for: .touchUpInside)
         
@@ -151,6 +151,10 @@ class DetailsVC: UIViewController {
     @objc func addCartButtonClicked(){
         print("asasdasdas")
  
+        
+       
+        cartProducts.append(selectedProduct)
+        
         let animationBackground = UIView(frame: view.frame)
         animationBackground.backgroundColor = UIColor(white: 0, alpha: 0.75)
         view.addSubview(animationBackground)
@@ -168,7 +172,6 @@ class DetailsVC: UIViewController {
             animationView?.isHidden = true
             animationBackground.isHidden = true
             presentVC(currentVC: self, destinationVC: OrderVC(), toDirection: .down)
- 
             
       }
    

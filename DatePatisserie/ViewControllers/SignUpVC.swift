@@ -53,12 +53,15 @@ class SignUpVC: UIViewController {
         kayitEmailField.autocapitalizationType = .none
         kayitEmailField.layer.borderWidth = 1
         kayitEmailField.layer.borderColor = lacivert.cgColor
-        kayitEmailField.placeholder = "Email Adresinizi Giriniz..."
         kayitEmailField.frame = CGRect(x: 0.1 * screenWidth, y: 0.53 * screenHeight, width: 0.8 * screenWidth, height: 0.06 * screenHeight)
         kayitEmailField.font = UIFont(name: "Gilroy-Regular", size: 16 * stringMultiplier)
         kayitEmailField.textColor = lacivert
         kayitEmailField.backgroundColor = .clear
         kayitEmailField.layer.cornerRadius = 12
+        kayitEmailField.attributedPlaceholder = NSAttributedString(
+            string: "Email Adresinizi Giriniz...",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray]
+        )
         
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: kayitEmailField.frame.height))
         kayitEmailField.leftView = paddingView
@@ -68,13 +71,16 @@ class SignUpVC: UIViewController {
         kayitSifreTextField.autocapitalizationType = .none
         kayitSifreTextField.layer.borderWidth = 1
         kayitSifreTextField.layer.borderColor = lacivert.cgColor
-        kayitSifreTextField.placeholder = "Şifrenizi Girin"
         kayitSifreTextField.frame = CGRect(x: 0.1 * screenWidth, y: 0.60 * screenHeight, width: 0.8 * screenWidth, height: 0.06 * screenHeight)
         kayitSifreTextField.font = UIFont(name: "Gilroy-Regular", size: 16 * stringMultiplier)
         kayitSifreTextField.textColor = lacivert
         kayitSifreTextField.backgroundColor = .clear
         kayitSifreTextField.layer.cornerRadius = 12
         kayitSifreTextField.layer.masksToBounds = true
+        kayitSifreTextField.attributedPlaceholder = NSAttributedString(
+            string: "Şifrenizi Giriniz...",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray]
+        )
         
         let paddingView3 = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: kayitSifreTextField.frame.height))
         kayitSifreTextField.leftView = paddingView3
@@ -85,18 +91,22 @@ class SignUpVC: UIViewController {
         kayitSifreTextField2.autocapitalizationType = .none
         kayitSifreTextField2.layer.borderWidth = 1
         kayitSifreTextField2.layer.borderColor = lacivert.cgColor
-        kayitSifreTextField2.placeholder = "Şifrenizi Doğrulayın"
+ 
         kayitSifreTextField2.frame = CGRect(x: 0.1 * screenWidth, y: 0.67 * screenHeight, width: 0.8 * screenWidth, height: 0.06 * screenHeight)
         kayitSifreTextField2.font = UIFont(name: "Gilroy-Regular", size: 16 * stringMultiplier)
         kayitSifreTextField2.textColor = lacivert
         kayitSifreTextField2.backgroundColor = .clear
         kayitSifreTextField2.layer.cornerRadius = 12
         kayitSifreTextField2.layer.masksToBounds = true
-        
+        kayitSifreTextField2.attributedPlaceholder = NSAttributedString(string: "Şifrenizi Doğrulayın",
+                                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray])
+    
         let paddingView4 = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: kayitSifreTextField2.frame.height))
         kayitSifreTextField2.leftView = paddingView4
         kayitSifreTextField2.leftViewMode = UITextField.ViewMode.always
         kayitSifreTextField2.isSecureTextEntry = false
+ 
+    
         self.view.addSubview(kayitSifreTextField2)
         
         
@@ -136,7 +146,6 @@ class SignUpVC: UIViewController {
                                 viewController: self)
                 
             }else{
-                
                 
                 let successAlert = UIAlertController(title: "Başarılı",
                                                      message: "Kaydınız başarıyla oluşturuldu 🎉 ",
@@ -181,9 +190,9 @@ class SignUpVC: UIViewController {
                                                 message: "E-mail doğrulaması yapmalısın.",
                                                 viewController: self)
                                 
-                                error?.localizedDescription
+
                                 print("sdsfsdgd")
-                                print(error?.localizedDescription)
+                                print("dsfsesfse \(error?.localizedDescription)")
                                 
                             }
                             

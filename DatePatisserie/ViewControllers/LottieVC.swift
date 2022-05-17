@@ -33,7 +33,7 @@ class LottieVC: UIViewController {
         
         let _ = Timer.scheduledTimer(withTimeInterval: 3.9, repeats: false) { timer in
             
-        presentVCWithoutAnimation(currentVC: self, destinationVC: MainVC()) }
+        presentVCWithoutAnimation(currentVC: self, destinationVC: HomeVC()) }
              
 
     }

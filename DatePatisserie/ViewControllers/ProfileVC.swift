@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class ProfileVC: UIViewController {
     
@@ -16,10 +18,8 @@ class ProfileVC: UIViewController {
         
     }
     func createUI(){
-        
-        
+
         view.backgroundColor = UIColor.white
-        
         
         let mainTitle = UILabel()
         mainTitle.text = NSLocalizedString("Profil", comment: "")
@@ -31,10 +31,14 @@ class ProfileVC: UIViewController {
         view.addSubview(mainTitle)
         
         
-        let mainImg = UIImageView()
-        mainImg.image = UIImage(named: "profile_img")
-        mainImg.frame = CGRect(x: 0.3 * screenWidth, y: 0.146 * screenHeight, width: 0.4 * screenWidth, height: 0.4 * screenWidth)
-        view.addSubview(mainImg)
+        let profileImg = UIImageView()
+        profileImg.image = UIImage(named: "profile_img")
+        profileImg.frame = CGRect(x: 0.3 * screenWidth, y: 0.146 * screenHeight, width: 0.4 * screenWidth, height: 0.4 * screenWidth)
+        profileImg.layer.cornerRadius =  0.2 * screenWidth
+        profileImg.layer.borderWidth = 2
+        profileImg.layer.borderColor = yesil.cgColor
+        profileImg.layer.masksToBounds = true
+        view.addSubview(profileImg)
         
         let backButton = UIButton()
         backButton.makeBackButton(view: view, selector: #selector(backClicked), VC: self)
@@ -69,8 +73,6 @@ class ProfileVC: UIViewController {
         idText.layer.cornerRadius = 12
         view.addSubview(idText)
         
-        
-        
         let kartButton = UIButton()
         kartButton.backgroundColor = .clear
         kartButton.setTitleColor(.white, for: .normal)
@@ -81,14 +83,10 @@ class ProfileVC: UIViewController {
         kartButton.contentHorizontalAlignment.self = .center
         kartButton.layer.cornerRadius = 12
         kartButton.backgroundColor = yesil
-        
-        
         view.addSubview(kartButton)
         kartButton.addTarget(self, action: #selector(kahveKartiClicked), for: .touchUpInside)
         
-        
         let cikisButton  = UIButton()
-        
         cikisButton.setTitleColor(.white, for: .normal)
         cikisButton.setTitle("Çıkış", for: .normal)
         cikisButton.backgroundColor = lacivert
@@ -99,34 +97,30 @@ class ProfileVC: UIViewController {
         cikisButton.contentHorizontalAlignment.self = .center
         view.addSubview(cikisButton)
         
-        cikisButton.addTarget(self, action: #selector(kayitOlClicked), for: .touchUpInside)
+        cikisButton.addTarget(self, action: #selector(cikisClicked), for: .touchUpInside)
         
         // Do any additional setup after loading the view.
     }
     
-    
-    //
-    
-    
     @objc func backClicked() {
-        vibrate(style: .heavy)
         dismiss(animated: true, completion: nil)
-        
-        
     }
     
     
     @objc func kahveKartiClicked() {
         presentAsPageSheet(currentVC: self, destinationVC: QRCodeVC())
     }
-    @objc func kayitOlClicked() {
-        print("click")
+    @objc func cikisClicked() {
+        
+        do {
+            try Auth.auth().signOut()
+            presentVC(currentVC: self, destinationVC: LoginVC(), toDirection: .down)
+        } catch {
+            showCustomAlert(title: "Hata", message: "Çıkış işlemi sırasında bir hata oluştu!", viewController: self)
+        }
     }
     @objc func sifremiUnuttumClicked() {
-        print("click")
+        
     }
-    
-    
-    
     
 }

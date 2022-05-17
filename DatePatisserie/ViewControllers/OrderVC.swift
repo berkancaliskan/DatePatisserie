@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class OrderVC: UIViewController {
     
@@ -68,9 +69,21 @@ class OrderVC: UIViewController {
         confirmOrderButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
         confirmOrderButton.backgroundColor = lacivert
         confirmOrderButton.layer.cornerRadius = 13
+        confirmOrderButton.addTarget(self, action: #selector(confirmOrderClicked), for: .touchUpInside)
         view.addSubview(confirmOrderButton)
 
     }
+    
+    @objc func confirmOrderClicked(){
+
+        
+   
+        
+       
+        
+        
+    }
+    
     
     @objc func backClicked() {
         vibrate(style: .heavy)
@@ -81,12 +94,16 @@ class OrderVC: UIViewController {
 }
 extension OrderVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return cartProducts.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
             let cell = tableView.dequeueReusableCell(withIdentifier: OrderCell.cell, for: indexPath) as! OrderCell
             cell.backgroundColor = krem
+       
+        
+        //cell.price = cartProducts[indexPath.row].price
+        
             cell.layer.cornerRadius = 14
             return cell
     }

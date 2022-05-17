@@ -30,12 +30,14 @@ class MenuVC: UIViewController, UIScrollViewDelegate, UICollectionViewDataSource
     let button9 = UIButton()
     let button10 = UIButton()
     
-    
+    var arrFilteredProdcuts = [Product]()
     
     let space: CGFloat = 20.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        filterCategory(type: .sandwich)
         view.backgroundColor = UIColor.white
         setDefaultSize(view: self.view)
         setupViews()
@@ -44,7 +46,6 @@ class MenuVC: UIViewController, UIScrollViewDelegate, UICollectionViewDataSource
         createScrollButtons()
         buttonAddSubview()
         setupLayouts()
-        createSandwiches()
         collectionView.reloadData()
         
         
@@ -197,16 +198,25 @@ class MenuVC: UIViewController, UIScrollViewDelegate, UICollectionViewDataSource
     
     //   Cellerin kaç tane olacağını profile boyuna göre belirliyoruz.
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return sandwiches.count
+        return arrFilteredProdcuts.count
     }
     
     //   Cellere tıkladığımda ne olacağını yazıyoruz.
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         vibrate(style: .heavy)
-        presentAsPageSheet(currentVC: self, destinationVC: DetailsVC())
-        showCustomAlert(title: "Merhaba!" , message: "Seçilen item \(indexPath.row)", viewController: self)
+        let destinationVC = DetailsVC()
+        destinationVC.selectedProduct = arrFilteredProdcuts[indexPath.row]
+        presentAsPageSheet(currentVC: self, destinationVC: destinationVC)
         
+        
+    }
+    
+    func filterCategory(type : ProductType){
+        
+        
+        arrFilteredProdcuts = arrProducts.filter({$0.type == type })
+        collectionView.reloadData()
     }
     //   Cellere içeriğinde ne olacağını yazıyoruz.
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -237,7 +247,7 @@ class MenuVC: UIViewController, UIScrollViewDelegate, UICollectionViewDataSource
 //
 //            print("default case")
 //        }
-        var cellcontent = sandwiches[indexPath.row]
+        var cellcontent = arrFilteredProdcuts[indexPath.row]
         
         cell.setup(with: cellcontent)
         cell.contentView.backgroundColor = .white
@@ -300,6 +310,7 @@ class MenuVC: UIViewController, UIScrollViewDelegate, UICollectionViewDataSource
         deactiveAllButton()
         button1.activeButton()
         menuButtonCounter = 0
+        filterCategory(type: .sandwich)
         
     }
     @objc  func button2Clicked(){
@@ -308,6 +319,7 @@ class MenuVC: UIViewController, UIScrollViewDelegate, UICollectionViewDataSource
         deactiveAllButton()
         button2.activeButton()
         menuButtonCounter = 1
+        filterCategory(type: .burger)
     }
     @objc  func button3Clicked(){
         
