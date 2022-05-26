@@ -152,8 +152,9 @@ class DetailsVC: UIViewController {
         print("asasdasdas")
  
         
-       
-        cartProducts.append(selectedProduct)
+        let cartObject  = CartObject()
+        cartObject.product = selectedProduct
+        cartProducts.append(cartObject)
         
         let animationBackground = UIView(frame: view.frame)
         animationBackground.backgroundColor = UIColor(white: 0, alpha: 0.75)

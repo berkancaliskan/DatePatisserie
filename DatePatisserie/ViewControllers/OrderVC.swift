@@ -20,7 +20,7 @@ class OrderVC: UIViewController {
     var frame: CGRect = CGRect(x:0, y:0, width:0, height:0)
     var contentWidth : CGFloat = 0.0
     
-    let totalPrice: Double = 0.0
+    var totalPrice: Double = 0.0
     override func viewDidLoad() {
         super.viewDidLoad()
         setDefaultSize(view: view)
@@ -63,6 +63,8 @@ class OrderVC: UIViewController {
         totalPriceLabel.font = UIFont(name: "Gilroy-Bold", size: 20)
         view.addSubview(totalPriceLabel)
         
+        calculateTotalPrice()
+        
         confirmOrderButton.frame = CGRect(x: 0.2 * screenWidth, y: 0.8 * screenHeight, width: 0.6 * screenWidth, height: 0.12 * screenWidth)
         confirmOrderButton.setTitle("Siparişi Onayla", for: UIControl.State.normal)
         confirmOrderButton.titleLabel?.font = UIFont(name: "Gilroy-Bold", size: 20)
@@ -78,12 +80,41 @@ class OrderVC: UIViewController {
 
         
    
+        let orderUUID = UUID()
         
-       
+        let db = Firestore.firestore()
         
+        for cartProduct in cartProducts{
+            
+           
+            
+            db.collection("Orders").document("\(orderUUID)").collection("Products").document("\(cartProduct.product.id)").setData([
+                "productName": "\(cartProduct.product.name)",
+                "productPrice": "\(cartProduct.product.price)"])
+            
+            db.collection("Orders").document("\(orderUUID)").setData([
+                "orderStatus": "New Order",
+                "totalPrice": "\(totalPrice)",
+                "orderUUID": "\(orderUUID)",
+                "date": "\(Date())"])
+        }
+        
+      
+  
         
     }
     
+    
+    func calculateTotalPrice(){
+        
+        totalPrice = 0
+        
+        for cartProduct in cartProducts{
+            
+            totalPrice += Double(cartProduct.quantity) * Double(cartProduct.product.price)
+            totalPriceLabel.text = "Toplam Tutar:  ₺\(totalPrice)"
+        }
+    }
     
     @objc func backClicked() {
         vibrate(style: .heavy)
@@ -101,12 +132,30 @@ extension OrderVC: UITableViewDelegate, UITableViewDataSource{
             let cell = tableView.dequeueReusableCell(withIdentifier: OrderCell.cell, for: indexPath) as! OrderCell
             cell.backgroundColor = krem
        
-        
+        cell.productName.text = cartProducts[indexPath.row].product.name
+        cell.productPrice.text = "\(cartProducts[indexPath.row].product.price)"
+        cell.productImageView.image = cartProducts[indexPath.row].product.image
         //cell.price = cartProducts[indexPath.row].price
         
+        cell.productCounterLabel.text = String(cartProducts[indexPath.row].quantity)
+        cell.productCounter.tag = indexPath.row
+        cell.productCounter.addTarget(self, action: #selector(stepperValueChanged(_:)), for: .valueChanged)
             cell.layer.cornerRadius = 14
             return cell
     }
+    
+    
+    @objc func stepperValueChanged(_ sender:UIStepper!){
+        
+        cartProducts[sender.tag].quantity = Int(sender.value)
+        cartProducts[sender.tag].totalPrice = Double(cartProducts[sender.tag].quantity) * Double(cartProducts[sender.tag].product.price)
+
+        totalPriceLabel.text = "Toplam Tutar:  ₺\(totalPrice)"
+        calculateTotalPrice()
+        orderTableView.reloadData()
+ //       productCounterLabel.text = String(Int(productCounter.value))
+      }
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)

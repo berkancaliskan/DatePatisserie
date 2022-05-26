@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+
 
 class QRCodeVC: UIViewController {
     
@@ -22,14 +24,12 @@ class QRCodeVC: UIViewController {
     
     func createQrUI(){
         
-        
         view.backgroundColor = UIColor.white
         
         let downImg = UIImageView()
         downImg.image = UIImage(named: "down")
         downImg.frame = CGRect(x: 0.45 * screenWidth, y: 0.02 * screenHeight, width: 0.1 * screenWidth, height: 0.027 * screenHeight)
         view.addSubview(downImg)
-        
         
         let holderTitle = UILabel()
         holderTitle.text = NSLocalizedString("QR Kodunuz", comment:"")
@@ -49,7 +49,7 @@ class QRCodeVC: UIViewController {
         holderSubTit.frame = CGRect(x: 0.07 * screenWidth, y: 0.13 * screenHeight, width: 0.86 * screenWidth, height: 0.18 * screenHeight)
         view.addSubview(holderSubTit)
       
-        QRImg.image = generateQRCode(from: "berkancaliskan.com")
+        QRImg.image = generateQRCode(from: "\(Auth.auth().currentUser?.uid ?? "")")
         QRImg.frame = CGRect(x: (screenWidth - 0.3 * screenHeight)/2 ,
                                     y: 0.35 * screenHeight,
                                     width: 0.3 * screenHeight,

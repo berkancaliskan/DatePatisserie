@@ -51,6 +51,7 @@ class SettingsVC: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         
         let mainTitle = UILabel()
         mainTitle.makeClassicLabel(x: 0.2, y: 0.057, w: 0.6, h: 0.05, text: "Ayarlar", textColor: lacivert, textSize: 22, textAlignment: .center, addView: view)
+        mainTitle.font = UIFont(name: "Gilroy-Bold", size: 22)
         let settingSubText = UILabel()
         settingSubText.makeClassicLabel(x: 0.06, y: 0.03, w: 0.9, h: 0.05, text: "Date Atelier & Patiserrie & Eatery", textColor: lacivert, textSize: 16, textAlignment: .left, addView: scrollview)
         let privacyText = UILabel()
@@ -69,11 +70,9 @@ class SettingsVC: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         let generator = UIImpactFeedbackGenerator(style: .medium)
         generator.impactOccurred()
         
-        // Data to share
         let sharedText = NSLocalizedString("Bu uygulamayı çok beğendim.", comment: "")
         let sharedImage = UIImage(named: "AppIcon")
         
-        // set up activity view controller
         let items: [Any] = [sharedImage,sharedText]
         let activityViewController = UIActivityViewController(activityItems: items, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash

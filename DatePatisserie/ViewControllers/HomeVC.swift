@@ -10,16 +10,17 @@ import Firebase
 import FirebaseAuth
 import Lottie
 
-// QR okutuldukça artacak
-var qrCounter = 34
+// QR okutuldukça artacak içilen kahveye göre işlemleri yapıp bilgiyi sağlıyor.
+// Firebaseden gelecek değer
+var qrCounter = 55
 
 var icilenKahve = qrCounter % 10
 var kalankahve = 10 - qrCounter % 10
 
 
 //İsmin altında yazıların değişmesi için sayaç
-let infoText = UILabel()
 var textNumberCounter = 0
+let infoText = UILabel()
 
 
 let coffeeProgressImageView = UIImageView()
@@ -39,6 +40,23 @@ class HomeVC: UIViewController {
         createDailyMenuUI()
         changeText()
     
+    }
+    
+    func updateCoffeCount(){
+        
+//        let db = Firestore.firestore()
+//        let docRef = db.collection("Users")document(Auth.auth().currentUser?.uid)
+//
+//        docRef.getDocument { (document, error) in
+//            if let document = document, document.exists {
+//                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+//                print("Document data: \(dataDescription)")
+//            } else {
+//                print("Document does not exist")
+//            }
+//        }
+        
+        
     }
     func changeText(){
         let _ = Timer.scheduledTimer(withTimeInterval: 4, repeats: true) { timer in
@@ -242,7 +260,7 @@ class HomeVC: UIViewController {
         foodImage1.clipsToBounds = true
         foodImage1.backgroundColor = .white
         foodImage1.layer.cornerRadius = 16
-        foodImage1.image = UIImage(named: "sandvic_1")
+        foodImage1.image = UIImage(named: "makarna")
         foodImage1.contentMode = .scaleAspectFit
         dailyFoodBg.addSubview(foodImage1)
         
@@ -253,8 +271,8 @@ class HomeVC: UIViewController {
         foodImage2.clipsToBounds = true
         foodImage2.backgroundColor = .white
         foodImage2.layer.cornerRadius = 16
-        foodImage2.image = UIImage(named: "sandvic_2")
-        foodImage2.contentMode = .scaleAspectFill
+        foodImage2.image = UIImage(named: "salata")
+        foodImage2.contentMode = .scaleAspectFit
         dailyFoodBg.addSubview(foodImage2)
         
         let foodImage3 = UIImageView()
@@ -262,24 +280,17 @@ class HomeVC: UIViewController {
         foodImage3.clipsToBounds = true
         foodImage3.backgroundColor = .white
         foodImage3.layer.cornerRadius = 16
-        foodImage3.image = UIImage(named: "p3")
-        foodImage3.contentMode = .scaleAspectFill
+        foodImage3.image = UIImage(named: "corba")
+        foodImage3.contentMode = .scaleAspectFit
         dailyFoodBg.addSubview(foodImage3)
-        
-        
         
     }
     
     
     @objc func menuClicked() {
-        
+        vibrate(style: .medium)
         presentVC(currentVC: self, destinationVC: MenuVC(), toDirection: .left)
      
-}
-    
-    @objc func kahveClicked() {
-        
-        presentVC(currentVC: self, destinationVC: CoffeeVC(), toDirection: .right)
 }
     
     @objc func settingsClicked() {

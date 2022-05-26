@@ -17,6 +17,7 @@ class Product {
     var details: String = ""
     var image =  UIImage()
     var type = ProductType.none
+    let id = "\(UUID())"
 }
 
 
@@ -35,20 +36,6 @@ enum ProductType {
     case none
 }
 
-
-func createProduct(name : String, price : Float , kcal : Float ,ingredients : String , details : String , image : UIImage  , type : ProductType){
-    
-     let product = Product()
-    product.name  = name
-    product.price = price
-    product.kcal = kcal
-    product.ingredients = ingredients
-    product.details = details
-    product.image =  image
-    product.type = type
-    arrProducts.append(product)
-    
-}
 
 
 
