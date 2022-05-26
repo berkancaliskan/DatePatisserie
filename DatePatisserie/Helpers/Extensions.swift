@@ -140,4 +140,32 @@ extension UILabel{
 }
 
 
+extension UITextField{
+    
+    func makeCustomTextField(view: UIView, yPozition: CGFloat, isSecureText: Bool, placeholder: String ){
+        setDefaultSize(view: view)
+        self.autocapitalizationType = .none
+        self.layer.borderWidth = 1
+        self.layer.borderColor = lacivert.cgColor
+        self.frame = CGRect(x: 0.1 * screenWidth, y: yPozition * screenHeight, width: 0.8 * screenWidth, height: 0.06 * screenHeight)
+        self.font = UIFont(name: "Gilroy-Regular", size: 16 * stringMultiplier)
+        self.textColor = lacivert
+        self.backgroundColor = .clear
+        self.layer.cornerRadius = 12
+        self.layer.masksToBounds = true
+        self.attributedPlaceholder = NSAttributedString(
+            string: placeholder,
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray]
+        )
+        
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: self.frame.height))
+        self.leftView = paddingView
+        self.leftViewMode = UITextField.ViewMode.always
+        self.isSecureTextEntry = isSecureText
+        view.addSubview(self)
+        
+    }
+
+}
+
 
