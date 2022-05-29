@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSCameraUsageDescription</key>
-	<string>We need your camera access for scan QR.</string>
+	<string>QR kod okumak için kamera erişimine izin vermelisiniz.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Günlük yemek fotoğrafları girmek için fotoğraflara erişimine izin vermelisiniz.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Gilroy-Bold.otf</string>

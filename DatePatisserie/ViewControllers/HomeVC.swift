@@ -6,58 +6,52 @@
 //
 
 import UIKit
+import FirebaseFirestore
 import Firebase
 import FirebaseAuth
 import Lottie
 
 // QR okutuldukça artacak içilen kahveye göre işlemleri yapıp bilgiyi sağlıyor.
 // Firebaseden gelecek değer
-var qrCounter = 55
-
-var icilenKahve = qrCounter % 10
-var kalankahve = 10 - qrCounter % 10
 
 
 //İsmin altında yazıların değişmesi için sayaç
 var textNumberCounter = 0
 let infoText = UILabel()
-
-
 let coffeeProgressImageView = UIImageView()
+
+
+let foodImage1 = UIImageView()
+let foodImage2 = UIImageView()
+let foodImage3 = UIImageView()
+
+let detailsFoodContentLabel = UILabel()
+
+let dailyFoodNamesLabel = UILabel()
+
+
 
 class HomeVC: UIViewController {
     
+  
     var coffeeLottie: AnimationView?
-    
-
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       
         view.backgroundColor = .white
         setDefaultSize(view: view)
         createTopUI()
         setCoffeeProgress()
         createDailyMenuUI()
         changeText()
-    
+        
+        
+     
     }
     
-    func updateCoffeCount(){
-        
-//        let db = Firestore.firestore()
-//        let docRef = db.collection("Users")document(Auth.auth().currentUser?.uid)
-//
-//        docRef.getDocument { (document, error) in
-//            if let document = document, document.exists {
-//                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-//                print("Document data: \(dataDescription)")
-//            } else {
-//                print("Document does not exist")
-//            }
-//        }
-        
-        
-    }
+   
     func changeText(){
         let _ = Timer.scheduledTimer(withTimeInterval: 4, repeats: true) { timer in
             textNumberCounter += 1
@@ -84,26 +78,26 @@ class HomeVC: UIViewController {
         let settingsButton = UIButton()
         settingsButton.setBackgroundImage(UIImage(named: "settings_btn"), for: UIControl.State.normal)
         settingsButton.frame = CGRect(x: 0.05 * screenWidth, y: 0.065 * screenHeight, width: 0.084 * screenWidth, height: 0.084 * screenWidth)
-                view.addSubview(settingsButton)
+        view.addSubview(settingsButton)
         settingsButton.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
         settingsButton.addTarget(self, action: #selector(settingsClicked), for: UIControl.Event.touchUpInside)
         
         let profileButton = UIButton()
         profileButton.setBackgroundImage(UIImage(named: "profile"), for: UIControl.State.normal)
         profileButton.frame = CGRect(x: 0.865 * screenWidth, y: 0.065 * screenHeight, width: 0.084 * screenWidth, height: 0.084 * screenWidth)
-                view.addSubview(profileButton)
+        view.addSubview(profileButton)
         profileButton.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
         profileButton.addTarget(self, action: #selector(profileClicked), for: UIControl.Event.touchUpInside)
-    
+        
         let helloName = UILabel()
-        helloName.text = NSLocalizedString("Merhaba, Berkan\(profileInfo.name) ", comment: "")
+        helloName.text = NSLocalizedString("Merhaba, \(profileInfo.name) ", comment: "")
         helloName.textColor = lacivert
         helloName.textAlignment = .left
         helloName.numberOfLines = 0
         helloName.font = UIFont(name: "Gilroy-Bold", size: 21 * stringMultiplier)
         helloName.frame = CGRect(x: 0.05 * screenWidth, y: 0.125 * screenHeight, width: 0.7 * screenWidth, height: 0.05 * screenHeight)
         view.addSubview(helloName)
-    
+        
         
         infoText.text = "Profil sayfasından sana özel QR kodunu okutarak kahve kazanabilirsin!"
         infoText.textAlignment = .left
@@ -113,7 +107,7 @@ class HomeVC: UIViewController {
         infoText.frame = CGRect(x: 0.05 * screenWidth, y: 0.17 * screenHeight, width: 0.9 * screenWidth, height: 0.1 * screenHeight)
         view.addSubview(infoText)
         
-  
+        
         
         let menuButton = UIButton()
         menuButton.backgroundColor = yesil
@@ -132,13 +126,18 @@ class HomeVC: UIViewController {
         view.addSubview(menuButton)
         menuButton.addTarget(self, action: #selector(menuClicked), for: UIControl.Event.touchUpInside)
         
-
-
+        
+        
     }
     
     func setCoffeeProgress(){
         
-    
+        
+        
+        let icilenKahve = profileInfo.qrCounter % 10
+        let kalankahve = 10 - profileInfo.qrCounter % 10
+
+      
         let coffeeProgressBg = UIView()
         coffeeProgressBg.frame = CGRect(x: 0.05 * screenWidth, y: 0.27 * screenHeight, width: 0.9 * screenWidth, height: 0.156 * screenHeight)
         
@@ -148,33 +147,35 @@ class HomeVC: UIViewController {
         view.addSubview(coffeeProgressBg)
         
         coffeeLottie = .init(name: "coffee_lottie")
-        coffeeLottie?.frame =  CGRect(x: 114, y: 25, width: 94, height: 94)
+        coffeeLottie?.frame =  CGRect(x: 114, y: (0.284 * screenHeight) , width: 94, height: 94)
         coffeeLottie?.play()
         coffeeLottie?.loopMode = .loop
-        coffeeProgressBg.addSubview(coffeeLottie!)
+        view.addSubview(coffeeLottie!)
         coffeeLottie?.backgroundBehavior = .pauseAndRestore
         
-
-        coffeeProgressImageView.frame = CGRect(x: 20, y: 22, width: 106, height: 106)
+        
+        coffeeProgressImageView.frame = CGRect(x: 0.084 * screenWidth, y: 0.305 * screenHeight , width: 0.18 * screenWidth, height: 0.18 * screenWidth)
+        
         coffeeProgressImageView.clipsToBounds = true
         coffeeProgressImageView.contentMode = .scaleAspectFill
-        coffeeProgressBg.addSubview(coffeeProgressImageView)
+        view.addSubview(coffeeProgressImageView)
+        
+      
         
         let coffeInfoText = UILabel()
         coffeInfoText.text = NSLocalizedString("Hediye kahvene son \n\(kalankahve) kahve kaldı! ", comment: "")
         coffeInfoText.textAlignment = .left
         coffeInfoText.textColor = lacivert
         coffeInfoText.numberOfLines = 0
-        coffeInfoText.font = UIFont(name: "Gilroy-Regular", size: 16 * stringMultiplier)
-        coffeInfoText.frame = CGRect(x: 200, y: 25, width: 170, height: 94)
-        coffeeProgressBg.addSubview(coffeInfoText)
+        coffeInfoText.font = UIFont(name: "Gilroy-Regular", size: 17.3 * stringMultiplier)
+        coffeInfoText.frame = CGRect(x: 0.5 * screenWidth, y: 0.284 * screenHeight , width: 170, height: 94)
+        view.addSubview(coffeInfoText)
         
-        
+       
         switch icilenKahve {
-    
+            
         case 0:
-            coffeInfoText.text = NSLocalizedString("Tebrikler Kahve Kazandınız!", comment: "")
-            coffeeProgressImageView.image = UIImage(named: "p10")
+            coffeeProgressImageView.image = UIImage(named: "p0")
         case 1:
             coffeeProgressImageView.image = UIImage(named: "p1")
         case 2:
@@ -195,11 +196,8 @@ class HomeVC: UIViewController {
             coffeeProgressImageView.image = UIImage(named: "p9")
         default:
             coffeeProgressImageView.image = UIImage(named: "p10")
+            coffeInfoText.text = NSLocalizedString("Tebrikler Kahve Kazandınız!", comment: "")
         }
-        
-
-
-
         
     }
     
@@ -223,7 +221,7 @@ class HomeVC: UIViewController {
         dateLabel.textColor = lacivert
         dateLabel.numberOfLines = 0
         dateLabel.font = UIFont(name: "Gilroy-Regular", size: 12.7 * stringMultiplier)
-        dateLabel.frame = CGRect(x: 16, y: 44, width: 170, height: 33)
+        dateLabel.frame = CGRect(x: 330, y: 10, width: 88, height: 33)
         dailyFoodBg.addSubview(dateLabel)
         
         
@@ -233,76 +231,104 @@ class HomeVC: UIViewController {
         dailyFoodTitle.textColor = lacivert
         dailyFoodTitle.numberOfLines = 0
         dailyFoodTitle.font = UIFont(name: "Gilroy-Bold", size: 18 * stringMultiplier)
-        dailyFoodTitle.frame = CGRect(x: 16, y: 20, width: 170, height: 33)
+        dailyFoodTitle.frame = CGRect(x: 16, y: 10, width: 170, height: 33)
         dailyFoodBg.addSubview(dailyFoodTitle)
         
-        let detailsTitle = UILabel()
-        detailsTitle.text = NSLocalizedString("Detaylar ", comment: "")
-        detailsTitle.textAlignment = .left
-        detailsTitle.textColor = lacivert
-        detailsTitle.numberOfLines = 0
-        detailsTitle.font = UIFont(name: "Gilroy-Bold", size: 18 * stringMultiplier)
-        detailsTitle.frame = CGRect(x: 16, y: 216, width: 390, height: 32)
-        dailyFoodBg.addSubview(detailsTitle)
         
-
-        let detailsContent = UILabel()
-        detailsContent.text = NSLocalizedString("Dağ Kekikli Makarna, Mevsim Salatası, Domates Çorbası ", comment: "")
-        detailsContent.textAlignment = .left
-        detailsContent.textColor = lacivert
-        detailsContent.numberOfLines = 0
-        detailsContent.font = UIFont(name: "Gilroy-Regular", size: 16 * stringMultiplier)
-        detailsContent.frame = CGRect(x: 16, y: 240, width: 390, height: 56)
-        dailyFoodBg.addSubview(detailsContent)
         
-        let foodImage1 = UIImageView()
-        foodImage1.frame = CGRect(x: 16, y: 86, width: 120, height: 120)
+        let foodNamesTitle = UILabel()
+        foodNamesTitle.text = NSLocalizedString("Yemekler", comment: "")
+        foodNamesTitle.textAlignment = .left
+        foodNamesTitle.textColor = lacivert
+        foodNamesTitle.numberOfLines = 0
+        foodNamesTitle.font = UIFont(name: "Gilroy-Bold", size: 18 * stringMultiplier)
+        foodNamesTitle.frame = CGRect(x: 16, y: 170, width: 390, height: 32)
+        dailyFoodBg.addSubview(foodNamesTitle)
+        
+        
+        
+        dailyFoodNamesLabel.text = "..."
+        dailyFoodNamesLabel.textAlignment = .left
+        dailyFoodNamesLabel.textColor = lacivert
+        dailyFoodNamesLabel.numberOfLines = 0
+        dailyFoodNamesLabel.font = UIFont(name: "Gilroy-Regular", size: 18 * stringMultiplier)
+        dailyFoodNamesLabel.frame = CGRect(x: 16, y: 185, width: 390, height: 56)
+        dailyFoodBg.addSubview(dailyFoodNamesLabel)
+        
+        
+        
+        let foodDetailsTitle = UILabel()
+        foodDetailsTitle.text = NSLocalizedString("Detaylar ", comment: "")
+        foodDetailsTitle.textAlignment = .left
+        foodDetailsTitle.textColor = lacivert
+        foodDetailsTitle.numberOfLines = 0
+        foodDetailsTitle.font = UIFont(name: "Gilroy-Bold", size: 18 * stringMultiplier)
+        foodDetailsTitle.frame = CGRect(x: 16, y: 230, width: 390, height: 32)
+        dailyFoodBg.addSubview(foodDetailsTitle)
+        
+        
+        
+        
+        detailsFoodContentLabel.text = NSLocalizedString("...", comment: "")
+        detailsFoodContentLabel.textAlignment = .left
+        detailsFoodContentLabel.textColor = lacivert
+        detailsFoodContentLabel.numberOfLines = 0
+        detailsFoodContentLabel.font = UIFont(name: "Gilroy-Regular", size: 16 * stringMultiplier)
+        detailsFoodContentLabel.frame = CGRect(x: 16, y: 245, width: 390, height: 56)
+        dailyFoodBg.addSubview(detailsFoodContentLabel)
+        
+        
+        
+        
+        
+        foodImage1.frame = CGRect(x: 0.05 * screenWidth, y: 50, width: 0.28 * screenWidth, height: 0.28 * screenWidth)
         foodImage1.clipsToBounds = true
         foodImage1.backgroundColor = .white
         foodImage1.layer.cornerRadius = 16
-        foodImage1.image = UIImage(named: "makarna")
+        foodImage1.image = UIImage(named: "daily_loading")
         foodImage1.contentMode = .scaleAspectFit
         dailyFoodBg.addSubview(foodImage1)
-        
         print(dailyFoodBg.frame.width)
         
-        let foodImage2 = UIImageView()
-        foodImage2.frame = CGRect(x: 154, y: 86, width: 120, height: 120)
+        
+        foodImage2.frame = CGRect(x: 0.5 * screenWidth - 0.14 * screenWidth, y: 50, width: 0.28 * screenWidth, height: 0.28 * screenWidth)
         foodImage2.clipsToBounds = true
         foodImage2.backgroundColor = .white
         foodImage2.layer.cornerRadius = 16
-        foodImage2.image = UIImage(named: "salata")
+        foodImage2.image = UIImage(named: "daily_loading")
         foodImage2.contentMode = .scaleAspectFit
         dailyFoodBg.addSubview(foodImage2)
         
-        let foodImage3 = UIImageView()
-        foodImage3.frame = CGRect(x: 292, y: 86, width: 120, height: 120)
+        
+        foodImage3.frame = CGRect(x: 0.67 * screenWidth, y: 50, width: 0.28 * screenWidth, height: 0.28 * screenWidth)
         foodImage3.clipsToBounds = true
         foodImage3.backgroundColor = .white
         foodImage3.layer.cornerRadius = 16
-        foodImage3.image = UIImage(named: "corba")
+        foodImage3.image = UIImage(named: "daily_loading")
         foodImage3.contentMode = .scaleAspectFit
         dailyFoodBg.addSubview(foodImage3)
         
     }
     
+   
+    
     
     @objc func menuClicked() {
         vibrate(style: .medium)
         presentVC(currentVC: self, destinationVC: MenuVC(), toDirection: .left)
-     
-}
+        
+    }
     
     @objc func settingsClicked() {
         
         vibrate(style: .medium)
         presentVC(currentVC: self, destinationVC: SettingsVC(), toDirection: .left)
-}
+    }
     @objc func profileClicked() {
         
         vibrate(style: .medium)
         presentVC(currentVC: self, destinationVC: ProfileVC(), toDirection: .right)
-}
-  
+    }
+    
     
 }

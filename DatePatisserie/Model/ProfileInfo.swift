@@ -17,6 +17,8 @@ class ProfileInfo {
     var phone: String = ""
     var password: String = ""
     var profilePhoto = UIImage()
+    var qrCounter: Int = 0
+    var stringProfilePhoto: String = ""
 }
 
 var profileInfo =  ProfileInfo()

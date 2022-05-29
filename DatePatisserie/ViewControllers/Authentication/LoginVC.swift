@@ -34,6 +34,7 @@ class LoginVC: UIViewController {
         mainImg.image = UIImage(named: "logo_original")
         mainImg.frame = CGRect(x: 0.17 * screenWidth, y: 0.14 * screenHeight, width: 0.66 * screenWidth, height: 0.3 * screenHeight)
         view.addSubview(mainImg)
+        mainImg.contentMode = .scaleAspectFit
         
     
         let kayıtYonlendirmeText  = UILabel()
@@ -43,60 +44,19 @@ class LoginVC: UIViewController {
         kayıtYonlendirmeText.font = UIFont(name: "Gilroy-Medium", size: 18 * stringMultiplier)
         kayıtYonlendirmeText.frame = CGRect(x: 0.1 * screenWidth, y: 0.5 * screenHeight, width: 0.8 * screenWidth, height: 0.05 * screenHeight)
         view.addSubview(kayıtYonlendirmeText)
+    
+        emailField.makeCustomTextField(view: view, yPozition: 0.55, isSecureText: false, placeholder: "Email adresinizi giriniz...")
         
-        
-        emailField.layer.borderWidth = 1
-        emailField.autocapitalizationType = .none
-        emailField.layer.borderColor = lacivert.cgColor
-        emailField.frame = CGRect(x: 0.1 * screenWidth, y: 0.55 * screenHeight, width: 0.8 * screenWidth, height: 0.06 * screenHeight)
-        emailField.font = UIFont(name: "Gilroy-Regular", size: 16 * stringMultiplier)
-        emailField.textColor = lacivert
-        emailField.backgroundColor = .clear
-        emailField.layer.cornerRadius = 12
-        
-        emailField.attributedPlaceholder = NSAttributedString(
-            string: "Email Adresinizi Giriniz...",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray2]
-        )
-        
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: emailField.frame.height))
-        emailField.leftView = paddingView
-        emailField.leftViewMode = UITextField.ViewMode.always
-        self.view.addSubview(emailField)
-        
-        
-        passField.layer.borderWidth = 1
-        passField.layer.borderColor = lacivert.cgColor
-        passField.frame = CGRect(x: 0.1 * screenWidth, y: 0.62 * screenHeight, width: 0.8 * screenWidth, height: 0.06 * screenHeight)
-        passField.font = UIFont(name: "Gilroy-Regular", size: 16 * stringMultiplier)
-        passField.textColor = lacivert
-        passField.backgroundColor = .clear
-        passField.layer.cornerRadius = 12
-        passField.layer.masksToBounds = true
-        passField.attributedPlaceholder = NSAttributedString(
-            string: "Şifrenizi Giriniz...",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray2]
-        )
-        
-        let paddingView2 = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: passField.frame.height))
-        passField.leftView = paddingView2
-        passField.leftViewMode = UITextField.ViewMode.always
-        passField.isSecureTextEntry = true
-        self.view.addSubview(passField)
-        
+        passField.makeCustomTextField(view: view, yPozition: 0.62, isSecureText: true, placeholder: "Şifrenizi giriniz...")
+         
         
         let girisButton  = UIButton()
         girisButton.backgroundColor = yesil
         girisButton.setTitleColor(.white, for: .normal)
         girisButton.setTitle("Giriş Yap", for: .normal)
-        
-        
         girisButton.frame = CGRect(x: 0.1 * screenWidth, y: 0.75 * screenHeight, width: 0.8 * screenWidth, height: 0.06 * screenHeight)
-        girisButton.contentVerticalAlignment.self = .center
         girisButton.layer.cornerRadius = 10
         girisButton.titleLabel?.font = UIFont(name: "Gilroy-Regular", size: 16 * stringMultiplier)
-        girisButton.contentHorizontalAlignment.self = .center
-        
         view.addSubview(girisButton)
         girisButton.addTarget(self, action: #selector(girisButtonClicked), for: .touchUpInside)
         
@@ -112,10 +72,8 @@ class LoginVC: UIViewController {
         sifremiUnuttum.setTitleColor(lacivert, for: .normal)
         sifremiUnuttum.setTitle("Şifremi Unuttum", for: .normal)
         sifremiUnuttum.frame = CGRect(x: 0.08 * screenWidth, y: 0.69 * screenHeight, width: 0.3 * screenWidth, height: 0.03 * screenHeight)
-        sifremiUnuttum.contentVerticalAlignment.self = .center
         sifremiUnuttum.layer.cornerRadius = 12
         sifremiUnuttum.titleLabel?.font = UIFont(name: "Gilroy-Medium", size: 12 * stringMultiplier)
-        sifremiUnuttum.contentHorizontalAlignment.self = .center
         view.addSubview(sifremiUnuttum)
         sifremiUnuttum.addTarget(self, action: #selector(sifremiUnuttumClicked), for: .touchUpInside)
         
@@ -134,7 +92,6 @@ class LoginVC: UIViewController {
         kayitOl.titleLabel?.font = UIFont(name: "Gilroy-Bold", size: 18 * stringMultiplier)
         kayitOl.contentHorizontalAlignment.self = .center
         view.addSubview(kayitOl)
-        
         kayitOl.addTarget(self, action: #selector(kayitOlClicked), for: .touchUpInside)
         
         
@@ -165,10 +122,13 @@ class LoginVC: UIViewController {
     
     
     @objc func girisButtonClicked() {
-        vibrate(style: .heavy)
+      
+        profileInfo.mailaddress = emailField.text!
+        profileInfo.password = passField.text!
         
         if emailField.text != "" && passField.text != ""  {
-            Auth.auth().signIn(withEmail: emailField.text!, password: passField.text!) { authDataResult, error in
+            
+            Auth.auth().signIn(withEmail: profileInfo.mailaddress, password: profileInfo.password) { authDataResult, error in
                 if error != nil{
                     showCustomAlert(title: NSLocalizedString("Hata!", comment: ""), message: NSLocalizedString(error?.localizedDescription ?? "Hata oluştu, lütfen daha sonra tekrar deneyiniz.", comment: ""), viewController: self)
                     self.navigationController?.popViewController(animated: true)
@@ -194,8 +154,6 @@ class LoginVC: UIViewController {
         presentAsPageSheet(currentVC: self, destinationVC: SignUpVC())
         
     }
-    
-    
     
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.

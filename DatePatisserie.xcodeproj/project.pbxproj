@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0711509F281E85C400C8A932 /* OrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0711509E281E85C400C8A932 /* OrderVC.swift */; };
 		0727233028215F95004D8A89 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727232628215F8B004D8A89 /* MenuVC.swift */; };
+		072D79EC28417D3800FEAAA3 /* AdminOrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072D79EB28417D3800FEAAA3 /* AdminOrderVC.swift */; };
 		074C2E96283195C60013B756 /* added_cart.json in Resources */ = {isa = PBXBuildFile; fileRef = 074C2E95283195C60013B756 /* added_cart.json */; };
 		075401E72803036C003AD065 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075401E62803036C003AD065 /* HomeVC.swift */; };
 		077135F227EC98A1004C055E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077135F127EC98A1004C055E /* AppDelegate.swift */; };
@@ -89,6 +90,7 @@
 /* Begin PBXFileReference section */
 		0711509E281E85C400C8A932 /* OrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderVC.swift; sourceTree = "<group>"; };
 		0727232628215F8B004D8A89 /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		072D79EB28417D3800FEAAA3 /* AdminOrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminOrderVC.swift; sourceTree = "<group>"; };
 		074C2E95283195C60013B756 /* added_cart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = added_cart.json; sourceTree = "<group>"; };
 		075401E62803036C003AD065 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		077135EE27EC98A1004C055E /* DatePatisserie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatePatisserie.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -294,6 +296,7 @@
 			children = (
 				43238035283551CB003694D5 /* Order.swift */,
 				4323803128354E88003694D5 /* AdminOrderCell.swift */,
+				072D79EB28417D3800FEAAA3 /* AdminOrderVC.swift */,
 			);
 			path = AdminOrder;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 				078B81CA27EDA7740095CE56 /* Onboarding1VC.swift in Sources */,
 				0790327B2833EB2300D615EB /* ProductHandler.swift in Sources */,
 				07FEA92227F1BC5C00546E31 /* Extensions.swift in Sources */,
+				072D79EC28417D3800FEAAA3 /* AdminOrderVC.swift in Sources */,
 				077475C8280C3DC800447BE5 /* QRCodeVC.swift in Sources */,
 				0771361227EC990A004C055E /* LoginVC.swift in Sources */,
 				0711509F281E85C400C8A932 /* OrderVC.swift in Sources */,

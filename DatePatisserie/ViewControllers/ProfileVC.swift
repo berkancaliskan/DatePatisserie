@@ -33,7 +33,7 @@ class ProfileVC: UIViewController {
         
         
         let profileImg = UIImageView()
-        profileImg.image = UIImage(named: "berkan_profile")
+        profileImg.image = profileInfo.profilePhoto 
         profileImg.frame = CGRect(x: 0.3 * screenWidth, y: 0.146 * screenHeight, width: 0.4 * screenWidth, height: 0.4 * screenWidth)
         profileImg.layer.cornerRadius =  0.2 * screenWidth
         profileImg.layer.borderWidth = 2
@@ -47,7 +47,7 @@ class ProfileVC: UIViewController {
         
         let nameText  = UILabel()
         nameText.textAlignment = .center
-        nameText.text = "\(currentUser?.displayName ?? "Berkan Çalışkan")"
+        nameText.text = "\(Auth.auth().currentUser?.displayName ?? "")"
         nameText.textColor = .black
         nameText.font = UIFont(name: "Gilroy-Medium", size: 20 * stringMultiplier)
         nameText.layer.cornerRadius = 12

@@ -13,6 +13,9 @@ import UIKit
 var arrProducts  = [Product]()
 var cartProducts = [CartObject]()
 
+let uDefaults = UserDefaults.standard
+
+
 func unwrapToString(variable : Any) -> String{
     
     if let unwrapped = variable as? String{

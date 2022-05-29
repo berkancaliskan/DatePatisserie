@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
 
 class QRCodeVC: UIViewController {
@@ -48,6 +49,18 @@ class QRCodeVC: UIViewController {
         holderSubTit.font = UIFont(name: "Gilroy-Light", size: 16 * stringMultiplier)
         holderSubTit.frame = CGRect(x: 0.07 * screenWidth, y: 0.13 * screenHeight, width: 0.86 * screenWidth, height: 0.18 * screenHeight)
         view.addSubview(holderSubTit)
+        
+        let qrUserId = UILabel()
+        qrUserId.text = NSLocalizedString("\(Auth.auth().currentUser?.uid ?? "")", comment:"")
+        qrUserId.textAlignment = .center
+        qrUserId.textColor = lacivert
+        qrUserId.numberOfLines = 0
+        qrUserId.font = UIFont(name: "Gilroy-Light", size: 16 * stringMultiplier)
+        qrUserId.frame = CGRect(x: 0.07 * screenWidth, y: 0.18 * screenHeight, width: 0.86 * screenWidth, height: 0.18 * screenHeight)
+        view.addSubview(qrUserId)
+        
+        
+        
       
         QRImg.image = generateQRCode(from: "\(Auth.auth().currentUser?.uid ?? "")")
         QRImg.frame = CGRect(x: (screenWidth - 0.3 * screenHeight)/2 ,

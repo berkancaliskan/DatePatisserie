@@ -69,6 +69,7 @@ class Onboarding1VC: UIViewController {
     }
 
     @objc func buttonClicked() {
+        uDefaults.setValue("user", forKey: "user")
         vibrate(style: .heavy)
         presentVC(currentVC: self, destinationVC: Onboarding2VC(), toDirection: .right)
     

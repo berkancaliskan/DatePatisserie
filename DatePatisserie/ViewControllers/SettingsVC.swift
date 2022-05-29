@@ -40,7 +40,7 @@ class SettingsVC: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         let rateButton = UIButton()
         rateButton.setSettingsButton(yPozition: 0.18, iconName: "star" , title: "Uygulamayı Puanla", selector: #selector(rateClicked), addView: scrollview, VC: self )
         let contactButton = UIButton()
-        contactButton.setSettingsButton(yPozition: 0.28, iconName: "mail" , title: "İletişime Geç", selector: #selector(privacyClicked), addView: scrollview, VC: self )
+        contactButton.setSettingsButton(yPozition: 0.28, iconName: "mail" , title: "İletişime Geç", selector: #selector(contactClicked), addView: scrollview, VC: self )
         let privacyButton = UIButton()
         privacyButton.setSettingsButton(yPozition: 0.43, iconName: "privacy" , title: "Gizlilik Sözleşmesi", selector: #selector(privacyClicked), addView: scrollview, VC: self )
         let termsButton = UIButton()

@@ -7,11 +7,10 @@
 
 import UIKit
 
-class AdminMainVC: UIViewController, UITableViewDelegate, UITableViewDataSource
-{
+class AdminMainVC: UIViewController{
     
     
-    let tableView = UITableView()
+    let scrollview = UIScrollView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,22 +19,48 @@ class AdminMainVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         
     }
     
+ 
     
     func createUI(){
         view.backgroundColor = .white
         
-     
-        createTableView()
-        createButtons()
-
-    }
-    
-    func createButtons(){
+        let logo = UIImageView()
+        logo.image = UIImage(named: "logo_original")
+        logo.frame = CGRect(x: 0.25 * screenWidth, y: 0.18 * screenHeight, width: 0.5 * screenWidth, height: 0.5 * screenWidth)
+        view.addSubview(logo)
+        logo.contentMode = .scaleAspectFit
+        
+        let title = UILabel()
+        title.text = NSLocalizedString("Yönetici Modu", comment: "")
+        title.textAlignment = .center
+        title.textColor = lacivert
+        title.numberOfLines = 0
+        title.font = UIFont(name: "Gilroy-Bold", size: 24)
+        title.frame = CGRect(x: 0.2 * screenWidth, y: 0.06 * screenHeight, width: 0.6 * screenWidth, height: 0.05 * screenHeight)
+        view.addSubview(title)
+        
+        let exitButton  = UIButton()
+        exitButton.setBackgroundImage(UIImage(named: "exit"), for: .normal)
+        exitButton.frame = CGRect(x: 0.85 * screenWidth, y: 0.066 * screenHeight, width: 0.05 * screenWidth, height: 0.05 * screenWidth)
+        view.addSubview(exitButton)
+        exitButton.addTarget(self, action: #selector(exitClicked), for: .touchUpInside)
+        
+        
+        let orderButton  = UIButton()
+        orderButton.setTitleColor(.white, for: .normal)
+        orderButton.setTitle("Siparişleri Görüntüle", for: .normal)
+        orderButton.frame = CGRect(x: 0.1 * screenWidth, y: 0.55 * screenHeight, width: 0.8 * screenWidth, height: 0.08 * screenHeight)
+        orderButton.layer.cornerRadius = 12
+        orderButton.backgroundColor = yesil
+        orderButton.titleLabel?.font = UIFont(name: "Gilroy-Regular", size: 18)
+        view.addSubview(orderButton)
+        orderButton.addTarget(self, action: #selector(toOrderClicked), for: .touchUpInside)
+        
         
         let toDailyMealButton  = UIButton()
         toDailyMealButton.setTitleColor(.white, for: .normal)
         toDailyMealButton.setTitle("Günlük Yemek Gir", for: .normal)
-        toDailyMealButton.frame = CGRect(x: 0.1 * screenWidth, y: 0.75 * screenHeight, width: 0.8 * screenWidth, height: 0.08 * screenHeight)
+        toDailyMealButton.frame = CGRect(x: 0.1 * screenWidth, y: 0.65 * screenHeight, width: 0.8 * screenWidth, height: 0.08 * screenHeight)
         toDailyMealButton.layer.cornerRadius = 12
         toDailyMealButton.backgroundColor = yesil
         toDailyMealButton.titleLabel?.font = UIFont(name: "Gilroy-Regular", size: 18)
@@ -45,86 +70,47 @@ class AdminMainVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         let QRPageButton  = UIButton()
         QRPageButton.setTitleColor(.white, for: .normal)
         QRPageButton.setTitle("QR Sayfasına Git", for: .normal)
-        QRPageButton.frame = CGRect(x: 0.1 * screenWidth, y: 0.85 * screenHeight, width: 0.8 * screenWidth, height: 0.08 * screenHeight)
+        QRPageButton.frame = CGRect(x: 0.1 * screenWidth, y: 0.75 * screenHeight, width: 0.8 * screenWidth, height: 0.08 * screenHeight)
         QRPageButton.layer.cornerRadius = 12
         QRPageButton.backgroundColor = yesil
         QRPageButton.titleLabel?.font = UIFont(name: "Gilroy-Regular", size: 18)
         view.addSubview(QRPageButton)
         QRPageButton.addTarget(self, action: #selector(toQRClicked), for: .touchUpInside)
         
-        
+    }
+    
+    
+    @objc func toOrderClicked() {
+        presentVC(currentVC: self, destinationVC: AdminOrderVC(), toDirection: .right)
     }
     @objc func toDailyClicked() {
-        presentVC(currentVC: self, destinationVC: DailyMealVC(), toDirection: .left)
+        presentVC(currentVC: self, destinationVC: DailyMealVC(), toDirection: .right)
     }
     
     @objc func toQRClicked() {
-        presentVC(currentVC: self, destinationVC: AdminQRScanner(), toDirection: .left)
+        presentVC(currentVC: self, destinationVC: AdminQRScanner(), toDirection: .right)
     }
-    func createTableView(){
+    @objc func exitClicked(){
         
+        let exitAlert = UIAlertController(title: "Çıkış",
+                                             message: "Yönetici modundan çıkış yapmak istediğinize emin misiniz?",
+                                             preferredStyle: UIAlertController.Style.alert)
+        exitAlert.addAction(UIAlertAction(title: "Çıkış Yap",
+                                             style: .default,
+                                             handler: { (action: UIAlertAction!) in
+            
+            presentVC(currentVC: self, destinationVC: LoginVC(), toDirection: .down)
+            
+        }))
         
-        view.addSubview(tableView)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(AdminOrderCell.self, forCellReuseIdentifier: "AdminOrderCell")
-        tableView.frame = CGRect(x: 0, y: 0.04 * screenHeight, width: screenWidth, height: 0.7 * screenHeight)
-        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
-    
+        exitAlert.addAction(UIAlertAction(title: "İptal",
+                                             style: .default,
+                                             handler: { (action: UIAlertAction!) in
+                print("cancel clicked - close alert")
+        }))
+        
+        self.present(exitAlert, animated: true, completion: nil)
+        
     }
-    
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrOrders.count
-    }
-
-  
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AdminOrderCell", for: indexPath) as! AdminOrderCell
-        
-        
-        print("arrOrders")
-        print(arrOrders)
-      
-        cell.lblProductName.textColor = .black
-        cell.lblProductName.text = arrOrders[indexPath.row].products[indexPath.row].name
-        cell.lblProductName.numberOfLines = 2
-        cell.lblProductName.textAlignment = .left
-        cell.lblProductName.font = UIFont(name: "Gilroy-Book", size: 16)
-        cell.lblProductName.frame = CGRect(x: 0.05 * screenWidth, y: 10, width: 0.8 * screenWidth, height: 30)
-        
-        cell.lblProductPrice.textColor = .black
-        cell.lblProductPrice.text = "\(arrOrders[indexPath.row].totalPrice)"
-        cell.lblProductPrice.numberOfLines = 2
-        cell.lblProductPrice.textAlignment = .left
-        cell.lblProductPrice.font = UIFont(name: "Gilroy-Book", size: 16)
-        cell.lblProductPrice.frame = CGRect(x: 0.05 * screenWidth, y: 40, width: 0.8 * screenWidth, height: 20)
-        
-        cell.lblBalanceDue.textColor = .black
-        cell.lblBalanceDue.text = "\(arrOrders[indexPath.row].status)"
-        cell.lblBalanceDue.numberOfLines = 2
-        cell.lblBalanceDue.textAlignment = .right
-        cell.lblBalanceDue.font = UIFont(name: "Gilroy-Book", size: 16)
-        cell.lblBalanceDue.frame = CGRect(x: 0.05 * screenWidth, y: 40, width: 0.9 * screenWidth, height: 20)
-       
-
-        return cell
-    }
-
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        
-     
-    
-    }
-  
-  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-       return 80
-  }
-  
-    
-    
-    
     
 }

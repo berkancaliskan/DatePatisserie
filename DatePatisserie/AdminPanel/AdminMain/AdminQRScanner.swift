@@ -17,13 +17,35 @@ class AdminQRScanner: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewDidLoad()
         
         setDefaultSize(view: view)
-        
-        let blur = UIBlurEffect(style: UIBlurEffect.Style.light)
+    
+        let gradient = CAGradientLayer()
+        gradient.frame = view.bounds
+        gradient.colors = [UIColor.white.cgColor, yesil.cgColor]
+        previewView.layer.insertSublayer(gradient, at: 0)
         
         previewView.frame = view.bounds
-        previewView.backgroundColor = .lightGray
         previewView.contentMode  = .scaleToFill
         view.addSubview(previewView)
+        
+        let backButton = UIButton()
+        backButton.setBackgroundImage(UIImage(named: "back_btn"), for: UIControl.State.normal)
+        backButton.frame = CGRect(x: 0.054 * screenWidth, y: 0.07 * screenHeight, width: 0.08 * screenWidth, height: 0.08 * screenWidth)
+        backButton.contentVerticalAlignment.self = .center
+        backButton.contentHorizontalAlignment.self = .center
+        previewView.addSubview(backButton)
+        backButton.addTarget(self, action: #selector(backClicked), for: UIControl.Event.touchUpInside)
+        
+        
+        
+        let title = UILabel()
+        title.frame = CGRect(x: 0.2 * screenWidth, y: 0.057 * screenHeight, width: 0.6 * screenWidth, height: 0.05 * screenHeight)
+        title.text = "QR Okuyucu"
+        title.textAlignment = .center
+        title.font = UIFont(name: "Gilroy-Bold", size: 22)
+        title.textColor = lacivert
+        previewView.addSubview(title)
+        
+        
         // Get an instance of the AVCaptureDevice class to initialize a
         // device object and provide the video as the media type parameter
         guard let captureDevice = AVCaptureDevice.default(for: AVMediaType.video) else {
@@ -62,6 +84,7 @@ class AdminQRScanner: UIViewController, UIImagePickerControllerDelegate, UINavig
             videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
             videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
             videoPreviewLayer?.frame = CGRect(x: 0.1 * screenWidth, y: 0.2 * screenHeight, width: 0.8 * screenWidth, height: 0.8 * screenWidth)
+            videoPreviewLayer?.cornerRadius = 12
             previewView.layer.addSublayer(videoPreviewLayer!)
 
             //start video capture
@@ -118,10 +141,14 @@ class AdminQRScanner: UIViewController, UIImagePickerControllerDelegate, UINavig
                 
                 }}}
         
-      
+    }
+    
+    @objc func backClicked() {
         
+        presentVC(currentVC: self, destinationVC: AdminMainVC(), toDirection: .right)
         
     }
+    
     func metadataOutput(_ captureOutput: AVCaptureMetadataOutput,
                         didOutput metadataObjects: [AVMetadataObject],
                         from connection: AVCaptureConnection) {
@@ -149,7 +176,6 @@ class AdminQRScanner: UIViewController, UIImagePickerControllerDelegate, UINavig
                         isGiftGained = true
                     increaseCoffeeCount(uid: outputString)
                     }
-//                    firebase veri artır.
                     
                     let _ = Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { timer in
                         

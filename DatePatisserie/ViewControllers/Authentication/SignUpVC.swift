@@ -10,7 +10,9 @@ import Firebase
 import FirebaseAuth
 
 
-class SignUpVC: UIViewController {
+class SignUpVC: UIViewController, UIScrollViewDelegate, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    
+    let scrollview = UIScrollView()
     
     let nameTextField =  UITextField()
     let surnameTextField =  UITextField()
@@ -19,27 +21,56 @@ class SignUpVC: UIViewController {
     let passwordTextField = UITextField()
     let passwordTextField2 = UITextField()
     let loginText  = UILabel()
-
+    let profileImg = UIImageView()
+    let changePhotoButton = UIButton()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setDefaultSize(view: view)
+        createScrollView()
         createUI()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
         
     }
+    func createScrollView(){
+        
+        scrollview.frame = CGRect(x: 0, y: 0.08 * screenHeight , width: screenWidth, height: screenHeight)
+        scrollview.contentSize = CGSize(width: screenWidth , height: screenHeight * 1.4)
+        scrollview.alwaysBounceVertical = true
+        scrollview.delegate = self
+        scrollview.backgroundColor = .clear
+        view.addSubview(scrollview)
+        
+    }
+    
     func createUI(){
         
-        let screenHeight = view.frame.size.height
-        let screenWidth = view.frame.size.width
-        let stringMultiplier = 0.00115 * screenHeight
-        
+      
         view.backgroundColor = UIColor.white
+        profileImg.image = UIImage(named: "profile_img")
+        profileImg.layer.borderWidth = 1
+        profileImg.layer.borderColor = yesil.cgColor
+        profileImg.layer.cornerRadius = 0.25 * screenWidth
         
-        let mainImg = UIImageView()
-        mainImg.image = UIImage(named: "logo_original")
-        mainImg.frame = CGRect(x: 0.17 * screenWidth, y: 0.12 * screenHeight, width: 0.66 * screenWidth, height: 0.3 * screenHeight)
-        view.addSubview(mainImg)
-        mainImg.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+        profileImg.frame = CGRect(x: view.frame.midX - 0.25 * screenWidth, y: 0.02 * screenHeight, width: 0.5 * screenWidth, height: 0.5 * screenWidth)
+        scrollview.addSubview(profileImg)
+        profileImg.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+        profileImg.contentMode = .scaleAspectFit
+        profileImg.layer.masksToBounds = true
+        
+        
+        changePhotoButton.frame = CGRect(x: 0.63 * screenWidth, y: 0.22 * screenHeight, width: 0.08 * screenWidth, height: 0.08 * screenWidth)
+        changePhotoButton.setBackgroundImage(UIImage(named: "add_photo"), for: .normal)
+        changePhotoButton.contentMode = .scaleAspectFit
+        changePhotoButton.addTarget(self, action: #selector(selectPhoto), for: .touchUpInside)
+        
+        scrollview.addSubview(changePhotoButton)
+        
+        
+        
         
         let downImg = UIImageView()
         downImg.image = UIImage(named: "down")
@@ -51,35 +82,35 @@ class SignUpVC: UIViewController {
         loginText.text = NSLocalizedString("Kaydını Oluştur", comment: "")
         loginText.textColor = lacivert
         loginText.font = UIFont(name: "Gilroy-Medium", size: 18 * stringMultiplier)
-        loginText.frame = CGRect(x: 0.1 * screenWidth, y: 0.39 * screenHeight, width: 0.8 * screenWidth, height: 0.05 * screenHeight)
-        view.addSubview(loginText)
+        loginText.frame = CGRect(x: 0.1 * screenWidth, y: 0.34 * screenHeight, width: 0.75 * screenWidth, height: 0.05 * screenHeight)
+        scrollview.addSubview(loginText)
         
         
  
-        nameTextField.makeCustomTextField(view: view, yPozition: 0.45, isSecureText: false, placeholder: "Adınızı Giriniz")
+        nameTextField.makeCustomTextField(view: scrollview, yPozition: 0.4, isSecureText: false, placeholder: "Adınızı Giriniz")
 
-        surnameTextField.makeCustomTextField(view: view, yPozition: 0.52, isSecureText: false, placeholder: "Soyadınızı Giriniz")
+        surnameTextField.makeCustomTextField(view: scrollview, yPozition: 0.47, isSecureText: false, placeholder: "Soyadınızı Giriniz")
      
-        emailTextField.makeCustomTextField(view: view, yPozition: 0.59, isSecureText: false, placeholder: "E-Posta Adresinizi Giriniz")
+        emailTextField.makeCustomTextField(view: scrollview, yPozition: 0.54, isSecureText: false, placeholder: "E-Posta Adresinizi Giriniz")
         
-        passwordTextField.makeCustomTextField(view: view, yPozition: 0.66, isSecureText: true, placeholder: "Şifrenizi Giriniz")
+        passwordTextField.makeCustomTextField(view: scrollview, yPozition: 0.61, isSecureText: true, placeholder: "Şifrenizi Giriniz")
 
-        passwordTextField2.makeCustomTextField(view: view, yPozition: 0.73, isSecureText: true, placeholder: "Şifrenizi Doğrulayınız")
+        passwordTextField2.makeCustomTextField(view: scrollview, yPozition: 0.68, isSecureText: true, placeholder: "Şifrenizi Doğrulayınız")
        
         
         
-        let kayitOl  = UIButton()
-        kayitOl.setTitleColor(.white, for: .normal)
-        kayitOl.setTitle("Kayıt Ol", for: .normal)
-        kayitOl.backgroundColor = yesil
-        kayitOl.frame = CGRect(x: 0.1 * screenWidth, y: 0.82 * screenHeight, width: 0.8 * screenWidth, height: 0.06 * screenHeight)
-        kayitOl.contentVerticalAlignment.self = .center
-        kayitOl.layer.cornerRadius = 10
-        kayitOl.titleLabel?.font = UIFont(name: "Gilroy-Regular", size: 18 * stringMultiplier)
-        kayitOl.contentHorizontalAlignment.self = .center
-        view.addSubview(kayitOl)
+        let signUpButton = UIButton()
+        signUpButton.setTitleColor(.white, for: .normal)
+        signUpButton.setTitle("Kayıt Ol", for: .normal)
+        signUpButton.backgroundColor = yesil
+        signUpButton.frame = CGRect(x: 0.1 * screenWidth, y: 0.77 * screenHeight, width: 0.8 * screenWidth, height: 0.06 * screenHeight)
+        signUpButton.contentVerticalAlignment.self = .center
+        signUpButton.layer.cornerRadius = 10
+        signUpButton.titleLabel?.font = UIFont(name: "Gilroy-Regular", size: 18 * stringMultiplier)
+        signUpButton.contentHorizontalAlignment.self = .center
+        scrollview.addSubview(signUpButton)
         
-        kayitOl.addTarget(self, action: #selector(kayitOlClicked), for: .touchUpInside)
+        signUpButton.addTarget(self, action: #selector(kayitOlClicked), for: .touchUpInside)
         
     }
     
@@ -94,7 +125,6 @@ class SignUpVC: UIViewController {
     
     func updateProfileItems(){
         
-        
         profileInfo.mailaddress = emailTextField.text!
         profileInfo.password = passwordTextField2.text!
         profileInfo.name = nameTextField.text!
@@ -102,6 +132,7 @@ class SignUpVC: UIViewController {
     
         
     }
+    
     
     func authFirebase(){
         
@@ -134,7 +165,6 @@ class SignUpVC: UIViewController {
                 self.present(successAlert, animated: true, completion: nil)
                 
             }
-            
         }
     }
     
@@ -151,7 +181,10 @@ class SignUpVC: UIViewController {
                     
                     if searchStr == true {
                         
+                        updateProfileItems()
+                        
                         authFirebase()
+                        
                         
                         Auth.auth().currentUser?.sendEmailVerification { error in
                             
@@ -199,4 +232,74 @@ class SignUpVC: UIViewController {
                         
                     }
     }
+    
+    
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
+    
+    
+    
+
+    @objc func selectPhoto(){
+        
+        
+        let alert = UIAlertController(title: "Fotoğraf Ekleyiniz", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Kamera", style: .default, handler: { _ in
+            self.openCamera()
+        }))
+        alert.addAction(UIAlertAction(title: "Galeri", style: .default, handler: { _ in
+            self.openGallery()
+        }))
+        alert.addAction(UIAlertAction.init(title: "İptal", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        profileImg.image = info[.editedImage] as? UIImage
+        profileInfo.profilePhoto = profileImg.image!
+        
+        profileInfo.stringProfilePhoto = convertImageToBase64String(img: profileInfo.profilePhoto)
+     
+        
+        
+        
+        self.dismiss(animated: true)
+    }
+    func openCamera(){
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerController.SourceType.camera
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+            
+        } else {
+            let alert  = UIAlertController(title: "Hata", message: "Kameraya ulaşılamıyor.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    func openGallery(){
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.allowsEditing = true
+            imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+            self.present(imagePicker, animated: true, completion: nil)
+        } else {
+            let alert  = UIAlertController(title: "Hata", message: "İzinleri kontrol ediniz.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    
+    
+    
+    
+    
 }

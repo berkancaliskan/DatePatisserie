@@ -67,6 +67,7 @@ class Onboarding3VC: UIViewController {
     }
 
     @objc func buttonClicked() {
+        uDefaults.setValue("user", forKey: "user")
         vibrate(style: .heavy)
         presentVC(currentVC: self, destinationVC: LoginVC(), toDirection: .right)
     

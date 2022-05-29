@@ -162,11 +162,11 @@ class MenuVC: UIViewController, UIScrollViewDelegate, UICollectionViewDataSource
         button9.makeCircleMenuButton(title: "Diğer", icon: UIImage(named: "burger_icon")!)
         button9.addTarget(self, action: #selector(button9Clicked), for:UIControl.Event.touchUpInside)
         
-        button10.frame = CGRect(x: button9.frame.maxX + 18,y: 5,width: screenHeight * 0.1,height: screenHeight * 0.1)
-        button10.makeCircleMenuButton(title: "Diğer", icon: UIImage(named: "burger_icon")!)
-        button10.addTarget(self, action: #selector(button10Clicked), for:UIControl.Event.touchUpInside)
-        
-        
+//        button10.frame = CGRect(x: button9.frame.maxX + 18,y: 5,width: screenHeight * 0.1,height: screenHeight * 0.1)
+//        button10.makeCircleMenuButton(title: "Diğer", icon: UIImage(named: "burger_icon")!)
+//        button10.addTarget(self, action: #selector(button10Clicked), for:UIControl.Event.touchUpInside)
+//
+//
         view.addSubview(scrollview)
         
     }
@@ -311,7 +311,7 @@ class MenuVC: UIViewController, UIScrollViewDelegate, UICollectionViewDataSource
         deactiveAllButton()
         button4.activeButton()
         menuButtonCounter = 3
-        filterCategory(type: .toast)
+        filterCategory(type: .coffee)
         
     }
     @objc  func button5Clicked(){
@@ -320,7 +320,7 @@ class MenuVC: UIViewController, UIScrollViewDelegate, UICollectionViewDataSource
         deactiveAllButton()
         button5.activeButton()
         menuButtonCounter = 4
-        filterCategory(type: .toast)
+        filterCategory(type: .hotDrink)
     }
     @objc  func button6Clicked(){
         
@@ -328,6 +328,7 @@ class MenuVC: UIViewController, UIScrollViewDelegate, UICollectionViewDataSource
         deactiveAllButton()
         button6.activeButton()
         menuButtonCounter = 5
+        filterCategory(type: .iceCoffee)
     }
     @objc  func button7Clicked(){
         
@@ -335,6 +336,7 @@ class MenuVC: UIViewController, UIScrollViewDelegate, UICollectionViewDataSource
         deactiveAllButton()
         button7.activeButton()
         menuButtonCounter = 6
+        filterCategory(type: .dessert)
     }
     @objc  func button8Clicked(){
         
@@ -342,6 +344,7 @@ class MenuVC: UIViewController, UIScrollViewDelegate, UICollectionViewDataSource
         deactiveAllButton()
         button8.activeButton()
         menuButtonCounter = 7
+        filterCategory(type: .coldDrink)
     }
     @objc  func button9Clicked(){
         
@@ -349,21 +352,23 @@ class MenuVC: UIViewController, UIScrollViewDelegate, UICollectionViewDataSource
         deactiveAllButton()
         button9.activeButton()
         menuButtonCounter = 8
+        filterCategory(type: .other)
     }
-    @objc  func button10Clicked(){
-        
-        print("button 10 clicked")
-        deactiveAllButton()
-        button10.activeButton()
-        menuButtonCounter = 9
-    }
+//    @objc  func button10Clicked(){
+//
+//        print("button 10 clicked")
+//        deactiveAllButton()
+//        button10.activeButton()
+//        menuButtonCounter = 9
+//        filterCategory(type: .toast)
+//    }
     @objc  func cartClicked(){
         
         presentVC(currentVC: self, destinationVC: OrderVC(), toDirection: .right)
     }
     @objc  func backClicked(){
         
-        dismiss(animated: true)
+        presentVC(currentVC: self, destinationVC: HomeVC(), toDirection: .right)
     }
     
 }
