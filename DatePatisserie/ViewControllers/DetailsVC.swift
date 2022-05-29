@@ -50,9 +50,12 @@ class DetailsVC: UIViewController {
         mainTitle.font = UIFont(name: "Gilroy-Bold", size: 22)
 
         let productImg = UIImageView()
-        productImg.image = UIImage(named: "sandvic_1")
+        productImg.image = selectedProduct.image
         productImg.frame = CGRect(x: 0.14 * screenWidth, y: 0.132 * screenHeight, width: 0.72 * screenWidth, height: 0.26 * screenHeight)
         view.addSubview(productImg)
+        productImg.contentMode = .scaleAspectFit
+        
+
   
         let productName = UILabel()
         productName.text = selectedProduct.name
@@ -70,7 +73,7 @@ class DetailsVC: UIViewController {
         kcal.contentMode = .scaleAspectFit
         
         let kcalValue = UILabel()
-        kcalValue.text = NSLocalizedString("430", comment: "")
+        kcalValue.text = "\(selectedProduct.kcal)"
         kcalValue.textAlignment = .left
         kcalValue.textColor = lacivert
         kcalValue.numberOfLines = 0
@@ -84,17 +87,17 @@ class DetailsVC: UIViewController {
         productContentTitle.textColor = lacivert
         productContentTitle.numberOfLines = 0
         productContentTitle.font = UIFont(name: "Gilroy-Bold", size: 20)
-        productContentTitle.frame = CGRect(x: 0.075 * screenWidth, y: 0.52 * screenHeight, width: 0.85 * screenWidth, height: 0.06 * screenWidth)
+        productContentTitle.frame = CGRect(x: 0.075 * screenWidth, y: 0.51 * screenHeight, width: 0.85 * screenWidth, height: 0.04 * screenWidth)
         view.addSubview(productContentTitle)
         
         let productContentText = UILabel()
-        productContentText.text = NSLocalizedString("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.", comment: "")
+        productContentText.text = "\(selectedProduct.ingredients)"
         productContentText.textAlignment = .left
         productContentText.textColor = lacivert
         productContentText.layer.cornerRadius = 12
         productContentText.numberOfLines = 0
         productContentText.font = UIFont(name: "Gilroy-Regular", size: 16)
-        productContentText.frame = CGRect(x: 0.075 * screenWidth, y: 0.54 * screenHeight, width: 0.85 * screenWidth, height: 0.1 * screenHeight)
+        productContentText.frame = CGRect(x: 0.075 * screenWidth, y: 0.55 * screenHeight, width: 0.85 * screenWidth, height: 0.06 * screenHeight)
         view.addSubview(productContentText)
         
         let detailTitle = UILabel()
@@ -103,35 +106,35 @@ class DetailsVC: UIViewController {
         detailTitle.textColor = lacivert
         detailTitle.numberOfLines = 0
         detailTitle.font = UIFont(name: "Gilroy-Bold", size: 20)
-        detailTitle.frame = CGRect(x: 0.075 * screenWidth, y: 0.66 * screenHeight, width: 0.85 * screenWidth, height: 0.06 * screenWidth)
+        detailTitle.frame = CGRect(x: 0.075 * screenWidth, y: 0.63 * screenHeight, width: 0.85 * screenWidth, height: 0.04 * screenWidth)
         view.addSubview(detailTitle)
         
         let detail = UILabel()
-        detail.text = NSLocalizedString( "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do sdflkmsdpofmposfraerj ", comment: "")
+        detail.text = selectedProduct.details
         detail.textAlignment = .left
         detail.textColor = lacivert
         detail.layer.cornerRadius = 12
         detail.numberOfLines = 0
         detail.font = UIFont(name: "Gilroy-Regular", size: 16)
-        detail.frame = CGRect(x: 0.075 * screenWidth, y: 0.67 * screenHeight, width: 0.62 * screenWidth, height: 0.1 * screenHeight)
+        detail.frame = CGRect(x: 0.075 * screenWidth, y: 0.65 * screenHeight, width: 0.62 * screenWidth, height: 0.13 * screenHeight)
         view.addSubview(detail)
         
         let price = UILabel()
-        price.text = NSLocalizedString("₺34.5", comment: "")
+        price.text = "\(selectedProduct.price)"
         price.textAlignment = .center
         price.textColor = lacivert
         price.backgroundColor = .clear
         price.layer.cornerRadius = 18
         price.numberOfLines = 0
         price.font = UIFont(name: "Gilroy-Regular", size: 21)
-        price.frame = CGRect(x: 0.73 * screenWidth, y: 0.67 * screenHeight, width: 0.14 * screenWidth, height: 0.1 * screenHeight)
+        price.frame = CGRect(x: 0.73 * screenWidth, y: 0.685 * screenHeight, width: 0.14 * screenWidth, height: 0.1 * screenHeight)
         view.addSubview(price)
         
         
         let addCartButton = UIButton()
         addCartButton.setTitleColor(.white, for: .normal)
         addCartButton.setTitle("Sepete Ekle", for: .normal)
-        addCartButton.frame = CGRect(x: 0.1 * screenWidth, y: 0.79 * screenHeight, width: 0.8 * screenWidth, height: 0.06 * screenHeight)
+        addCartButton.frame = CGRect(x: 0.1 * screenWidth, y: 0.815 * screenHeight, width: 0.8 * screenWidth, height: 0.06 * screenHeight)
         addCartButton.titleLabel?.font = UIFont(name: "Gilroy-Medium", size: 14 * stringMultiplier)
         addCartButton.layer.cornerRadius = 12
         addCartButton.backgroundColor = yesil

@@ -56,7 +56,7 @@ class QRCodeVC: UIViewController {
         qrUserId.textColor = lacivert
         qrUserId.numberOfLines = 0
         qrUserId.font = UIFont(name: "Gilroy-Light", size: 16 * stringMultiplier)
-        qrUserId.frame = CGRect(x: 0.07 * screenWidth, y: 0.18 * screenHeight, width: 0.86 * screenWidth, height: 0.18 * screenHeight)
+        qrUserId.frame = CGRect(x: 0.07 * screenWidth, y: 0.62 * screenHeight, width: 0.86 * screenWidth, height: 0.18 * screenHeight)
         view.addSubview(qrUserId)
         
         

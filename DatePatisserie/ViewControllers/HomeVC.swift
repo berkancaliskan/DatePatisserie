@@ -33,7 +33,7 @@ let dailyFoodNamesLabel = UILabel()
 
 class HomeVC: UIViewController {
     
-  
+    let helloName = UILabel()
     var coffeeLottie: AnimationView?
         
     override func viewDidLoad() {
@@ -46,6 +46,7 @@ class HomeVC: UIViewController {
         setCoffeeProgress()
         createDailyMenuUI()
         changeText()
+        getCoffeeCount()
         
         
      
@@ -89,7 +90,7 @@ class HomeVC: UIViewController {
         profileButton.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
         profileButton.addTarget(self, action: #selector(profileClicked), for: UIControl.Event.touchUpInside)
         
-        let helloName = UILabel()
+       
         helloName.text = NSLocalizedString("Merhaba, \(profileInfo.name) ", comment: "")
         helloName.textColor = lacivert
         helloName.textAlignment = .left
@@ -114,7 +115,6 @@ class HomeVC: UIViewController {
         menuButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
         menuButton.setTitle("MENÜ", for: .normal)
         menuButton.layer.cornerRadius = 15
-        menuButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         menuButton.titleLabel?.font =  UIFont(name: "Gilroy-Medium", size: 19)
         menuButton.frame = CGRect(x: 0.05 * screenWidth, y: 0.45 * screenHeight, width: 0.9 * screenWidth, height: 0.086 * screenHeight)
         menuButton.layer.shadowColor = UIColor.lightGray.cgColor
@@ -242,7 +242,7 @@ class HomeVC: UIViewController {
         foodNamesTitle.textColor = lacivert
         foodNamesTitle.numberOfLines = 0
         foodNamesTitle.font = UIFont(name: "Gilroy-Bold", size: 18 * stringMultiplier)
-        foodNamesTitle.frame = CGRect(x: 16, y: 170, width: 390, height: 32)
+        foodNamesTitle.frame = CGRect(x: 16, y: 176, width: 390, height: 24)
         dailyFoodBg.addSubview(foodNamesTitle)
         
         
@@ -252,7 +252,7 @@ class HomeVC: UIViewController {
         dailyFoodNamesLabel.textColor = lacivert
         dailyFoodNamesLabel.numberOfLines = 0
         dailyFoodNamesLabel.font = UIFont(name: "Gilroy-Regular", size: 18 * stringMultiplier)
-        dailyFoodNamesLabel.frame = CGRect(x: 16, y: 185, width: 390, height: 56)
+        dailyFoodNamesLabel.frame = CGRect(x: 16, y: 195, width: 390, height: 30)
         dailyFoodBg.addSubview(dailyFoodNamesLabel)
         
         
@@ -263,18 +263,18 @@ class HomeVC: UIViewController {
         foodDetailsTitle.textColor = lacivert
         foodDetailsTitle.numberOfLines = 0
         foodDetailsTitle.font = UIFont(name: "Gilroy-Bold", size: 18 * stringMultiplier)
-        foodDetailsTitle.frame = CGRect(x: 16, y: 230, width: 390, height: 32)
+        foodDetailsTitle.frame = CGRect(x: 16, y: 225, width: 390, height: 24)
         dailyFoodBg.addSubview(foodDetailsTitle)
         
         
         
         
-        detailsFoodContentLabel.text = NSLocalizedString("...", comment: "")
+        detailsFoodContentLabel.text = "..."
         detailsFoodContentLabel.textAlignment = .left
         detailsFoodContentLabel.textColor = lacivert
         detailsFoodContentLabel.numberOfLines = 0
-        detailsFoodContentLabel.font = UIFont(name: "Gilroy-Regular", size: 16 * stringMultiplier)
-        detailsFoodContentLabel.frame = CGRect(x: 16, y: 245, width: 390, height: 56)
+        detailsFoodContentLabel.font = UIFont(name: "Gilroy-Regular", size: 18 * stringMultiplier)
+        detailsFoodContentLabel.frame = CGRect(x: 16, y: 249, width: 390, height: 48)
         dailyFoodBg.addSubview(detailsFoodContentLabel)
         
         
@@ -329,6 +329,35 @@ class HomeVC: UIViewController {
         vibrate(style: .medium)
         presentVC(currentVC: self, destinationVC: ProfileVC(), toDirection: .right)
     }
-    
+    func getCoffeeCount() {
+        
+        let _ = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: false) { timer in
+            
+                 let userId = Auth.auth().currentUser?.uid
+                 //Get specific document from current current date
+                 let docRef = Firestore.firestore()
+                     .collection("Users")
+                     .document(userId ?? "CchH9ch8bSYmA7c6O6tbnq6d4n13")
+                 
+                 // Get data
+                 docRef.getDocument { (document, error) in
+                     guard let document = document, document.exists else {
+                         print("Document does not exist")
+                         return
+                     }
+                     
+                     let dataDescription = document.data()
+                     let qrCount = dataDescription?["coffeCount"] ?? 0
+                     let name = dataDescription?["name"]!
+             
+                     profileInfo.qrCounter = qrCount as! Int
+                     self.helloName.text = "Merhaba \(name ?? "")"
+                     self.setCoffeeProgress()
+                 }
+      }
+       
+    }
+
+   
     
 }

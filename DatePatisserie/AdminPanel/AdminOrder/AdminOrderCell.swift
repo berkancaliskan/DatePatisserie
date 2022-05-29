@@ -2,7 +2,7 @@
 //  ItemCell.swift
 //  Invoice Maker
 //
-//  Created by Tuna Öztürk on 21.03.2022.
+//  Created by Berkan Çalışkan on 21.03.2022.
 //
 
 import UIKit

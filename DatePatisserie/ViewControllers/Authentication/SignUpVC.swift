@@ -148,6 +148,25 @@ class SignUpVC: UIViewController, UIScrollViewDelegate, UIImagePickerControllerD
                 
             }else{
                 
+                let userId = Auth.auth().currentUser!.uid
+                let db = Firestore.firestore()
+                
+                db.collection("Users").document("\(userId)").setData([
+                    
+                    "name": "\(profileInfo.name)",
+                    "surname": "\(profileInfo.surname)",
+                    "stringProfilePhoto": "\(profileInfo.stringProfilePhoto)",
+                    "mailAddress": "\(profileInfo.mailaddress)",
+                    "password" : "\(profileInfo.password)",
+                    "coffeCount" : 0
+                    
+                    
+
+                ])
+                
+                
+                
+                
                 let successAlert = UIAlertController(title: "Başarılı",
                                                      message: "Kaydınız başarıyla oluşturuldu 🎉 ",
                                                      preferredStyle: UIAlertController.Style.alert)
@@ -264,8 +283,8 @@ class SignUpVC: UIViewController, UIScrollViewDelegate, UIImagePickerControllerD
         
         profileInfo.stringProfilePhoto = convertImageToBase64String(img: profileInfo.profilePhoto)
      
-        
-        
+
+
         
         self.dismiss(animated: true)
     }

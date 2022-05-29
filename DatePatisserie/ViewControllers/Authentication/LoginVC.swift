@@ -45,9 +45,9 @@ class LoginVC: UIViewController {
         kayıtYonlendirmeText.frame = CGRect(x: 0.1 * screenWidth, y: 0.5 * screenHeight, width: 0.8 * screenWidth, height: 0.05 * screenHeight)
         view.addSubview(kayıtYonlendirmeText)
     
-        emailField.makeCustomTextField(view: view, yPozition: 0.55, isSecureText: false, placeholder: "Email adresinizi giriniz...")
+        emailField.makeCustomTextField(view: view, yPozition: 0.45, isSecureText: false, placeholder: "Email adresinizi giriniz...")
         
-        passField.makeCustomTextField(view: view, yPozition: 0.62, isSecureText: true, placeholder: "Şifrenizi giriniz...")
+        passField.makeCustomTextField(view: view, yPozition: 0.53, isSecureText: true, placeholder: "Şifrenizi giriniz...")
          
         
         let girisButton  = UIButton()

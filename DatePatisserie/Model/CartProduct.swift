@@ -2,7 +2,7 @@
 //  CartProduct.swift
 //  DatePatisserie
 //
-//  Created by Tuna Öztürk on 18.05.2022.
+//  Created by Berkan Çalışkan on 18.05.2022.
 //
 
 import Foundation

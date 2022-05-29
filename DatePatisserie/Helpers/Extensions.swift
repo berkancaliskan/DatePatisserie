@@ -17,7 +17,7 @@ extension UIButton{
         self.backgroundColor = krem
         self.layer.borderColor = UIColor.clear.cgColor
         self.layer.borderWidth = 2
-        self.layer.cornerRadius = self.frame.width * 0.5
+        self.layer.cornerRadius = self.frame.width * 0.15
         self.titleLabel?.text = title
         self.titleLabel?.font = UIFont(name: "Gilroy-Medium", size: 12 * stringMultiplier)
         self.contentHorizontalAlignment.self = .center
@@ -31,7 +31,7 @@ extension UIButton{
         iconView.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
         
         let iconNameLabel = UILabel()
-        iconNameLabel.frame = CGRect(x: 0, y: self.frame.midY + 15, width: self.frame.width , height: self.frame.height * 0.1)
+        iconNameLabel.frame = CGRect(x: 0, y: self.frame.midY + 15, width: self.frame.width , height: self.frame.height * 0.12)
         iconNameLabel.font = UIFont(name: "Gilroy-Medium", size: 12 * stringMultiplier)
         iconNameLabel.textColor = lacivert
         iconNameLabel.text = title
@@ -41,6 +41,7 @@ extension UIButton{
     
     func activeButton(){
         
+        self.addSelectEffect()
         self.layer.borderColor = yesil.cgColor
         self.layer.borderWidth = 4
         
@@ -73,6 +74,31 @@ extension UIButton{
             }
         }
     }
+    
+    func addSelectEffect(){
+        
+        
+        let _ = Timer.scheduledTimer(withTimeInterval: 0.001, repeats: false) { timer in
+            
+            UIButton.animate(withDuration: 0.1) {
+                self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+            } completion: { _ in
+                UIButton.animate(withDuration: 0.1) {
+                    self.transform = CGAffineTransform(scaleX: 1.06, y: 1.06)
+                } completion: { _ in
+                    self.transform = CGAffineTransform(scaleX: 1.02, y: 1.02)
+                    UIButton.animate(withDuration: 0.1) {
+                        self.transform = CGAffineTransform(scaleX: 0.98, y: 0.98)
+                    } completion: { _ in
+                        self.transform = CGAffineTransform(scaleX: 1, y: 1)
+                        
+                    }
+                }
+            }
+        }
+        
+    }
+    
     
     func addVibrateEffect(){
         
@@ -136,6 +162,20 @@ extension UILabel{
         self.textAlignment = textAlignment
         self.font = UIFont(name: "Gilroy-Regular", size: textSize )
         addView.addSubview(self)
+    }
+    
+    
+    func makeTitle(view: UIView, title: String){
+        
+        self.frame = CGRect(x: 0.2 * screenWidth, y: 0.08 * screenHeight, width: 0.6 * screenWidth, height: 22 )
+        self.text = title
+        self.numberOfLines = 1
+        self.textColor = .white
+        self.textAlignment = .center
+        self.font = UIFont(name: "Gilroy-Bold", size: 24 )
+        self.backgroundColor = .clear
+        view.addSubview(self)
+        
     }
 }
 

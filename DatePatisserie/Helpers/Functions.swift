@@ -86,28 +86,3 @@ func getDailyFood() {
 }
 
 
-func getCoffeeCount() {
-    
-   
-        let userId = Auth.auth().currentUser?.uid
-        //Get specific document from current current date
-        let docRef = Firestore.firestore()
-            .collection("Users")
-            .document(userId ?? "CchH9ch8bSYmA7c6O6tbnq6d4n13")
-        
-        // Get data
-        docRef.getDocument { (document, error) in
-            guard let document = document, document.exists else {
-                print("Document does not exist")
-                return
-            }
-            
-            let dataDescription = document.data()
-            let qrCount = dataDescription?["coffeCount"] ?? 0
-    
-            profileInfo.qrCounter = qrCount as! Int
-            
-            HomeVC().setCoffeeProgress()
-        }
-}
-

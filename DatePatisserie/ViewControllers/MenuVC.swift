@@ -103,10 +103,14 @@ class MenuVC: UIViewController, UIScrollViewDelegate, UICollectionViewDataSource
     
     func createScrollView(){
         scrollview.frame = CGRect(x: 0, y: screenHeight * 0.14, width: screenWidth, height: screenHeight * 0.11)
-        scrollview.contentSize = CGSize(width: screenWidth * 2.7, height: screenHeight * 0.1)
+        scrollview.contentSize = CGSize(width: screenWidth * 2.03, height: screenHeight * 0.1)
         scrollview.alwaysBounceHorizontal = true
         scrollview.delegate = self
         scrollview.backgroundColor = .clear
+        scrollview.showsHorizontalScrollIndicator = false
+        
+        
+        
         
     }
     
@@ -126,40 +130,40 @@ class MenuVC: UIViewController, UIScrollViewDelegate, UICollectionViewDataSource
     
     func createScrollButtons(){
         
-        button1.frame = CGRect(x: 16,y: 5,width: screenHeight * 0.1,height: screenHeight * 0.1)
-        button1.makeCircleMenuButton(title: "Sandviç", icon: UIImage(named: "sandvic_icon")!)
+        button1.frame = CGRect(x: 16,y: 3,width: screenHeight * 0.1,height: screenHeight * 0.1)
+        button1.makeCircleMenuButton(title: "Sandviç", icon: UIImage(named: "sandwich_icon")!)
         button1.addTarget(self, action: #selector(button1Clicked), for:UIControl.Event.touchUpInside)
         
-        button2.frame = CGRect(x: button1.frame.maxX + 18,y: 5,width: screenHeight * 0.1,height: screenHeight * 0.1)
-        button2.makeCircleMenuButton(title: "Tost", icon: UIImage(named: "pizza_icon")!)
+        button2.frame = CGRect(x: button1.frame.maxX + 18,y: 3,width: screenHeight * 0.1,height: screenHeight * 0.1)
+        button2.makeCircleMenuButton(title: "Tost", icon: UIImage(named: "toast_icon")!)
         button2.addTarget(self, action: #selector(button2Clicked), for:UIControl.Event.touchUpInside)
         
-        button3.frame = CGRect(x: button2.frame.maxX + 18,y: 5,width: screenHeight * 0.1,height: screenHeight * 0.1)
+        button3.frame = CGRect(x: button2.frame.maxX + 18,y: 3,width: screenHeight * 0.1,height: screenHeight * 0.1)
         button3.makeCircleMenuButton(title: "Burger", icon: UIImage(named: "burger_icon")!)
         button3.addTarget(self, action: #selector(button3Clicked), for:UIControl.Event.touchUpInside)
         
-        button4.frame = CGRect(x: button3.frame.maxX + 18,y: 5,width: screenHeight * 0.1,height: screenHeight * 0.1)
-        button4.makeCircleMenuButton(title: "Pizza", icon: UIImage(named: "burger_icon")!)
+        button4.frame = CGRect(x: button3.frame.maxX + 18,y: 3,width: screenHeight * 0.1,height: screenHeight * 0.1)
+        button4.makeCircleMenuButton(title: "Kahve", icon: UIImage(named: "coffee_icon")!)
         button4.addTarget(self, action: #selector(button4Clicked), for:UIControl.Event.touchUpInside)
         
-        button5.frame = CGRect(x: button4.frame.maxX + 18,y: 5,width: screenHeight * 0.1,height: screenHeight * 0.1)
-        button5.makeCircleMenuButton(title: "Tatlı", icon: UIImage(named: "burger_icon")!)
+        button5.frame = CGRect(x: button4.frame.maxX + 18,y: 3,width: screenHeight * 0.1,height: screenHeight * 0.1)
+        button5.makeCircleMenuButton(title: "Sıcak İçecek", icon: UIImage(named: "hot_drink_icon")!)
         button5.addTarget(self, action: #selector(button5Clicked), for:UIControl.Event.touchUpInside)
         
-        button6.frame = CGRect(x: button5.frame.maxX + 18,y: 5,width: screenHeight * 0.1,height: screenHeight * 0.1)
-        button6.makeCircleMenuButton(title: "Diğer", icon: UIImage(named: "burger_icon")!)
+        button6.frame = CGRect(x: button5.frame.maxX + 18,y: 3,width: screenHeight * 0.1,height: screenHeight * 0.1)
+        button6.makeCircleMenuButton(title: "Soğuk Kahve", icon: UIImage(named: "ice_coffee_icon")!)
         button6.addTarget(self, action: #selector(button6Clicked), for:UIControl.Event.touchUpInside)
         
-        button7.frame = CGRect(x: button6.frame.maxX + 18,y: 5,width: screenHeight * 0.1,height: screenHeight * 0.1)
-        button7.makeCircleMenuButton(title: "Diğer", icon: UIImage(named: "burger_icon")!)
+        button7.frame = CGRect(x: button6.frame.maxX + 18,y: 3,width: screenHeight * 0.1,height: screenHeight * 0.1)
+        button7.makeCircleMenuButton(title: "Tatlı", icon: UIImage(named: "dessert_icon")!)
         button7.addTarget(self, action: #selector(button7Clicked), for:UIControl.Event.touchUpInside)
         
-        button8.frame = CGRect(x: button7.frame.maxX + 18,y: 5,width: screenHeight * 0.1,height: screenHeight * 0.1)
-        button8.makeCircleMenuButton(title: "Diğer", icon: UIImage(named: "burger_icon")!)
+        button8.frame = CGRect(x: button7.frame.maxX + 18,y: 3,width: screenHeight * 0.1,height: screenHeight * 0.1)
+        button8.makeCircleMenuButton(title: "Soğuk İçecek", icon: UIImage(named: "ice_drink_icon")!)
         button8.addTarget(self, action: #selector(button8Clicked), for:UIControl.Event.touchUpInside)
         
-        button9.frame = CGRect(x: button8.frame.maxX + 18,y: 5,width: screenHeight * 0.1,height: screenHeight * 0.1)
-        button9.makeCircleMenuButton(title: "Diğer", icon: UIImage(named: "burger_icon")!)
+        button9.frame = CGRect(x: button8.frame.maxX + 18,y: 3,width: screenHeight * 0.1,height: screenHeight * 0.1)
+        button9.makeCircleMenuButton(title: "Diğer", icon: UIImage(named: "other_icon")!)
         button9.addTarget(self, action: #selector(button9Clicked), for:UIControl.Event.touchUpInside)
         
 //        button10.frame = CGRect(x: button9.frame.maxX + 18,y: 5,width: screenHeight * 0.1,height: screenHeight * 0.1)
@@ -296,6 +300,7 @@ class MenuVC: UIViewController, UIScrollViewDelegate, UICollectionViewDataSource
         button2.activeButton()
         menuButtonCounter = 1
         filterCategory(type: .toast)
+    
     }
     @objc  func button3Clicked(){
         
@@ -312,6 +317,7 @@ class MenuVC: UIViewController, UIScrollViewDelegate, UICollectionViewDataSource
         button4.activeButton()
         menuButtonCounter = 3
         filterCategory(type: .coffee)
+       
         
     }
     @objc  func button5Clicked(){
@@ -321,6 +327,7 @@ class MenuVC: UIViewController, UIScrollViewDelegate, UICollectionViewDataSource
         button5.activeButton()
         menuButtonCounter = 4
         filterCategory(type: .hotDrink)
+       
     }
     @objc  func button6Clicked(){
         
@@ -329,6 +336,7 @@ class MenuVC: UIViewController, UIScrollViewDelegate, UICollectionViewDataSource
         button6.activeButton()
         menuButtonCounter = 5
         filterCategory(type: .iceCoffee)
+      
     }
     @objc  func button7Clicked(){
         
@@ -337,6 +345,7 @@ class MenuVC: UIViewController, UIScrollViewDelegate, UICollectionViewDataSource
         button7.activeButton()
         menuButtonCounter = 6
         filterCategory(type: .dessert)
+       
     }
     @objc  func button8Clicked(){
         
@@ -345,6 +354,7 @@ class MenuVC: UIViewController, UIScrollViewDelegate, UICollectionViewDataSource
         button8.activeButton()
         menuButtonCounter = 7
         filterCategory(type: .coldDrink)
+        
     }
     @objc  func button9Clicked(){
         
@@ -353,6 +363,7 @@ class MenuVC: UIViewController, UIScrollViewDelegate, UICollectionViewDataSource
         button9.activeButton()
         menuButtonCounter = 8
         filterCategory(type: .other)
+        
     }
 //    @objc  func button10Clicked(){
 //
